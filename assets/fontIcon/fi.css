@@ -22,11 +22,7 @@
 }
 
 [class^="fi-"]:before, [class*=" fi-"]:before,
-[class^="fi-"]:after, [class*=" fi-"]:after {   
-font-family: fi;
-font-size: 20px;
-font-style: normal;
-}
+[class^="fi-"]:after, [class*=" fi-"]:after {font-family: fi;font-size: 14px;font-style: normal;}
 
 .fi-feeder:before { content: "\f100"; }
 .fi-armchair:before { content: "\f101"; }

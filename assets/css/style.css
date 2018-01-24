@@ -6,15 +6,7 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 /*//// for global pages Star ////*/
-body {
--webkit-font-smoothing: antialiased;
-color: rgba(60, 75, 88, 1);
-background: #f2f2f2;
-font-family: "Source Sans Pro", "Helvetica Neue", Roboto, "Noto Sans CJK TC", "Heiti TC", -apple-system, BlinkMacSystemFont, Ubuntu, Cantarell, sans-serif;
-line-height: 1.25;
-font-weight: normal;
-overflow-x: hidden;
-}
+body {-webkit-font-smoothing: antialiased;color: rgba(60, 75, 88, 1);background: #f2f2f2;font-family: "Source Sans Pro", "Helvetica Neue", Roboto, "Noto Sans CJK TC", "Heiti TC", -apple-system, BlinkMacSystemFont, Ubuntu, Cantarell, sans-serif;line-height: 1.25;font-weight: normal;overflow-x: hidden;}
 hr{border: none;border-bottom: 1px solid #f0f0f0;}
 .f10{font-size:10pt;}
 .f14{font-size:14pt;}
@@ -40,7 +32,7 @@ hr{border: none;border-bottom: 1px solid #f0f0f0;}
 .text-right {text-align:right;}
 /* 頂部固定欄樣式 */
 .topMenuBar {background-color:white;position: fixed;width: 100%;z-index: 2;display: block;padding: .2rem 0;top: 0;-moz-box-shadow: 0px 1px 4px rgba(0,0,0,.15);-webkit-box-shadow: 0px 1px 4px rgba(0,0,0,.15);box-shadow: 0px 1px 4px rgba(0,0,0,.15);}
-.topMenuBar li:first-of-type i {font-size: x-large;}
+.topMenuBar li:first-of-type i {font-size: 20px;}
 .topMenuBar li input[type=text] {border:none;outline:none;}
 /* 底部固定欄樣式 */
 .BottomBar {position:fixed;bottom:0;left:0;right:0;background-color:rgba(255,255,255,.85);z-index:1;}
@@ -53,8 +45,9 @@ main.container .boxCont{padding:1rem;display: inherit;} /* 預設沙盒 */
 main input#menuBtn {display: none;}
 main input#menuBtn:checked ~ aside.menu {left: 0;}
 main input#menuBtn:checked ~ label.menuClose {opacity: 1;visibility: visible;}
-main .menuButton {background: white;display: inline-block;padding: 10px 20px;margin: 0 auto;cursor: pointer;-webkit-transition: 0.3s ease;transition: 0.3s ease;-webkit-box-sizing: border-box;box-sizing: border-box;}
+main .menuButton {display: inline-block;padding: 10px 20px;margin: 0 auto;cursor: pointer;-webkit-transition: 0.3s ease;transition: 0.3s ease;-webkit-box-sizing: border-box;box-sizing: border-box;}
 main .menuButton:hover {background: #f0f0f0;}
+main .menuButton object {width: 1.4rem;pointer-events:none;}
 /* 半透明灰底 Toggle */
 main .menuClose {
 position: fixed;
@@ -85,21 +78,42 @@ z-index: 4;
 }
 main .menu .menuContainer {width: 100%;height: 100%;display: -webkit-box;display: -ms-flexbox;display: flex;background: #f3f3f3;}
 main .menu nav {width: 100%;height: 100%;overflow-y: scroll;}
-main .menu nav h3, main .menu nav a {text-align: left;padding: .85rem 0 .85rem .85rem;margin: 0;font-weight: 300;color: black;}
+main .menu nav h3, main .menu nav a {text-align: left;padding: .8rem 0 .8rem .85rem;margin: 0;font-weight: 300;color: black;}
 main .menu nav h3 {background: #f2f2f2;border-bottom: 1px solid #e5e5e5;}
 main .menu nav a {font-size: medium;border-bottom: 1px solid #e5e5e5;-webkit-transition: 0.3s ease;transition: 0.3s ease;cursor: pointer;display:flex;align-items: center;text-decoration: none;letter-spacing: 1px;}
 main .menu nav a:hover {background: #f1f1f1;}
 
 /* 展開側欄使用者樣式 */
 main .menu nav h3.userAccount {padding: .52rem 0 .62rem .3rem!important;}
-main .menu nav h3.userAccount span.userName {font-size: medium;line-height: 1;}
+main .menu nav h3.userAccount img.userImg-circle {max-width:100%;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;display: inherit;}
 
-main .menu nav .userImg-circle {max-width:100%;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;display: inherit;}
+main .menu nav h3.userAccount img.userImg-circle:hover {transform: rotateY(-180deg);}
+main input#menuBtn:checked ~ .menu nav h3.userAccount img.userImg-circle {transform-origin: center center;transition:all .3s;animation: aslideImgFlip .6s 3 ease-in-out;}
+@keyframes aslideImgFlip {0% {transform: rotateY(180deg);}15% {transform: rotateY(0deg);}30% {transform: rotateY(180deg);}100% {transform: rotateY(0deg);}}
+
+main .menu nav h3.userAccount span.userName {font-size: medium;line-height: 1;}
+main .menu nav h3.userAccount span.userName {width:0%;overflow: hidden;display: inherit;white-space:nowrap;opacity:0;}
+main input#menuBtn:checked ~ .menu nav h3.userAccount span.userName {width:100%;transition:all 3s ease;transition-delay:.5s;opacity:1;}
+
+
+main .menu nav h3.userAccount .times {font-size:16pt;transform: translateX(1.5rem);opacity:0;}
+main input#menuBtn:checked ~ .menu nav h3.userAccount .times {transform: translateX(0rem);transition:all 1.2s ease-out;transition-delay:.8s;opacity:1;}
+
 main .menu nav ul small {margin-left: .5rem;color:#999;font-size: 9pt;text-transform: uppercase;}
 
 main .menu nav .clineUser {margin-top: 1rem;}
 main .menu nav .clineUser i {margin-right: .5rem;color: #666;}
 main .menu nav .clineUser li:last-of-type a {border:none;}
+
+/* 展開側欄選單動畫 */
+main input#menuBtn:checked ~ .menu nav .clineUser li a {opacity:0;animation: aslideAnima .5s forwards;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:first-of-type a{animation-delay: .2s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(2) a{animation-delay: .4s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(3) a{animation-delay: .6s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(4) a{animation-delay: .8s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(5) a{animation-delay: 1s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(6) a{animation-delay: 1.2s;}
+@keyframes aslideAnima {0% {transform: translateX(1rem);}100% {opacity:1;transform: translateX(0);}}
 
 /* 底部資訊欄 */
 .bottomInfo {text-align:center;padding: 1.25rem 0 1rem;border-top:1px solid rgba(0,0,0,.12);}
