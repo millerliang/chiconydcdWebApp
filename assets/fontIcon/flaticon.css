@@ -22,12 +22,7 @@ Creation date: 22/06/2016 15:35
 }
 
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
-font-family: Flaticon;
-font-size: 20px;
-font-style: normal;
-/* margin-left: 20px; */
-}
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {font-family: Flaticon;font-size: 20px;font-style: normal;}
 
 .flaticon-badge:before { content: "\f100"; }
 .flaticon-bill:before { content: "\f101"; }

@@ -6,7 +6,8 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 /*//// for global pages Star ////*/
-body {-webkit-font-smoothing: antialiased;color: rgba(60, 75, 88, 1);background: #f2f2f2;font-family: "Source Sans Pro", "Helvetica Neue", Roboto, "Noto Sans CJK TC", "Heiti TC", -apple-system, BlinkMacSystemFont, Ubuntu, Cantarell, sans-serif;line-height: 1.25;font-weight: normal;overflow-x: hidden;}
+body {font-family: "Heiti TC", "Source Sans Pro", "Helvetica Neue", "Noto Sans CJK TC", Roboto, -apple-system, BlinkMacSystemFont, Ubuntu, Cantarell, sans-serif;
+-webkit-font-smoothing: antialiased;color: rgba(60, 75, 88, 1);background: #f2f2f2;line-height: 1.25;font-weight: normal;overflow-x: hidden;}
 hr{border: none;border-bottom: 1px solid #f0f0f0;}
 .f10{font-size:10pt;}
 .f14{font-size:14pt;}
@@ -40,7 +41,8 @@ hr{border: none;border-bottom: 1px solid #f0f0f0;}
 .cube9 li {padding:0;} /* 九宮格無邊距 */
 
 main.container {position: relative;width: 100%;padding:3.3rem 0 3rem;} /* 全域框架 */
-main.container .boxCont{padding:1rem;display: inherit;} /* 預設沙盒 */
+main.container .subTitle{font-size: 14pt;padding: .35rem 1rem;} /* 區塊副標題 */
+main.container .boxCont{padding:1rem;display: inherit;font-size: 11pt;} /* 預設沙盒 */
 
 main input#menuBtn {display: none;}
 main input#menuBtn:checked ~ aside.menu {left: 0;}
@@ -122,3 +124,49 @@ main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(6) a{animation-
 .bottomInfo .row .col-xs {color:#999;}
 
 /*//// for global pages End ////*/
+
+/*//// for Other pages Star ////*/
+
+/* 抽獎 btn */
+.topShoppingBag {
+    position: relative;
+    display: inline-block;
+}
+.topShoppingBag i::before {
+    font-size: 19px;
+}
+.topShoppingBag span {
+    position: absolute;
+    line-height: 12px;
+    top: -5px;
+    right: -8px;
+    color: white;
+    background-color: rgba(237, 0, 0, .75);
+    font-size: xx-small;
+    padding: .15rem;
+    border-radius: 50%;
+    width: 11px;
+    height: 11px;
+    overflow: hidden;
+    display: initial;
+    align-items:  center;
+    text-align: center;
+}
+
+/* 抽獎 btn */
+.lotteryBtn {background-color: transparent;padding: 0 0 .5em;}
+.lotteryBtn li {}
+.lotteryBtn li a {
+    padding: .3rem 0;
+    color: white;
+    background-color: rgba(102, 48, 178, .85);
+    border-radius: 2rem;
+    align-items:  center;
+    width: 90%;
+    display: inline-block;
+}
+.lotteryBtn li a.colorB {background-color: rgba(48, 89, 178, .85);}
+.lotteryBtn li a i {vertical-align: middle;margin-right: .3rem;display: inline-block;}
+.lotteryBtn li a i::before {font-size: 1.6rem;}
+
+/*//// for Other pages End ////*/

@@ -51,3 +51,6 @@ button, select {text-transform: none;}
 button {overflow: visible;}
 button, input, select, textarea {font-family: inherit;font-size: inherit;line-height: inherit;}
 button, html input[type=button], input[type=reset], input[type=submit] {-webkit-appearance: button;}
+a,input:focus,button {outline: none;}
+a {color: #333;}
+a:link,a:visited,a:hover,a:active {text-decoration: underline;text-decoration: none;}
