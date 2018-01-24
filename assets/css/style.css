@@ -16,6 +16,9 @@ font-weight: normal;
 overflow-x: hidden;
 }
 hr{border: none;border-bottom: 1px solid #f0f0f0;}
+.f10{font-size:10pt;}
+.f14{font-size:14pt;}
+.f16{font-size:16pt;}
 .h05rem{height:.5rem;}
 .h1rem{height:1rem;}
 .h15rem{height:1.5rem;}
@@ -94,8 +97,8 @@ main .menu nav h3.userAccount span.userName {font-size: medium;line-height: 1;}
 main .menu nav .userImg-circle {max-width:100%;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;display: inherit;}
 main .menu nav ul small {margin-left: .5rem;color:#999;font-size: 9pt;text-transform: uppercase;}
 
-main .menu nav .clineUser {margin-top: 2rem;}
-main .menu nav .clineUser i {margin-right: .35rem;color: #666;}
+main .menu nav .clineUser {margin-top: 1rem;}
+main .menu nav .clineUser i {margin-right: .5rem;color: #666;}
 main .menu nav .clineUser li:last-of-type a {border:none;}
 
 /* 底部資訊欄 */
