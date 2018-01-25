@@ -14,24 +14,27 @@
 <body>
 <main class="container">
 <input type="checkbox" id="menuBtn"/>  
-<label class="menuClose" for="menuBtn"></label> 
+<label class="menuClose" for="menuBtn"></label>
 <nav class="topMenuBar">
 	<ul class="row middle-xs">
-		<li class="col-xs-2">
+		<li>
 			<!-- <label class="menuButton" for="menuBtn"><i class="fa fa-bars"></i></label> -->
 			<label class="menuButton" for="menuBtn">
 				<object data="assets/svgs/barIco.svg" type="image/svg+xml"></object>
 			</label>
 		</li>
-		<li class="col-xs-1">
+		<li>
 			<a href="#0" class="topShoppingBag">
 				<i class="flaticon-shopping-bag-2"></i>
 				<span class="point">2</span>
 			</a>
 		</li>
-		<li class="col-xs">
-			<i class="fa fa-search"></i>
-			<input placeholder="搜尋" type="text">
+		<li class="col-xs noWrap">
+			<form>
+				<i class="fa fa-search"></i>
+				<input placeholder="搜尋" type="text">
+				<button type="reset">&times;</button>
+			</form>
 		</li>
 	</ul>
 </nav>
@@ -51,10 +54,10 @@
 				<li><a href="#">抽獎<small>lottery</small></a></li>
 			</ul>
 			<ul class="clineUser">
-				<li><a href="#"><i class="fi-shield"></i>我的品牌</a></li>
+				<li><a href="#"><i class="fi-handbag"></i>我的品牌</a></li>
 				<li><a href="#"><i class="fi-shopping-bag"></i>我的商品</a></li>
-				<li><a href="#"><i class="fi-shop"></i>我的門市</a></li>
-				<li><a href="#"><i class="fi-buy"></i>我的訂單</a></li>
+				<li><a href="#"><i class="fi-placeholder-1"></i>我的門市</a></li>
+				<li><a href="#"><i class="fi-invoice"></i>我的訂單</a></li>
 				<li><a href="#"><i class="fi-coupon"></i>我的優惠劵</a></li>
 				<li><a href="#"><i class="flaticon-id-card"></i>我的檔案</a></li>
 			</ul>
@@ -75,16 +78,16 @@
 		</div>
 		<div class="ws_bullets">
 			<div>
-				<a href="#" title="text"><img src=""/>carousel-1</a>
-				<a href="#" title="text"><img src=""/>carousel-2</a>
-				<a href="#" title="text"><img src=""/>carousel-3</a>
-				<a href="#" title="text"><img src=""/>carousel-4</a>
-				<a href="#" title="text"><img src=""/>carousel-5</a>
+				<a href="#" title="AD-1"><img src=""/>carousel-1</a>
+				<a href="#" title="AD-2"><img src=""/>carousel-2</a>
+				<a href="#" title="AD-3"><img src=""/>carousel-3</a>
+				<a href="#" title="AD-4"><img src=""/>carousel-4</a>
+				<a href="#" title="AD-5"><img src=""/>carousel-5</a>
 			</div>
 		</div>
 		<div class="ws_shadow"></div>
 	</div>
-	<!-- <div style="height:2rem;"></div>
+	<!-- <div class="h2rem"></div>
 	<div id="effbuttons" class="control-buttons"></div> -->
 </selected>
 
@@ -108,14 +111,14 @@
 	</ul>
 </selected> -->
 <div class="h1rem"></div>
-<h3 class="subTitle">熱銷商品</h3>
+<h3 class="subTitle couponShowAnchor">熱銷商品</h3>
 <selected class="boxCont">
 	<ul class="row middle-xs text-center">
-		<li class="col-xs-6"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img01.jpg"><div>Amadana Music</div></li>
-		<li class="col-xs-6"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img02.jpg"><div>tricot amadana</div></li>
-		<li class="col-xs-12"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img05.jpg"><div>PREMIUM WARTER × amadana</div></li>
-		<li class="col-xs-6"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img03.jpg"><div>amadana Tag line</div></li>
-		<li class="col-xs-6"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img04.jpg"><div>SILICA PURE × amadana</div></li>
+		<li data-aos-anchor=".couponShowAnchor" data-aos="fade-up" data-aos-delay="300" data-aos-easing="ease-out-cubic" class="col-xs-6"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img01.jpg"><div>Amadana Music</div></li>
+		<li data-aos-anchor=".couponShowAnchor" data-aos="fade-down" data-aos-delay="600" data-aos-easing="ease-out-cubic" class="col-xs-6"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img02.jpg"><div>tricot amadana</div></li>
+		<li data-aos-anchor=".couponShowAnchor" data-aos="flip-up" data-aos-delay="900" class="col-xs-12"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img05.jpg"><div>PREMIUM WARTER × amadana</div></li>
+		<li data-aos-anchor=".couponShowAnchor" data-aos="fade-up" data-aos-delay="1200" data-aos-easing="ease-out-cubic" class="col-xs-6"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img03.jpg"><div>amadana Tag line</div></li>
+		<li data-aos-anchor=".couponShowAnchor" data-aos="fade-down" data-aos-delay="1500" data-aos-easing="ease-out-cubic" class="col-xs-6"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img04.jpg"><div>SILICA PURE × amadana</div></li>
 		<!-- <li data-aos="flip-up" class="col-xs-8"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_logo_amadana.png"></li>
 		<li data-aos="flip-down" class="col-xs-4"><img class="img-responsive" src="http://www.amadana.com/products/images/brand_img_amadana.jpg"></li> -->
 	</ul>
@@ -140,14 +143,16 @@
 </selected> -->
 <hr/>
 <h3 class="subTitle">品牌活動</h3>
-<center>
-	<img data-aos="fade-right" class="img-responsive" src="http://www.doshisha.co.jp/img/mainimage/bnr_rubin.jpg">
-	<img data-aos="fade-left" class="img-responsive" src="http://www.doshisha.co.jp/img/mainimage/bnr_kamomefan.jpg">
+<center class="overHidden">
+	<a href="#0"><img data-aos="fade-right" class="img-responsive" src="http://www.doshisha.co.jp/img/mainimage/bnr_rubin.jpg"></a>
+	<a href="#0"></a><img data-aos="fade-left" class="img-responsive" src="http://www.doshisha.co.jp/img/mainimage/bnr_kamomefan.jpg"></a>
 </center>
+<!-- <iframe width="100%" height="300" src="https://www.youtube-nocookie.com/embed/su7NKWZgqsQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+
 <footer class="BottomBar lotteryBtn">
 	<ul class="row middle-xs text-center">
-		<li class="col-xs-6"><a class="colorB" href="#0"><i class="fi-gift"></i>抽 獎</a></li>
-		<li class="col-xs-6"><a href="#0"><i class="fi-coupon"></i>優惠劵</a></li>
+		<li class="col-xs-6"><a data-aos="fade-up" data-aos-delay="800" data-aos-easing="ease-out-cubic" data-aos-anchor=".couponShowAnchor" class="colorB" href="#0"><i class="fi-gift"></i>抽 獎</a></li>
+		<li class="col-xs-6"><a data-aos="fade-up" data-aos-delay="1000" data-aos-easing="ease-out-cubic" data-aos-anchor=".couponShowAnchor" href="#0"><i class="fi-coupon"></i>優惠劵</a></li>
 	</ul>
 </footer>
 
