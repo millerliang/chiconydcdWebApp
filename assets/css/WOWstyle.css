@@ -488,7 +488,7 @@
 #wowslider-container1 .ws-title span {font-size:medium;padding: .25rem 1rem;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
 .control-buttons .effects-title, .control-buttons a.button {font-size:11pt;}
 #wowslider-container1 .ws-title {color:#17212b;}
-#wowslider-container1 .ws_bullets a {background-color:rgba(248,248,248,.5);width:8px;height:8px;}
+#wowslider-container1 .ws_bullets a {background-color:rgba(248,248,248,.5);width: 7px;height: 7px;}
 #wowslider-container1 .ws_bullets a.ws_selbull {background-color:rgba(0,0,0,.65);}
 [id*=wowslider-container] > div.ws_images img, #wowslider-container > div.ws_images img, #wowslider-container1 > div.ws_images img{
 box-shadow: 0 1px 3px rgba(0, 0, 0, .12);-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12);-moz-box-box-shadow: 0 1px 3px rgba(0, 0, 0, .12);}

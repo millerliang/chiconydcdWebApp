@@ -4,10 +4,12 @@
 @import url(../fontIcon/flaticon.css);
 @import url(../fontIcon/fi.css);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+/* @import url(https://use.fontawesome.com/releases/v5.0.4/css/all.css); */
 
 /*//// for global pages Star ////*/
 body {font-family: "Heiti TC", 'Microsoft JhengHei', "Source Sans Pro", "Helvetica Neue", "Noto Sans CJK TC", Roboto, -apple-system, BlinkMacSystemFont, Ubuntu, Cantarell, sans-serif;-webkit-font-smoothing: antialiased;color: rgba(60, 75, 88, 1);background: #f2f2f2;line-height: 1.25;font-weight: normal;/* overflow-x: hidden; */}
 hr{border: none;border-bottom: 1px solid #f0f0f0;}
+strong,b{font-weight: bold;}
 .f10{font-size:10pt;}
 .f14{font-size:14pt;}
 .f16{font-size:16pt;}
@@ -36,6 +38,7 @@ hr{border: none;border-bottom: 1px solid #f0f0f0;}
 .topMenuBar {background-color:white;position: fixed;width: 100%;z-index: 2;display: block;padding: .2rem 0;top: 0;-moz-box-shadow: 0px 1px 4px rgba(0,0,0,.15);-webkit-box-shadow: 0px 1px 4px rgba(0,0,0,.15);box-shadow: 0px 1px 4px rgba(0,0,0,.15);}
 .topMenuBar .row {flex-wrap: nowrap;}
 .topMenuBar li:first-of-type i {font-size: 20px;} /* menuBarIcon */
+.topMenuBar h3 {font-weight: 700;font-size: 14pt;}
 
 .topMenuBar li form input[type=text] {border:1px solid transparent;outline:none;padding: .25rem 0;width: 80%;transition:all .3s;font-size: smaller;border-radius: 2rem;}
 .topMenuBar li form input[type=text]:focus {border: 1px solid #efefef;padding: .25rem 0 .25rem .8rem;}
@@ -43,7 +46,46 @@ hr{border: none;border-bottom: 1px solid #f0f0f0;}
 
 /* RestBtn Search input text */
 .topMenuBar li form button {position: relative;z-index: 3;cursor: pointer;border: none;background: transparent;padding: .12rem .5rem;color: #666;opacity: 0;}
-.topMenuBar li form:hover button,.topMenuBar li input[type=text]:focus + button {transition: all .8s;transform: translateX(-2.5rem);font-size: small;opacity: 1;}
+.topMenuBar li form:hover button,.topMenuBar li input[type=text]:focus + button {transition: all .8s;transform: translateX(-2.25rem);font-size: small;opacity: 1;}
+
+/* TopBar 購物車樣式 */
+.topShoppingBag {
+    position: relative;
+    display: inline-block;
+    width: 1.2rem;
+}
+.topShoppingBag i::before {
+    font-size: 19px;
+}
+.topShoppingBag span.shopNum {
+    font-family: monospace;
+    position: absolute;
+    line-height: 11px;
+    top: -6px;
+    right: -6px;
+    color: white;
+    background-color: rgba(237, 0, 0, .75);
+    font-size: xx-small;
+    padding: .15rem;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    align-items: center;
+    text-align: center;
+    transform-origin: center bottom;
+    animation: shopCarNum 1.8s infinite ease-in-out;
+}
+@keyframes shopCarNum {
+    0% {transform: rotate(0deg);}
+    5% {transform: rotate(25deg);}
+    10% {transform: rotate(-25deg);}
+    15% {transform: rotate(35deg);}
+    20% {transform: rotate(-35deg);}
+    25% {transform: rotate(0deg);}
+}
 
 /* 底部固定欄樣式 */
 .BottomBar {position:fixed;bottom:0;left:0;right:0;background-color:rgba(255,255,255,.85);z-index:1;}
@@ -52,6 +94,7 @@ hr{border: none;border-bottom: 1px solid #f0f0f0;}
 
 main.container {position: relative;width: 100%;padding:3.3rem 0 3rem;} /* 全域框架 */
 main.container .subTitle{font-size: 14pt;padding: .35rem 1rem;} /* 區塊副標題 */
+main.container .subTitle::before{content:"-";margin-right: .3rem;color: #bbb;font-size: smaller;} /* 副標題 + - */
 main.container .boxCont{padding:1rem;display: inherit;font-size: 11pt;} /* 預設沙盒 */
 
 main input#menuBtn {display: none;}
@@ -132,38 +175,7 @@ main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(6) a{animation-
 .bottomInfo .row small {display:block;line-height:1.5;}
 .bottomInfo .row .col-xs {color:#999;}
 
-/*//// for global pages End ////*/
-
-/*//// for Other pages Star ////*/
-
-/* 抽獎 btn */
-.topShoppingBag {
-    position: relative;
-    display: inline-block;
-}
-.topShoppingBag i::before {
-    font-size: 19px;
-}
-.topShoppingBag span {
-    font-family: monospace;
-    position: absolute;
-    line-height: 11px;
-    top: -5px;
-    right: -8px;
-    color: white;
-    background-color: rgba(237, 0, 0, .75);
-    font-size: xx-small;
-    padding: .15rem;
-    border-radius: 50%;
-    width: 11px;
-    height: 11px;
-    overflow: hidden;
-    display: initial;
-    align-items:  center;
-    text-align: center;
-}
-
-/* 抽獎 btn */
+/* index 抽獎 btn */
 .lotteryBtn {background-color: transparent;padding: 0 0 .5em;}
 .lotteryBtn li {}
 .lotteryBtn li a {
@@ -180,5 +192,24 @@ main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(6) a{animation-
 .lotteryBtn li a.colorB {background-color: rgba(48, 89, 178, .85);background: linear-gradient(to bottom, rgba(110, 140, 255, 0.95), rgba(160, 200, 245, 0.85));}
 .lotteryBtn li a i {vertical-align: middle;margin-right: .3rem;display: inline-block;}
 .lotteryBtn li a i::before {font-size: 1.6rem;}
+
+/*//// for global pages End ////*/
+
+/*//// for Other pages Star ////*/
+
+/* isotope-filter Style */
+#branItems {}
+#branItems li {padding: 0 .2rem 1.2rem .2rem;}
+#branItems li a {
+    background-color:  white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
+    display: block;
+    padding: .25rem .5rem;
+    border-radius: 4px;
+}
+
+/* isotope-filter Btns */
+.button-group ul li a {color: #ccc;}
+.button-group ul li a.is-checked {color: #222;font-weight:500;}
 
 /*//// for Other pages End ////*/

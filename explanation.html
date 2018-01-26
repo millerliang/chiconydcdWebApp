@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<main class="container">
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<a href="#0" class="menuButton goBackPage">
+				<i class="fa fa-angle-left" data-aos="flip-right" data-aos-delay="1000"></i>
+				<!-- <object data="assets/svgs/barIco.svg" type="image/svg+xml"></object> -->
+			</a>
+		</li>
+		<!-- <li>
+			<a href="#0" class="topShoppingBag">
+				<i class="flaticon-shopping-cart-5"></i>
+				<span class="shopNum">2</span>
+			</a>
+		</li> -->
+		<li class="col-xs noWrap">
+			<h3 data-aos="fade-left" data-aos-duration="1600" data-aos-delay="300">品牌說明</h3>
+		</li>
+	</ul>
+</nav>
+
+<style>
+.boxCont p {line-height:1.6;}.img-responsive {width:8rem;padding:1rem 0;}
+</style>
+<div class="h05rem"></div>
+<selected class="boxCont">
+	<ul class="row middle-xs">
+		<li><img data-aos="fade-left" data-aos-delay="200" src="http://plusminuszero.com.tw/images/logo-dark.png"></li>
+		<li class="col-xs text-right noWrap" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="1600">
+			<a href="http://plusminuszero.com.tw" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle fa-stack-2x"></i>
+					<i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+			<a href="https://www.facebook.com/plusminuszero.hk/" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle fa-stack-2x"></i>
+					<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+		</li>
+	</ul>
+</selected>
+<div class="h15rem"></div>
+
+<h3 class="subTitle" data-aos="fade-up" data-aos-delay="100">入會辦法</h3>
+<img data-aos="flip-right" data-aos-delay="200" class="img-responsive" src="https://image.flaticon.com/icons/svg/590/590199.svg">
+
+<selected class="boxCont" data-aos="fade-up" data-aos-delay="400">
+	<p><strong>您曾經註冊過會員帳號，但改用FB快速登入</strong><br/>您的FB E-mail若和官網註冊的會員E-mail一樣，官網將會自動整合FB和會員帳號。您可以隨意切換這二種登入方式，美幣、VIP / VVIP累計消費金額及福利會自動合併。 若FB E-mail和官網註冊的會員E-mail不同，而您已經使用FB帳號購買，FB和官網會員帳號將無法合併。</p>
+	<div class="h15rem"></div>
+	<p><strong>您沒有註冊會員，只用FB快速登入</strong><br/>FB登入後，請前往「會員中心 > 個人帳戶管理 > 補登生日日期」即可享有生日禮。FB登入和註冊官網會員享有同樣的會員福利。</p>
+</selected>
+
+<div class="h3rem"></div>
+<h3 class="subTitle" data-aos="fade-up" data-aos-delay="100">會員福利</h3>
+<img data-aos="flip-left" data-aos-delay="200" class="img-responsive" src="https://image.flaticon.com/icons/svg/646/646732.svg">
+
+<selected class="boxCont" data-aos="fade-up" data-aos-delay="200">
+	<p><strong>會員升等說明</strong> <small>Promotion</small></p>
+	<p>只要 12 個月內累積消費金額* 達到以下門檻，會員等級將自動升級成 VIP / VVIP資格，我們也會同時寄信通知您。</p>
+	<div class="h15rem"></div>
+	<p>升等 VIP 累積消費達 NT$3,000</p>
+	<p>升等 VVIP 累積消費達 NT$6,000</p>
+	<p>達到金額門檻後的14天內無退貨或取消訂單</p>
+	<div class="h15rem"></div>
+	<strong>累積消費金額</strong>
+	<p>係指您實際支付給小三美日的商品總金額。</p>
+	<p>（不包含運費、貨到付款外加 NT$30、折扣碼、抵用劵、購物金、美幣折抵等金額）</p>
+	<div class="h15rem"></div>
+	<strong>VIP/VVIP標準</strong>
+	<p>VIP/ VVIP的會員身份以登入官網「會員中心」所示為準。</p>
+	<div class="h15rem"></div>
+	<strong>VIP/VVIP資格有效期限為 12 個月</strong>
+	<p>12 個月內累積消費金額到達，資格將自動延續。若消費未達，資格自動轉為一般會員，我們將不另外通知。</p>
+	<p>舉例：您於 2017.10.12 升等 VIP 資格，可享 VIP 福利至 2018.10.11。</p>
+</selected>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/js/aos.js"></script>
+
+<script>
+$(document).ready(function () {
+	$(".goBackPage").click(function () {
+		event.preventDefault();
+		history.back(1);
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-out-cubic',
+		//delay: 50,
+	});
+});
+</script>
+</body>
+</html>

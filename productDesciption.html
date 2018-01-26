@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<style>
+.boxCont h1 {font-size:21pt;color: #666;}
+.boxCont h2 {font-size:14pt;color: #999;}
+.boxCont p {line-height:1.6;font-size:small;}
+.boxCont .price {color:#ef4b0a;font-size:16pt;font-weight:600;}
+i.fa-heart-o,i.fa-star-o {font-size:1.3rem;animation: refave-heart .8s;}
+i.is-active {color:#ef4b0a;animation: fave-heart .8s;}
+@keyframes fave-heart {
+0% {
+transform: scale(1,1);opacity:.25;}
+50% {transform: scale(1.5,1.5);}
+100% {opacity:1;transform: scale(1,1)}
+}
+@keyframes refave-heart {
+0% {transform: scale(.8,.8);}
+50% {transform: scale(1.2,1.2);opacity:.25;}
+100% {transform: scale(1,1)opacity:1;}
+}
+.BottomBar {padding:.3rem .5rem;}
+.BottomBar .text-right i {font-size:1.5rem;}
+.BottomBar .productColor {display: inline-block;width:1.5rem;height:1.5rem;border:1px solid #ddd;margin:0 .3rem}
+.BottomBar .productColor.p1 {background-color:#eddc5a}
+.BottomBar .productColor.p2 {background-color:#fff}
+main .menu {height: auto;bottom:-50rem;left:0;top: auto;width: 100%;background-color: white;}
+main input#menuBtn:checked ~ aside.menu {bottom: 3rem;}
+/* 底部展開選單 */
+main .menu ul.popupSel li a i {margin-right:.25rem;min-width:1rem;text-align: center;}
+main .menu ul.popupSel li a {border-bottom:1px solid #ddd;padding:1.25rem 1rem;display:block;}
+main .menu ul.popupSel li a:hover {background: #f1f1f1;}
+main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
+</style>
+<main class="container">
+<input type="checkbox" id="menuBtn" />
+<label class="menuClose" for="menuBtn"></label>
+<aside class="menu">
+	<ul class="popupSel">
+		<li><a href="#0"><i class="fa fa-info"></i> 規格說明</a></li>
+		<li><a href="#0"><i class="fa fa-share-alt"></i> 分享他人</a></li>
+		<li><a href="#0" class="ifActive"><i class="fa fa-star-o"></i> 加入收藏</a></li>
+	</ul>
+</aside>
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<a href="#0" class="menuButton goBackPage">
+				<i class="fa fa-angle-left" data-aos="flip-right" data-aos-delay="1000"></i>
+				<!-- <object data="assets/svgs/barIco.svg" type="image/svg+xml"></object> -->
+			</a>
+		</li>
+		<!-- <li>
+			<a href="#0" class="topShoppingBag">
+				<i class="flaticon-shopping-cart-5"></i>
+				<span class="shopNum">2</span>
+			</a>
+		</li> -->
+		<li class="col-xs noWrap">
+			<h3 data-aos="fade-left" data-aos-duration="1600" data-aos-delay="300">商品介紹</h3>
+		</li>
+		<li class="col-xs-1_ noWarp text-right">
+			<label for="" class="menuButton ifActive"><i class="fa fa-heart-o"></i></label>
+		</li>
+	</ul>
+</nav>
+
+<div class="h05rem"></div>
+<selected class="boxCont">
+	<ul class="row middle-xs">
+		<li class="col-xs"><img data-aos="fade-left" data-aos-delay="200" src="http://plusminuszero.com.tw/images/logo-dark.png"></li>
+		<li class="text-right noWrap" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="1600">
+			<p class="price">$ 1,790</p>
+		</li>
+	</ul>
+</selected>
+
+<selected class="boxCont" data-aos="fade-up" data-aos-delay="200">
+	<img class="img-responsive" src="http://plusminuszero.com.tw/images/xqs-z710.jpg">
+	<h1>XQS-Z710</h1>
+	<h2>小型輕巧的客廳專用扇</h2>
+	<div class="h1rem"></div>
+	<p>無論是強調秋冬季節的收納，或一般女性也易於搬運的體積 體積雖小，操作性毫不妥協，擁有貼心設計的電扇</p>
+	<div class="h2rem"></div>
+	<ul class="row middle-xs" data-aos="fade-up" data-aos-delay="300">
+		<li class="col-xs-6" style="background:url('http://plusminuszero.com.tw/images/z71001.jpg') no-repeat;min-height: 10rem;background-size:cover;"></li>
+		<li class="col-xs-6" style="background:url('http://plusminuszero.com.tw/images/z71002.jpg') no-repeat;min-height: 10rem;background-size:cover;"></li>
+	</ul>
+	<div class="h2rem"></div>
+	<ul class="row" data-aos="fade-up" data-aos-delay="200">
+		<li class="col-xs-5">
+			<img class="img-responsive" src="http://plusminuszero.com.tw/images/z71003.jpg">
+		</li>
+		<li class="col-xs">
+			<h1 style="color:#88abda;">3.5kg</h1>
+			<h2>輕量化設計，易於收納</h2>
+			<div class="h05rem"></div>
+			<p>即便把手伸長提取電扇，電扇也不會碰到地上，特徵在 於易於拿取的提把與輕量化機體 僅 62.3 cm 的迷你高度，無論是和室生活、客廳鋪設地 墊等，都能加以對應。此外，只要將立柱伸長，就成為 與一般電扇相同的 72.7 cm 高度</p>
+		</li>
+	</ul>
+	<div class="h2rem"></div>
+	<ul class="row" data-aos="fade-up" data-aos-delay="200">
+		<li class="col-xs">
+			<h2>與室內裝潢合為一體</h2>
+			<div class="h05rem"></div>
+			<p>一般圓形底盤往往佔據多餘空間… 貼近生活的四方型圓弧邊角底盤 毫無一絲多餘且簡潔的設計，收納便利</p>
+			<div class="h05rem"></div>
+			<img class="img-responsive" src="http://plusminuszero.com.tw/images/z71004.jpg">
+		</li>
+		<li class="col-xs-5">
+			<img class="img-responsive" src="http://plusminuszero.com.tw/images/z71003-1.jpg">
+		</li>
+	</ul>
+</selected>
+<img class="img-responsive" src="http://plusminuszero.com.tw/images/z71005.jpg" data-aos="fade-in" data-aos-delay="200">
+<div class="h2rem"></div>
+<selected class="boxCont text-center" data-aos="fade-up" data-aos-delay="200">
+	<h1>操作簡單易懂，功能多樣化</h1>
+	<div class="h1rem"></div>
+	<p>簡潔的操作設計也是±0的特徵。無論是底盤或按鈕，圓潤飽滿的外觀設計，給人柔和而可愛的印象 各按鈕保持一定間距，能避免誤觸，增加操作容易性</p>
+	<hr>
+	<img class="img-responsive" src="http://plusminuszero.com.tw/images/z710015.jpeg" data-aos="fade-up" data-aos-delay="200">
+	<ul class="row" data-aos="fade-up" data-aos-delay="200">
+		<li class="col-xs-4">
+			<img class="img-responsive" src="http://plusminuszero.com.tw/images/z71008.jpg">
+			<div class="h1rem"></div>
+			<p>按壓卡榫即可調整高度<br>（高度為 62.3 cm-73 cm) 無論寢室、餐廳、兒童房等空間都能自由運用</p>
+		</li>
+		<li class="col-xs-4">
+			<img class="img-responsive" src="http://plusminuszero.com.tw/images/z71009.jpg">
+			<div class="h1rem"></div>
+			<p>家中任何成員都能輕鬆操作的設計 無論大人、小孩、甚至是老人都能易於操作</p>
+		</li>
+		<li class="col-xs-4">
+			<img class="img-responsive" src="http://plusminuszero.com.tw/images/z710010.jpg">
+			<div class="h1rem"></div>
+			<p>底盤設有四個止滑墊<br>底盤收納設計不會讓線材纏在一起</p>
+		</li>
+	</ul>
+	<div class="h2rem"></div>
+	<ul class="row middle-xs" data-aos="fade-up" data-aos-delay="200">
+		<li class="col-xs-6">
+			<img class="img-responsive" src="http://plusminuszero.com.tw/images/z710011.jpg">
+			<img class="img-responsive" src="http://plusminuszero.com.tw/images/z710012.jpg">
+		</li>
+		<li class="col-xs text-left">
+			<h2>使用方法更廣泛多元</h2>
+			<div class="h05rem"></div>
+			<p>流露時尚風格的芥末黃 經典涼爽風格白色</p>
+			<div class="h05rem"></div>
+			<img style="width:2rem;" src="http://plusminuszero.com.tw/images/z710013.jpg">
+			<img style="width:2rem;" src="http://plusminuszero.com.tw/images/z710014.jpg">
+		</li>
+	</ul>
+	<hr>
+	<div class="h2rem"></div>
+	<ul class="row text-center" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
+		<h1 class="col-xs-12">標準配件組<hr style="margin:.3rem 0;"></h1>
+		<li class="col-xs">
+			<p>電風扇主體</p>
+		</li>
+		<li class="col-xs">
+			<p>遙控器(附電池)</p>
+		</li>
+		<li class="col-xs">
+			<p>使用說明書</p>
+		</li>
+	</ul>
+</selected>
+<footer class="BottomBar">
+	<ul class="row middle-xs">
+		<li class="">
+			<label for="menuBtn" class="menuButton"><i class="fa fa-ellipsis-v"></i></label>
+		</li>
+		<li class="col-xs text-right__">
+			<!-- <i class="fa fa-star-o"></i>
+			<i class="fa fa-share-alt"></i> -->
+			<span class="productColor p1"></span>
+			<span class="productColor p2"></span>
+		</li>
+	</ul>
+</footer>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/js/aos.js"></script>
+
+<script>
+$(document).ready(function () {
+	$(".goBackPage").click(function () {
+		event.preventDefault();
+		history.back(1);
+	});
+
+	$(".ifActive").click(function () {
+		$(this).children("i").toggleClass("is-active");
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-out-cubic',
+		//delay: 50,
+	});
+});
+</script>
+</body>
+</html>

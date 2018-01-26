@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<main class="container">
+<input type="checkbox" id="menuBtn"/>  
+<label class="menuClose" for="menuBtn"></label>
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<label class="menuButton" for="menuBtn">
+				<object data="assets/svgs/barIco.svg" type="image/svg+xml"></object>
+			</label>
+		</li>
+		<li>
+			<a href="#0" class="topShoppingBag">
+				<i class="flaticon-shopping-cart-5"></i>
+				<span class="shopNum">2</span>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<form>
+				<i class="fa fa-search"></i>
+				<input placeholder="搜尋" type="text">
+				<button type="reset">&times;</button>
+			</form>
+		</li>
+	</ul>
+</nav>
+
+<aside class="menu">
+	<div class="menuContainer">
+		<nav>
+			<h3 class="row middle-xs userAccount">
+				<div class="col-xs-2"><img class="userImg-circle" src="https://placem.at/people?txt=Avatar&w=128&amp;h=128&random=?"></div>
+				<div class="col-xs-8"><span class="userName">約翰·維克</span></div>
+				<div class="col-xs-2 times text-center"><label for="menuBtn">&times;</div>
+			</h3>
+			<ul>
+				<li><a href="#">消息<small>News</small></a></li>
+				<li><a href="#">商品<small>commodity</small></a></li>
+				<li><a href="#">門市<small>Store</small></a></li>
+				<li><a href="#">抽獎<small>lottery</small></a></li>
+			</ul>
+			<ul class="clineUser">
+				<li><a href="#"><i class="fi-handbag"></i>我的品牌</a></li>
+				<li><a href="#"><i class="fi-shopping-bag"></i>我的商品</a></li>
+				<li><a href="#"><i class="fi-placeholder-1"></i>我的門市</a></li>
+				<li><a href="#"><i class="fi-invoice"></i>我的訂單</a></li>
+				<li><a href="#"><i class="fi-coupon"></i>我的優惠劵</a></li>
+				<li><a href="#"><i class="flaticon-id-card"></i>我的檔案</a></li>
+			</ul>
+		</nav>  
+	</div>
+</aside>
+
+<div class="h1rem couponShowAnchor"></div>
+<h3 class="subTitle">品牌</h3>
+<!-- <selected class="isotope-filter button-group boxCont">
+	<ul class="row center-xs cube9 noWrap">
+		<li class="col-xs"><a class="button is-checked" data-filter="*">All</a></li>
+		<li class="col-xs"><a class="button" data-filter=".products_1">數位影像</a></li>
+		<li class="col-xs"><a class="button" data-filter=".products_3">美妝</a></li>
+		<li class="col-xs"><a class="button" data-filter=".products_4">家電</a></li>
+		<li class="col-xs"><a class="button" data-filter=".products_2">生活用品</a></li>
+	</ul>
+</selected> -->
+<selected class="boxCont">
+	<ul id="branItems" class="row middle-xs text-center"></ul>
+</selected>
+<hr/>
+
+<!-- <footer class="BottomBar lotteryBtn">
+	<ul class="row middle-xs text-center">
+		<li class="col-xs-6"><a data-aos="fade-up" data-aos-delay="800" data-aos-easing="ease-out-cubic" data-aos-anchor=".couponShowAnchor" class="colorB" href="#0"><i class="fi-gift"></i>抽 獎</a></li>
+		<li class="col-xs-6"><a data-aos="fade-up" data-aos-delay="1000" data-aos-easing="ease-out-cubic" data-aos-anchor=".couponShowAnchor" href="#0"><i class="fi-coupon"></i>優惠劵</a></li>
+	</ul>
+</footer> -->
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+<script>
+$(document).ready(function () {
+	var branItemsJson =[{
+		b_url:"#0",b_type:"products_1",b_delay:"100",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152334240000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_1",b_delay:"200",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152335060000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_1",b_delay:"300",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152335530000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_1",b_delay:"400",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152340560000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_1",b_delay:"500",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152340210000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_1",b_delay:"600",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152339110000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_1",b_delay:"700",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152345440000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_1",b_delay:"800",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152338360000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_1",b_delay:"900",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152346170000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_1",b_delay:"1000",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152344500000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_1",b_delay:"1100",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152339480000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_2",b_delay:"1200",b_img:"http://www.chiconydcd.com.tw/upload/products/1506152351520000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"1300",b_img:"http://www.chiconydcd.com.tw/upload/products/1608021421260000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"1400",b_img:"http://www.chiconydcd.com.tw/upload/products/1608021429300000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"1500",b_img:"http://www.chiconydcd.com.tw/upload/products/1608021450070000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"1600",b_img:"http://www.chiconydcd.com.tw/upload/products/1704201548280000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"1700",b_img:"http://www.chiconydcd.com.tw/upload/products/1608021648130000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"1800",b_img:"http://www.chiconydcd.com.tw/upload/products/1609131847260000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"1900",b_img:"http://www.chiconydcd.com.tw/upload/products/1612051602100000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"2000",b_img:"http://www.chiconydcd.com.tw/upload/products/1708012116250000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"2100",b_img:"http://www.chiconydcd.com.tw/upload/products/1710241640400000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"2200",b_img:"http://www.chiconydcd.com.tw/upload/products/1710241641420000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"2300",b_img:"http://www.chiconydcd.com.tw/upload/products/1710241642200000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"2400",b_img:"http://www.chiconydcd.com.tw/upload/products/1710241643540000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"2500",b_img:"http://www.chiconydcd.com.tw/upload/products/1710241644450000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_3",b_delay:"2600",b_img:"http://www.chiconydcd.com.tw/upload/products/1710241645310000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_4",b_delay:"2700",b_img:"http://www.chiconydcd.com.tw/upload/products/1708012112120000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_4",b_delay:"2800",b_img:"http://www.chiconydcd.com.tw/upload/products/1708012114090000001.jpg"
+		},{
+		b_url:"#0",b_type:"products_4",b_delay:"2900",b_img:"http://www.chiconydcd.com.tw/upload/products/1710241646180000001.png"
+		},{
+		b_url:"#0",b_type:"products_4",b_delay:"3000",b_img:"http://www.chiconydcd.com.tw/upload/products/1710241647040000001.jpg"
+		}
+	];
+	$.each(branItemsJson,function(index,obj)
+	{
+		bran_item ='<li class="col-xs-4 grid-item ' + obj.b_type +'" data-aos-anchor=".couponShowAnchor" data-aos-once="true" data-aos="fade-up" data-aos-delay="'+ obj.b_delay +'">';
+		bran_item +='<a href="'+ obj.b_url +'"><img class="img-responsive" src="'+ obj.b_img +'"></a>';
+		bran_item +='</li>';
+		$('#branItems').append(bran_item);
+	});
+
+	//$('#branItems').isotope({
+	//	itemSelector: '.grid-item',
+	//	layoutMode: 'fitRows',
+	//	masonry: {
+	//		columnWidth: 200
+	//	}
+	//});
+
+	var $portfoliogrid = $('#branItems');
+	$('.isotope-filter').on('click', '.button', function () {
+		var filterValue = $(this).attr('data-filter');
+		$portfoliogrid.isotope({
+			filter: filterValue
+		});
+	});
+
+	$('.button-group').each(function (i, buttonGroup) {
+		var $buttonGroup = $(buttonGroup);
+		$buttonGroup.on('click', '.button', function () {
+			$buttonGroup.find('.is-checked').removeClass('is-checked');
+			$(this).addClass('is-checked');
+		});
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 300,
+		easing: 'ease-in-sine',
+		//delay: 50,
+	});
+});
+</script>
+</body>
+</html>
