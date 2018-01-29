@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<style>
+i.fa-heart-o,i.fa-star-o {font-size:1.3rem;animation: refave-heart .8s;}
+i.is-active {color:#ef4b0a;animation: fave-heart .8s;}
+@keyframes fave-heart {
+0% {
+transform: scale(1,1);opacity:.25;}
+50% {transform: scale(1.5,1.5);}
+100% {opacity:1;transform: scale(1,1)}
+}
+@keyframes refave-heart {
+0% {transform: scale(.8,.8);}
+50% {transform: scale(1.2,1.2);opacity:.25;}
+100% {transform: scale(1,1)opacity:1;}
+}
+
+main .menu {height: auto;top:-50rem;left:0;width: 100%;background-color: white;}
+main input#menuBtn:checked ~ aside.menu {top: 3rem;bottom: auto;}
+/* 頂部展開選單 */
+main .menu ul.popupSel li a i {margin-right:.25rem;min-width:1rem;text-align: center;}
+main .menu ul.popupSel li a {border-bottom:1px solid #ddd;padding:1.25rem 1rem;display:block;}
+main .menu ul.popupSel li a:hover {background: #f1f1f1;}
+main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
+
+.google-maps {position: relative;padding-bottom: 75%;overflow_: hidden;}
+.google-maps iframe {position: absolute;top: 0;left: 0;width: 100% !important;height: 100% !important;}
+.introduction {position: absolute;top:110%;padding:0 1rem;}
+.introduction h4 {font-size:11pt;}
+.introduction phone {line-height: 2;}
+</style>
+<main class="container">
+<input type="checkbox" id="menuBtn" />
+<label class="menuClose" for="menuBtn"></label>
+<aside class="menu">
+	<ul class="popupSel">
+		<li><a href="#0"><i class="fa fa-info"></i> 說明</a></li>
+		<li><a href="#0"><i class="fa fa-share-alt"></i> 分享他人</a></li>
+		<li><a href="#0" class="ifActive"><i class="fa fa-star-o"></i> 加入收藏</a></li>
+	</ul>
+</aside>
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<a href="#0" class="menuButton goBackPage">
+				<i class="fa fa-angle-left" data-aos="flip-right" data-aos-delay="1000"></i>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<h3 data-aos="fade-left" data-aos-duration="1600" data-aos-delay="300">門市介紹</h3>
+		</li>
+		<li class="col-xs-1_ noWarp text-right">
+			<label for="menuBtn" class="menuButton"><i class="fa fa-ellipsis-v"></i></label>
+		</li>
+	</ul>
+</nav>
+
+<div class="google-maps">
+<iframe width='600' height='450' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=新北市三重區光復路二段69號&z=16&output=embed&t='></iframe>
+
+<selected class="boxCont introduction f10">
+	<ul class="row">
+		<li class="col-xs-4"><img class="img-responsive" src="http://www.chiconydcd.com.tw/upload/store/1709181323050000001.jpg"></li>
+		<li class="col-xs">
+			<h4>相機美人-新光華店</h4>
+			<phone>02-2395-7277</phone>
+			<address>台北市中正區市民大道三段8號3樓45號</address>
+		</li>
+	</ul>
+	<div class="h15rem"></div>
+	<p>營業時間：<br>週一至週五 11:00 ~ 21:00<br>週六及週日 10:00 ~ 22:00</p>
+	<div class="h1rem"></div>
+	<p>附近交通：<br>捷運 板南線忠孝新生站<br>公車 642 643</p>
+</selected>
+</div>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/js/aos.js"></script>
+
+<script>
+$(document).ready(function () {
+	$(".goBackPage").click(function () {
+		event.preventDefault();
+		history.back(1);
+	});
+
+	$(".ifActive").click(function () {
+		$(this).children("i").toggleClass("is-active");
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-out-cubic',
+		//delay: 50,
+	});
+});
+</script>
+</body>
+</html>

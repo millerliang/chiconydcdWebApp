@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<main class="container">
+<input type="checkbox" id="menuBtn"/>  
+<label class="menuClose" for="menuBtn"></label>
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<label class="menuButton" for="menuBtn">
+				<object data="assets/svgs/barIco.svg" type="image/svg+xml"></object>
+			</label>
+		</li>
+		<li>
+			<a href="#0" class="topShoppingBag">
+				<i class="flaticon-shopping-cart-5"></i>
+				<span class="shopNum">2</span>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<form>
+				<i class="fa fa-search"></i>
+				<input placeholder="搜尋" type="text">
+				<button type="reset">&times;</button>
+			</form>
+		</li>
+	</ul>
+</nav>
+
+<aside class="menu">
+	<div class="menuContainer">
+		<nav>
+			<h3 class="row middle-xs userAccount">
+				<div class="col-xs-2"><img class="userImg-circle" src="https://placem.at/people?txt=Avatar&w=128&amp;h=128&random=?"></div>
+				<div class="col-xs-8"><span class="userName">約翰·維克</span></div>
+				<div class="col-xs-2 times text-center"><label for="menuBtn">&times;</div>
+			</h3>
+			<ul>
+				<li><a href="news.html">消息<small>News</small></a></li>
+				<li><a href="commodity.html">商品<small>Commodity</small></a></li>
+				<li><a href="store.html">門市<small>Store</small></a></li>
+				<li><a href="lottery.html">抽獎<small>lottery</small></a></li>
+			</ul>
+			<ul class="clineUser">
+				<li><a href="#"><i class="fi-handbag"></i>我的品牌</a></li>
+				<li><a href="#"><i class="fi-shopping-bag"></i>我的商品</a></li>
+				<li><a href="#"><i class="fi-placeholder-1"></i>我的門市</a></li>
+				<li><a href="#"><i class="fi-invoice"></i>我的訂單</a></li>
+				<li><a href="#"><i class="fi-coupon"></i>我的優惠劵</a></li>
+				<li><a href="#"><i class="flaticon-id-card"></i>我的檔案</a></li>
+			</ul>
+		</nav>  
+	</div>
+</aside>
+
+<div class="h1rem"></div>
+<ul class="row middle-xs cube9">
+	<li class="col-xs">
+		<h3 class="subTitle">門市</h3>
+	</li>
+	<li class="col-xs text-right noWrap" data-aos="fade-down" data-aos-delay="600" data-aos-duration="800">
+		<a class="mapBtn active" href="#0"><i class="fa fa-list-ul"></i> 列表搜尋</a>
+		<a class="mapBtn" href="#0"><i class="fa fa-map-o"></i> 地圖搜尋</a>
+	</li>
+</ul>
+<div class="h05rem"></div>
+<!-- <h3 class="subTitle">門市</h3> -->
+<selected class="isotope-filter button-group navFilter">
+	<ul class="row center-xs cube9 noWrap f10">
+		<li class="col-xs"><a class="button is-checked" data-filter=".type1">展售店</a></li>
+		<li class="col-xs"><a class="button" data-filter=".type2">展售專櫃</a></li>
+		<li class="col-xs"><a class="button" data-filter=".type3">連鎖通路</a></li>
+		<li class="col-xs"><a class="button" data-filter=".type4">虛擬通路</a></li>
+		<li class="col-xs"><a class="button" data-filter=".type5">專業門市</a></li>
+		<li class="col-xs"><a class="button" data-filter=".type6">特殊通路</a></li>
+		<li class="col-xs"><a class="button" data-filter="*">全部</a></li>
+	</ul>
+</selected>
+<selected class="boxCont">
+	<ul id="storeItems" class="row middle-xs text-center"></ul>
+</selected>
+<style>
+	.navFilter {position:sticky;top:3.3rem;overflow:hidden;overflow-x:auto;display:block;padding:1rem 0;background-color: white;z-index: 1;}
+	.navFilter ul {min-width:500px;flex-wrap: nowrap;}
+	.mapBtn {color:#999;border:1px solid #ebebeb;padding: .35rem 1rem;border-radius:1rem;margin-right:.35rem;font-size:small;}
+	.mapBtn.active {border-color:#333;background-color: #333;color: white;padding: .3rem .8rem;border-radius:1rem;margin-right:.35rem;font-size:small;}
+	#storeItems {font-size: smaller;}
+	#storeItems li {padding-bottom:1rem;}
+	#storeItems li h4 {font-size:11pt;margin:.35rem 0;}
+	#storeItems li phone {line-height:2;}
+	#storeItems li address {color:#666;}
+</style>
+<hr/>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+<script>
+$(document).ready(function () {
+	var storeItemsJson =[{
+		s_url:"#0",s_type:"type1",s_title:"相機美人-敦化店",s_phone:"02-2711-0656",s_addres:"台北市大安區敦化南路一段233巷48號",s_img:"http://www.chiconydcd.com.tw/upload/store/1707311538080000001.jpg"
+		},{
+		s_url:"#0",s_type:"type1",s_title:"相機美人-新光華店",s_phone:"02-2395-7277",s_addres:"台北市中正區市民大道三段8號3樓45號",s_img:"http://www.chiconydcd.com.tw/upload/store/1709181323050000001.jpg"
+		},{
+		s_url:"#0",s_type:"type1",s_title:"相機美人-南港中信園區店",s_phone:"02-2785-0155",s_addres:"台北市南港區經貿二路186號C棟2樓",s_img:"http://www.chiconydcd.com.tw/upload/store/1709181317490000001.jpg"
+		},{
+		s_url:"#0",s_type:"type1",s_title:"弘采科技-新店家樂福店",s_phone:"02-8919-3138",s_addres:"新北市新店區中興路三段1號2樓",s_img:"http://www.chiconydcd.com.tw/upload/store/1709181329520000001.jpg"
+		},{
+		s_url:"#0",s_type:"type1",s_title:"和信嘉-內壢家樂福店",s_phone:"03-463-8746",s_addres:"桃園市中壢區中華路一段450號",s_img:"http://www.chiconydcd.com.tw/upload/store/1709181334440000001.jpg"
+		},{
+		s_url:"#0",s_type:"type1",s_title:"極美職人",s_phone:"04-2301-3331",s_addres:"台中市西區模範街80號",s_img:"http://www.chiconydcd.com.tw/upload/store/1707171803320000001.jpg"
+		},{
+		s_url:"#0",s_type:"type1",s_title:"a life 生活家電旗艦館",s_phone:"04-2223-1873",s_addres:"台中市北區三民路3段168巷1號",s_img:"http://www.chiconydcd.com.tw/upload/store/1707171835190000001.jpg"
+		},{
+		s_url:"#0",s_type:"type1",s_title:"世鈞科技",s_phone:"04-839-3708",s_addres:"彰化縣員林市中山路二段468號",s_img:"http://www.chiconydcd.com.tw/upload/store/1707171828000000001.jpg"
+		},{
+		s_url:"#0",s_type:"type1",s_title:"羅森資訊-瑞豐生活館",s_phone:"07-522-8711",s_addres:"高雄市鼓山區南屏路501號",s_img:"http://www.chiconydcd.com.tw/upload/store/1707171944540000001.jpg"
+		},{
+		s_url:"#0",s_type:"type1",s_title:"羅森資訊-金典綠園道",s_phone:"04-232-39155",s_addres:"臺中市西區健行路 1049 號 1F",s_img:"http://www.chiconydcd.com.tw/upload/store/1710191318480000001.jpg"
+		},{
+		s_url:"#0",s_type:"type1",s_title:"羅森資訊-鳳山生活館",s_phone:"07-780-6800",s_addres:"高雄市鳳山區青年路二段457號",s_img:"http://www.chiconydcd.com.tw/upload/store/1707171937060000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"誠品信義-相機美人專櫃",s_phone:"02-8789-3388 #3115",s_addres:"台北市信義區松高路11號2樓",s_img:"http://www.chiconydcd.com.tw/upload/store/1707311523300000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"統一時代百貨-明昱專櫃",s_phone:"0973-881-299",s_addres:"台北市忠孝東路五段8號6樓",s_img:"http://www.chiconydcd.com.tw/upload/store/1707252237590000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"忠孝SOGO-怡眾專櫃",s_phone:"02-2752-5661",s_addres:"台北市忠孝東路四段45號8樓",s_img:"http://www.chiconydcd.com.tw/upload/store/1707271131220000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"京站百貨-明昱專櫃",s_phone:"0986-021-626",s_addres:"台北市大同區承德路一段1號3樓",s_img:"http://www.chiconydcd.com.tw/upload/store/1710191946540000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"中和環球購物中心-明昱專櫃",s_phone:"02-8685-31556",s_addres:"新北市中和區中山路三段122號B1",s_img:"http://www.chiconydcd.com.tw/upload/store/1707271055300000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"台茂購物中心-和信嘉專櫃",s_phone:"03-3521249",s_addres:"桃園市蘆竹區南崁路一段112號5樓",s_img:"http://www.chiconydcd.com.tw/upload/store/1707271121170000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"中壢SOGO-怡眾專櫃",s_phone:"03-427-6239",s_addres:"中壢市元化路357號7樓",s_img:"http://www.chiconydcd.com.tw/upload/store/1707271107540000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"台中NOVA-a life生活家電館",s_phone:"04-2326-3081",s_addres:"台中市西區英才路508號-樓135櫃位",s_img:"http://www.chiconydcd.com.tw/upload/store/1707211539410000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"勤美誠品-鈞越專櫃",s_phone:"04-2328-1000#5010",s_addres:"台中市公益路68號B1",s_img:"http://www.chiconydcd.com.tw/upload/store/1707252250200000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"嘉義耐斯百貨-相機美人專櫃",s_phone:"05-271-0097",s_addres:"嘉義市東區忠孝路600號B1",s_img:"http://www.chiconydcd.com.tw/upload/store/1707311529130000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"羅森資訊-台中大遠百誠品",s_phone:"(04)225-42855",s_addres:"臺中市西屯區台灣大道三段251號 9F",s_img:"http://www.chiconydcd.com.tw/upload/store/1710191325500000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"新光三越台南西門店-廣積專櫃",s_phone:"06-303-0999",s_addres:"台南市中西區西門路一段658號",s_img:"http://www.chiconydcd.com.tw/upload/store/1707252328340000001.JPG"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"漢神巨蛋-羅森專櫃",s_phone:"07-5866593",s_addres:"高雄市左營區博愛路二段777號B1",s_img:"http://www.chiconydcd.com.tw/upload/store/1707252312290000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"羅森資訊-南紡購物中心",s_phone:"(06)208-1700",s_addres:"台南市東區中華東路一段366號B1",s_img:"http://www.chiconydcd.com.tw/upload/store/1710191331260000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"羅森資訊-高雄夢時代百貨",s_phone:"(07)823-0055",s_addres:"高雄市前鎮區中華五路789號3F",s_img:"http://www.chiconydcd.com.tw/upload/store/1710191328530000001.jpg"
+		},{
+		s_url:"#0",s_type:"type2",s_title:"屏東太平洋百貨-羅森專櫃",s_phone:"08-732-5666",s_addres:"屏東縣屏東市中正路72號",s_img:"http://www.chiconydcd.com.tw/upload/store/1707252346010000001.jpg"
+		},
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506092309260000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506092308490000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506092318050000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506092319110000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506161625090000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506100948550000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506100950440000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506100951570000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506100953160000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506100954240000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506100956520000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101006170000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101010140000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101043040000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101044340000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101046370000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101055050000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101056370000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101059200000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101100410000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101103080000001.jpg" },
+		{ s_url: "#0", s_type: "type3", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101122500000001.jpg" },
+		{ s_url: "#0", s_type: "type4", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101129460000001.jpg" },
+		{ s_url: "#0", s_type: "type4", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101131520000001.jpg" },
+		{ s_url: "#0", s_type: "type4", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101132320000001.jpg" },
+		{ s_url: "#0", s_type: "type4", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101134430000001.jpg" },
+		{ s_url: "#0", s_type: "type4", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101140170000001.jpg" },
+		{ s_url: "#0", s_type: "type4", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101142000000001.jpg" },
+		{ s_url: "#0", s_type: "type4", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101145020000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506181205190000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506181203590000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101437490000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101443250000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101436410000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1603311510360000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506181156440000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101444210000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101149500000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101217050000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101221240000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101223020000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101226030000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101227230000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101430510000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101435480000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101438460000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101439530000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101440550000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101442080000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101445120000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101450430000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101451240000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101452030000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101452450000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101453240000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101454110000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101454450000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101455230000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101456010000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506181157460000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506181159210000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506181238140000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506181239090000001.jpg" },
+		{ s_url: "#0", s_type: "type5", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506181239450000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101520120000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101519120000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101143420000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101458130000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101458510000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101459370000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101500270000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101501000000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101501520000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101504130000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101513370000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101514200000001.jpg" },
+		{ s_url: "#0", s_type: "type6", s_title: "", s_phone: "", s_addres: "", s_img: "http://www.chiconydcd.com.tw/upload/store/1506101514570000001.jpg" }
+	];
+	$.each(storeItemsJson,function(index,obj)
+	{
+		store_item ='<li class="col-xs-6 grid-item ' + obj.s_type +'">';
+		// store_item +='<a href="'+ obj.s_url +'"><img class="img-responsive" src="'+ obj.s_img +'"></a>';
+		store_item +='<a href="storeIntroduction.html"><img class="img-responsive" src="'+ obj.s_img +'"></a>';
+		store_item +='<h4>' + obj.s_title +'</h4>';
+		store_item +='<phone>' + obj.s_phone +'</phone>';
+		store_item +='<address>' + obj.s_addres +'</address>';
+		store_item +='</li>';
+		$('#storeItems').append(store_item);
+	});
+
+	$('#storeItems').isotope({
+		filter: '.type1',
+		//itemSelector: '.grid-item',
+		//layoutMode: 'fitRows',
+		//masonry: {
+		//	columnWidth: 200
+		//}
+	});
+
+	var $portfoliogrid = $('#storeItems');
+	$('.isotope-filter').on('click', '.button', function () {
+		var filterValue = $(this).attr('data-filter');
+		$portfoliogrid.isotope({
+			filter: filterValue
+		});
+	});
+
+	$('.button-group').each(function (i, buttonGroup) {
+		var $buttonGroup = $(buttonGroup);
+		$buttonGroup.on('click', '.button', function () {
+			$buttonGroup.find('.is-checked').removeClass('is-checked');
+			$(this).addClass('is-checked');
+		});
+	});
+
+	// $("#storeItems li a").attr('href', 'index.html');
+
+	AOS.init({
+		//offset: 45,
+		duration: 300,
+		easing: 'ease-out-cubic',
+		//delay: 50,
+	});
+});
+</script>
+</body>
+</html>
