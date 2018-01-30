@@ -67,8 +67,8 @@
 		<h3 class="subTitle">門市</h3>
 	</li>
 	<li class="col-xs text-right noWrap" data-aos="fade-down" data-aos-delay="600" data-aos-duration="800">
-		<a class="mapBtn active" href="#0"><i class="fa fa-list-ul"></i> 列表搜尋</a>
-		<a class="mapBtn" href="#0"><i class="fa fa-map-o"></i> 地圖搜尋</a>
+		<!-- <a class="mapBtn" href="#0"><i class="fa fa-list-ul"></i> 列表搜尋</a> -->
+		<a class="mapBtn active" href="mapSearch.html"><i class="fa fa-map-o"></i> 地圖搜尋</a>
 	</li>
 </ul>
 <div class="h05rem"></div>
@@ -253,14 +253,18 @@ $(document).ready(function () {
 		$('#storeItems').append(store_item);
 	});
 
-	$('#storeItems').isotope({
-		filter: '.type1',
+	//$('#storeItems').isotope({
+		//filter: '.type1',
 		//itemSelector: '.grid-item',
 		//layoutMode: 'fitRows',
 		//masonry: {
 		//	columnWidth: 200
 		//}
-	});
+	//});
+
+	setTimeout(function () {
+		$('#storeItems').isotope({filter: '.type1',});
+	}, 1200);
 
 	var $portfoliogrid = $('#storeItems');
 	$('.isotope-filter').on('click', '.button', function () {
