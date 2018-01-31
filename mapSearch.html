@@ -12,7 +12,7 @@
 <style>
 html,body {height: 100%;overflow: hidden;}
 
-i.fa-heart-o,i.fa-star-o {font-size:1.3rem;animation: refave-heart .8s;}
+.ifActive i {font-size:1.3rem;animation: refave-heart .8s;}
 i.is-active {color:#ef4b0a;animation: fave-heart .8s;}
 @keyframes fave-heart {
 0% {
@@ -35,14 +35,18 @@ main .menu ul.popupSel li a:hover {background: #f1f1f1;}
 main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
 
 #map {height:calc(100vh - 3rem);}
+.mapInfoWindow {padding:.35rem .5rem 0;}
+.mapInfoWindow img {max-width:12rem;}
+.mapInfoWindow h3 {margin-bottom:.5rem;font-size:12pt;}
+.mapInfoWindow p {margin-bottom:.25rem;}
 </style>
 <main class="container" style="height:100vh;padding:3rem 0 0 0;">
 <input type="checkbox" id="menuBtn" />
 <label class="menuClose" for="menuBtn"></label>
 <aside class="menu">
 	<ul class="popupSel">
-		<li><a href="#0">全 部</a></li>
-		<li><a href="#0"><i class="fa fa-check" style="float: right;color: #a0c763;"></i>展售店</a></li>
+		<li><a href="#0"><i class="fa fa-check" style="float: right;color: #a0c763;"></i>全 部</a></li>
+		<li><a href="#0">展售店</a></li>
 		<li><a href="#0">展售專櫃</a></li>
 	</ul>
 </aside>
@@ -69,6 +73,7 @@ main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
 <!-- Replace the value of the key parameter with your own API key. -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaSL-jx7oKuVVnrBHMhs5bxw3qgE0DL94&callback=initMap"></script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script src="assets/js/storeList.js"></script>
 
 <script>
 $(document).ready(function () {
@@ -100,19 +105,19 @@ function initMap() {
 	});
 
 	//JSON ArrayData
-	var markersList = [
-		{ "title": "相機美人-新光華店", "address": "台北市中正區市民大道三段8號3樓45號", "phone": "02-2395-7277", "label": "1", "loc": { lat: 25.0450357, lng: 121.53193120000003 } },
-		{ "title": "相機美人-敦化店", "address": "台北市大安區敦化南路一段233巷48號", "phone": "02-2711-0656", "label": "2", "loc": { lat: 25.0403231, lng: 121.55188429999998 } },
-		{ "title": "相機美人-南港中信園區店", "address": "台北市南港區經貿二路186號C棟2樓", "phone": "02-2785-0155", "label": "3", "loc": { lat: 25.0586561, lng: 121.61495089999994 } },
-		{ "title": "弘采科技-新店家樂福店", "address": "新北市新店區中興路三段1號2樓", "phone": "02-8919-3138", "label": "4", "loc": { lat: 24.9761049, lng: 121.54659530000004 } },
-		{ "title": "和信嘉-內壢家樂福店", "address": "桃園市中壢區中華路一段450號", "phone": "03-463-8746", "label": "5", "loc": { lat: 24.9727564, lng: 121.25344799999993 } },
-		{ "title": "極美職人", "address": "台中市西區模範街80號", "phone": "04-2301-3331", "label": "6", "loc": { lat: 24.15062, lng: 120.66673390000005 } },
-		{ "title": "a life 生活家電旗艦館", "address": "台中市北區三民路3段168巷1號", "phone": "04-2223-1873", "label": "7", "loc": { lat: 24.1521983, lng: 120.6853509 } },
-		{ "title": "世鈞科技", "address": "彰化縣員林市中山路二段468號", "phone": "04-839-3708", "label": "8", "loc": { lat: 23.9707539, lng: 120.57159100000001 } },
-		{ "title": "羅森資訊-瑞豐生活館", "address": "高雄市鼓山區南屏路501號", "phone": "07-522-8711", "label": "9", "loc": { lat: 22.6654023, lng: 120.30021039999997 } },
-		{ "title": "羅森資訊-金典綠園道", "address": "臺中市西區健行路1049號1F", "phone": "04-232-39155", "label": "10", "loc": { lat: 24.1557383, lng: 120.66326100000003 } },
-		{ "title": "羅森資訊-鳳山生活館", "address": "高雄市鳳山區青年路二段457號", "phone": "07-780-6800", "label": "11", "loc": { lat: 22.644978, lng: 120.35010490000002 } }
-	];
+	////var markersList = [
+	////	{ "title": "相機美人-新光華店", "address": "台北市中正區市民大道三段8號3樓45號", "phone": "02-2395-7277", "label": "1", "loc": { lat: 25.0450357, lng: 121.53193120000003 } },
+	////	{ "title": "相機美人-敦化店", "address": "台北市大安區敦化南路一段233巷48號", "phone": "02-2711-0656", "label": "2", "loc": { lat: 25.0403231, lng: 121.55188429999998 } },
+	////	{ "title": "相機美人-南港中信園區店", "address": "台北市南港區經貿二路186號C棟2樓", "phone": "02-2785-0155", "label": "3", "loc": { lat: 25.0586561, lng: 121.61495089999994 } },
+	////	{ "title": "弘采科技-新店家樂福店", "address": "新北市新店區中興路三段1號2樓", "phone": "02-8919-3138", "label": "4", "loc": { lat: 24.9761049, lng: 121.54659530000004 } },
+	////	{ "title": "和信嘉-內壢家樂福店", "address": "桃園市中壢區中華路一段450號", "phone": "03-463-8746", "label": "5", "loc": { lat: 24.9727564, lng: 121.25344799999993 } },
+	////	{ "title": "極美職人", "address": "台中市西區模範街80號", "phone": "04-2301-3331", "label": "6", "loc": { lat: 24.15062, lng: 120.66673390000005 } },
+	////	{ "title": "a life 生活家電旗艦館", "address": "台中市北區三民路3段168巷1號", "phone": "04-2223-1873", "label": "7", "loc": { lat: 24.1521983, lng: 120.6853509 } },
+	////	{ "title": "世鈞科技", "address": "彰化縣員林市中山路二段468號", "phone": "04-839-3708", "label": "8", "loc": { lat: 23.9707539, lng: 120.57159100000001 } },
+	////	{ "title": "羅森資訊-瑞豐生活館", "address": "高雄市鼓山區南屏路501號", "phone": "07-522-8711", "label": "9", "loc": { lat: 22.6654023, lng: 120.30021039999997 } },
+	////	{ "title": "羅森資訊-金典綠園道", "address": "臺中市西區健行路1049號1F", "phone": "04-232-39155", "label": "10", "loc": { lat: 24.1557383, lng: 120.66326100000003 } },
+	////	{ "title": "羅森資訊-鳳山生活館", "address": "高雄市鳳山區青年路二段457號", "phone": "07-780-6800", "label": "11", "loc": { lat: 22.644978, lng: 120.35010490000002 } }
+	////];
 
 	// Create an array of alphabetical characters used to label the markers.
 	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -132,7 +137,7 @@ function initMap() {
 			animation: google.maps.Animation.DROP
 		});
 		google.maps.event.addListener(marker, 'click', function (e) {
-			infoWindow.setContent("<div style='padding:.5rem;'><h3 style='margin-bottom:.3rem;font-size:12pt;'>" + data.title + "</h3><p>" + data.address + "</p><p>" + data.phone + "</p></div>");
+			infoWindow.setContent("<div class='mapInfoWindow'><img src='"+ data.img +"'><h3>" + data.title + "</h3><p>" + data.address + "</p><p>" + data.phone + "</p></div>");
 			infoWindow.open(map, marker);
 			map.setCenter(marker.getPosition());
 			map.panTo(marker.getPosition());
@@ -143,6 +148,7 @@ function initMap() {
 	// Add a marker clusterer to manage the markers.
 	var markerCluster = new MarkerClusterer(map, markers,{ imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
+
 ////*****************************************************////
 </script>
 </body>
