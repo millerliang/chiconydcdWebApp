@@ -86,6 +86,7 @@ main .textCont p {line-height: 1.6;margin: .8rem 0 1.5rem;}
 	<img class="img-responsive" src="http://chiconydcd.tw/casio/upload/image/9(1).jpg" data-aos="fade-up">
 	<img class="img-responsive" src="http://chiconydcd.tw/casio/upload/image/6(3).jpg" data-aos="fade-up">
 </selected>
+<div id="new_html"></div>
 
 
 </main>
@@ -94,6 +95,7 @@ main .textCont p {line-height: 1.6;margin: .8rem 0 1.5rem;}
 <script src="assets/js/aos.js"></script>
 
 <script>
+$("#new_html").load('loadTest.html #ttt');
 $(document).ready(function () {
 	$(".goBackPage").click(function () {
 		event.preventDefault();

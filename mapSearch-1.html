@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<style>
+html,body {height: 100%;overflow: hidden;}
+
+i.fa-heart-o,i.fa-star-o {font-size:1.3rem;animation: refave-heart .8s;}
+i.is-active {color:#ef4b0a;animation: fave-heart .8s;}
+@keyframes fave-heart {
+0% {
+transform: scale(1,1);opacity:.25;}
+50% {transform: scale(1.5,1.5);}
+100% {opacity:1;transform: scale(1,1)}
+}
+@keyframes refave-heart {
+0% {transform: scale(.8,.8);}
+50% {transform: scale(1.2,1.2);opacity:.25;}
+100% {transform: scale(1,1)opacity:1;}
+}
+
+main .menu {height: auto;top:-50rem;left:0;width: 100%;background-color: white;}
+main input#menuBtn:checked ~ aside.menu {top: 3rem;bottom: auto;}
+/* 頂部展開選單 */
+main .menu ul.popupSel li a i {margin-right:.25rem;min-width:1rem;text-align: center;}
+main .menu ul.popupSel li a {border-bottom:1px solid #ddd;padding:1.25rem 1rem;display:block;}
+main .menu ul.popupSel li a:hover {background: #f1f1f1;}
+main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
+
+#Gmap {height:40%;position:sticky!important;top: 3rem;}
+#display_list {font-size:10pt;padding:1rem; max-height:100vh;overflow:hidden;overflow-y:auto;background-color: rgba(255, 255, 255, .65);}
+#display_list li {border-bottom:1px solid #efefef;padding:1rem 0;}
+#display_list li a.starIco {float:right;margin-right:.35rem;}
+#display_list header {font-size:12pt;display: inline-block;margin-left:.25rem;}
+#display_list phone,#display_list address {display:block;color:#666;font-size:smaller;padding: .25rem 0 0 .8rem;}
+</style>
+<main class="container" style="height:100%;padding-top:0rem;overflow: hidden;overflow-y:auto;">
+<input type="checkbox" id="menuBtn" />
+<label class="menuClose" for="menuBtn"></label>
+<aside class="menu">
+	<ul class="popupSel">
+		<li><a href="#0">全 部</a></li>
+		<li><a href="#0"><i class="fa fa-check" style="float: right;color: #a0c763;"></i>展售店</a></li>
+		<li><a href="#0">展售專櫃</a></li>
+		<li><a href="#0">連鎖通路</a></li>
+		<!-- <li><a href="#0">虛擬通路</a></li>
+		<li><a href="#0">專業門市</a></li>
+		<li><a href="#0">特殊通路</a></li> -->
+		<!-- <li><a href="#0"><i class="fa fa-info"></i> 說明</a></li>
+		<li><a href="#0"><i class="fa fa-share-alt"></i> 分享他人</a></li>
+		<li><a href="#0" class="ifActive"><i class="fa fa-star-o"></i> 加入收藏</a></li> -->
+	</ul>
+</aside>
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<a href="#0" class="menuButton goBackPage">
+				<i class="fa fa-angle-left" data-aos="flip-right" data-aos-delay="1000"></i>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<h3 data-aos="fade-left" data-aos-duration="1600" data-aos-delay="300">地圖搜尋</h3>
+		</li>
+		<li class="col-xs-1_ noWarp text-right">
+			<label for="menuBtn" class="menuButton"><i class="fa fa-ellipsis-v"></i></label>
+		</li>
+	</ul>
+</nav>
+
+<div id="Gmap"></div>
+
+<div class="h2rem"></div>
+<ul id="display_list" class="collection"></ul>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/js/aos.js"></script>
+
+<script>
+$(document).ready(function () {
+	$(".goBackPage").click(function () {
+		event.preventDefault();
+		history.back(1);
+	});
+
+	$(".ifActive").click(function () {
+		$(this).children("i").toggleClass("is-active");
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-out-cubic',
+		//delay: 50,
+	});
+});
+
+////*****////
+// The markers are stored in an array.
+var map;
+var markers = [];
+var i, str = "";
+//JSON Array
+var list = [
+	{ "title": "相機美人-新光華店", "address": "台北市中正區市民大道三段8號3樓45號", "phone": "02-2395-7277", "label": "1", "loc": { lat: 25.0450357, lng: 121.53193120000003 } },
+	{ "title": "相機美人-敦化店", "address": "台北市大安區敦化南路一段233巷48號", "phone": "02-2711-0656", "label": "2", "loc": { lat: 25.0403231, lng: 121.55188429999998 } },
+	{ "title": "相機美人-南港中信園區店", "address": "台北市南港區經貿二路186號C棟2樓", "phone": "02-2785-0155", "label": "3", "loc": { lat: 25.0586561, lng: 121.61495089999994 } },
+	{ "title": "弘采科技-新店家樂福店", "address": "新北市新店區中興路三段1號2樓", "phone": "02-8919-3138", "label": "4", "loc": { lat: 24.9761049, lng: 121.54659530000004 } }
+];
+
+function initMap() {
+	var myLatLng = { lat: 25.0450357, lng: 121.53193120000003 };
+	map = new google.maps.Map(document.getElementById('Gmap'), {
+		zoom: 11,
+		center: myLatLng,
+		disableDefaultUI: true,
+		//mapTypeId: google.maps.MapTypeId.ROAD
+	});
+
+	// Adds a marker at the center of the map.
+	//addMarker(centerLoc,"C","中興湖");
+
+	//使用迴圈呼叫addMarker()來增加多個marker
+	for (i = 0; i < list.length; i++) {
+		addMarker(list[i].loc, list[i].label, list[i].title);
+	}
+
+}
+
+// Adds a marker to the map and push to the array.
+function addMarker(location, Mlabel, Mtitle) {
+	var marker = new google.maps.Marker({
+		position: location,
+		label: Mlabel,
+		title: Mtitle,
+		map: map
+	});
+	markers.push(marker);
+}
+
+//產生 collections
+for (i = 0; i < list.length; i++) {
+	str += "<li>";
+	str += "<a href='#0' class='starIco ifActive'><i class='fa fa-star-o'></i></a>";
+	str += "<a href='http://maps.google.com.tw/maps?f=q&hl=zh-TW&q=" + list[i].loc.lat + "," + list[i].loc.lng + "&z=16&t=q" + list[i].link + "'><i class='fa fa-map-marker red'></i> <span>" + list[i].label + "</span>";
+	str += "<header>" + list[i].title + "</header></a>";
+	str += "<phone>" + list[i].phone + "</phone>";
+	str += "<address>" + list[i].address + "</address>";
+	str += "</li>";
+}
+document.getElementById("display_list").innerHTML = str;
+</script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script> -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaSL-jx7oKuVVnrBHMhs5bxw3qgE0DL94&callback=initMap"></script>
+</body>
+</html>
