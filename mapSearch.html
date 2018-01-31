@@ -36,15 +36,14 @@ main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
 
 #map {height:calc(100vh - 3rem);}
 </style>
-<main class="container" style="height:100vh;padding-top:3rem;">
+<main class="container" style="height:100vh;padding:3rem 0 0 0;">
 <input type="checkbox" id="menuBtn" />
 <label class="menuClose" for="menuBtn"></label>
 <aside class="menu">
 	<ul class="popupSel">
 		<li><a href="#0">全 部</a></li>
-		<li><a href="#0"><i class="fa fa-check" style="float: right;color: #a0c763;"></i>Taiwan</a></li>
-		<li><a href="#0">China</a></li>
-		<li><a href="#0">HongKong</a></li>
+		<li><a href="#0"><i class="fa fa-check" style="float: right;color: #a0c763;"></i>展售店</a></li>
+		<li><a href="#0">展售專櫃</a></li>
 	</ul>
 </aside>
 <nav class="topMenuBar">
@@ -93,9 +92,11 @@ $(document).ready(function () {
 function initMap() {
 
 	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 8,
+		zoom: 7,
+		center: { lat: 23.9932872, lng: 120.96468660000005 },
+		mapTypeControl: false,
+		streetViewControl: false
 		//disableDefaultUI: true,
-		center: { lat: 23.9932872, lng: 120.96468660000005 }
 	});
 
 	//JSON ArrayData
@@ -131,7 +132,7 @@ function initMap() {
 			animation: google.maps.Animation.DROP
 		});
 		google.maps.event.addListener(marker, 'click', function (e) {
-			infoWindow.setContent("<div style='padding:.5rem;'><h3 style='margin-bottom:.3rem;'>" + data.title + "</h3><p>" + data.address + "</p><p>" + data.phone + "</p></div>");
+			infoWindow.setContent("<div style='padding:.5rem;'><h3 style='margin-bottom:.3rem;font-size:12pt;'>" + data.title + "</h3><p>" + data.address + "</p><p>" + data.phone + "</p></div>");
 			infoWindow.open(map, marker);
 			map.setCenter(marker.getPosition());
 			map.panTo(marker.getPosition());

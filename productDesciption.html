@@ -14,7 +14,7 @@
 .boxCont h2 {font-size:14pt;color: #999;}
 .boxCont p {line-height:1.6;font-size:small;}
 .boxCont .price {color:#ef4b0a;font-size:16pt;font-weight:600;}
-i.fa-heart-o,i.fa-star-o {font-size:1.3rem;animation: refave-heart .8s;}
+.ifActive i {font-size:1.3rem;animation: refave-heart .8s;}
 i.is-active {color:#ef4b0a;animation: fave-heart .8s;}
 @keyframes fave-heart {
 0% {
@@ -36,8 +36,8 @@ main .menu {height: auto;bottom:-50rem;left:0;top: auto;width: 100%;background-c
 main input#menuBtn:checked ~ aside.menu {bottom: 3rem;}
 /* 底部展開選單 */
 main .menu ul.popupSel li a i {margin-right:.25rem;min-width:1rem;text-align: center;}
-main .menu ul.popupSel li a {border-bottom:1px solid #ddd;padding:1.25rem 1rem;display:block;}
-main .menu ul.popupSel li a:hover {background: #f1f1f1;}
+main .menu ul.popupSel li a,main .menu ul.popupSel li label{border-bottom:1px solid #ddd;padding:1.25rem 1rem;display:block;}
+main .menu ul.popupSel li a:hover,main .menu ul.popupSel li label:hover{background: #f1f1f1;}
 main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
 </style>
 <main class="container">
@@ -47,7 +47,7 @@ main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
 	<ul class="popupSel">
 		<li><a href="#0"><i class="fa fa-info"></i> 規格說明</a></li>
 		<li><a href="#0"><i class="fa fa-share-alt"></i> 分享他人</a></li>
-		<li><a href="#0" class="ifActive"><i class="fa fa-star-o"></i> 加入收藏</a></li>
+		<li><label class="ifActive"><i class="fa fa-star-o"></i> 加入收藏</label></li>
 	</ul>
 </aside>
 <nav class="topMenuBar">
