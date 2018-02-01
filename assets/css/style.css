@@ -104,14 +104,16 @@ main.container .subTitle{font-size: 14pt;padding: .35rem 1rem;} /* 區塊副標�
 main.container .subTitle::before{content:"-";margin-right: .3rem;color: #bbb;font-size: smaller;} /* 副標題 + - */
 main.container .boxCont{padding:1rem;display: inherit;} /* 預設沙盒 */
 
-main input#menuBtn {display: none;}
+main input#menuBtn,main input#overlayer {display: none;}
 main input#menuBtn:checked ~ aside.menu {left: 0;}
 main input#menuBtn:checked ~ label.menuClose {opacity: 1;visibility: visible;}
+main input#overlayer:checked ~ label.overlayerClose {opacity: 1;visibility: visible;}
+main input#overlayer:checked ~ .popBoxCont {top:50%;transform: translateY(-50%);}
 main .menuButton {display: inline-block;padding: 10px 20px;margin: 0 auto;cursor: pointer;-webkit-transition: 0.3s ease;transition: 0.3s ease;-webkit-box-sizing: border-box;box-sizing: border-box;}
 main .menuButton:hover {background: #f0f0f0;}
 main .menuButton object {width: 1.4rem;pointer-events:none;}
 /* 半透明灰底 Toggle */
-main .menuClose {
+main .menuClose,.overlayerClose {
 position: fixed;
 top: 0;
 left: 0;
@@ -124,6 +126,8 @@ visibility: hidden;
 transition: 0.3s ease;
 z-index: 3;
 }
+/* 跳出選單樣式 */
+main .popBoxCont {position: fixed;top: -30rem;left: 1rem;right: 1rem;background-color: white;-webkit-transition: 0.35s ease-in-out;transition: 0.35s ease-in-out;-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);z-index: 4;border-radius: 3px;}
 /* 左側欄展開樣式 */
 main .menu {
 height: 100%;

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/signupForm.css">
+</head>
+
+<body>
+<main class="container">
+<input type="checkbox" id="menuBtn"/>  
+<label class="menuClose" for="menuBtn"></label>
+<input type="checkbox" id="overlayer"/>  
+<label class="overlayerClose" for="overlayer-None"></label>
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<label class="menuButton" for="menuBtn">
+				<object data="assets/svgs/barIco.svg" type="image/svg+xml"></object>
+			</label>
+		</li>
+		<li>
+			<a href="#0" class="topShoppingBag">
+				<i class="flaticon-shopping-cart-5"></i>
+				<span class="shopNum">2</span>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<form>
+				<i class="fa fa-search"></i>
+				<input placeholder="搜尋" type="text">
+				<button type="reset">&times;</button>
+			</form>
+		</li>
+	</ul>
+</nav>
+
+<selected class="popBoxCont">
+	<div class="verificationCode">
+		<h1 class="title">SMS 簡訊驗證碼</h1>
+		<img class="img-responsive" src="https://image.flaticon.com/icons/svg/456/456905.svg">
+		<input type="number" class="input" placeholder="輸入6位驗證號碼" max="6">
+		<div class="h1rem"></div>
+		<button class="button">驗 證</button>
+		<p class="cancelBtn"><label for="overlayer">取 消</label></p>
+	</div>
+</selected>
+
+<aside class="menu">
+	<div class="menuContainer">
+		<nav>
+			<h3 class="row middle-xs userAccount">
+				<div class="col-xs-2"><img class="userImg-circle" src="https://placem.at/people?txt=Avatar&w=128&amp;h=128&random=?"></div>
+				<div class="col-xs-8"><span class="userName">約翰·維克</span></div>
+				<div class="col-xs-2 times text-center"><label for="menuBtn">&times;</div>
+			</h3>
+			<ul>
+				<li><a href="news.html">消息<small>News</small></a></li>
+				<li><a href="commodity.html">商品<small>Commodity</small></a></li>
+				<li><a href="store.html">門市<small>Store</small></a></li>
+				<li><a href="lottery.html">抽獎<small>lottery</small></a></li>
+			</ul>
+			<ul class="clineUser">
+				<li><a href="#"><i class="fi-handbag"></i>我的品牌</a></li>
+				<li><a href="#"><i class="fi-shopping-bag"></i>我的商品</a></li>
+				<li><a href="#"><i class="fi-placeholder-1"></i>我的門市</a></li>
+				<li><a href="#"><i class="fi-invoice"></i>我的訂單</a></li>
+				<li><a href="#"><i class="fi-coupon"></i>我的優惠劵</a></li>
+				<li><a href="#"><i class="flaticon-id-card"></i>我的檔案</a></li>
+			</ul>
+		</nav>  
+	</div>
+</aside>
+
+<div class="formMain">
+	<form class="register-form" data-aos="fade-up" data-aos-delay="250">
+		<div class="line"></div>
+		<div class="form-content">
+			<h1 class="title"><img src="https://image.flaticon.com/icons/svg/149/149004.svg"> Sign up</h1>
+			<div class="h2rem"></div>
+			<p>歡迎您申請加入群光會員，麻煩您至少提供手機號碼，以完成註冊流程。</p>
+			<p>加入會員，歡迎您利用群光line@帳號，查詢您在各門市的消費紀錄，並參與我們的會員活動，您將獲贈各種商品優惠券</p>
+			<div class="h15rem"></div>
+			<input type="phone" class="input" placeholder="輸入手機號碼" />
+			<div class="h1rem"></div>
+			<label class="button" for="overlayer">送 出</label>
+			<!-- <a class="link">Forgot password?</a> -->
+			<div class="h2rem"></div>
+			<p class="text-center">或是由以下註冊</p>
+			<div class="h15rem"></div>
+			<div class="row middle-xs center-xs">
+				<div class="col-xs"><a href="#0"><i class="fa fa-2x fa-facebook-square"></i></a></div>
+				<div class="col-xs"><a href="#0"><i class="fa fa-2x fa-google-plus"></i></a></div>
+				<div class="col-xs"><a href="#0"><i class="fa fa-2x fa-wechat"></i></a></div>
+			</div>
+		</div>
+	</form>
+</div>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script> -->
+<script src="assets/js/aos.js"></script>
+<script>
+$(document).ready(function() {
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-in-sine',
+		//delay: 50,
+	});
+});
+</script>
+</body>
+</html>
