@@ -39,13 +39,17 @@ main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
 .mapInfoWindow img {max-width:12rem;}
 .mapInfoWindow h3 {margin-bottom:.5rem;font-size:12pt;}
 .mapInfoWindow p {margin-bottom:.25rem;}
+
+/* GoogleMap control UI */
+.controlUIClass {margin:0 .5rem 3rem 0;text-align:center;}
+.controlUIClass span {margin-bottom:.8rem;display:block;color:white;font-Family:Roboto,Arial,sans-serif;font-Size:10pt;line-Height:2;padding:0 .65rem;border:2px solid #fff;border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.3);cursor:pointer;background-color:#333;background: linear-gradient(to bottom, #033a46, #2191a0);}
 </style>
 <main class="container" style="height:100vh;padding:3rem 0 0 0;">
 <input type="checkbox" id="menuBtn" />
 <label class="menuClose" for="menuBtn"></label>
 <aside class="menu">
 	<ul class="popupSel">
-		<li><a href="#0"><i class="fa fa-check" style="float: right;color: #a0c763;"></i>全 部</a></li>
+		<li><a href="#0" id="mapAll"><i class="fa fa-check" style="float: right;color: #a0c763;"></i>全 部</a></li>
 		<li><a href="#0">展售店</a></li>
 		<li><a href="#0">展售專櫃</a></li>
 	</ul>
@@ -76,32 +80,65 @@ main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
 <script src="assets/js/storeList.js"></script>
 
 <script>
-$(document).ready(function () {
-	$(".goBackPage").click(function () {
-		event.preventDefault();
-		history.back(1);
-	});
-
-	$(".ifActive").click(function () {
-		$(this).children("i").toggleClass("is-active");
-	});
-
-	AOS.init({
-		//offset: 45,
-		duration: 600,
-		easing: 'ease-out-cubic',
-		//delay: 50,
-	});
-});
 ////*****************************************************////
+var defuLatlng = {lat: 23.9932872, lng: 120.96468660000005}; //地理中心
+var NorthLatlng = {lat: 24.976049, lng: 121.420235}; //北部
+var centralLatlng = {lat: 24.147533, lng: 120.672606}; //中部
+var southLatlng = {lat: 22.766903, lng: 120.355527}; //南部
+
+function CenterControl(controlDiv, map) {
+
+	// Set CSS for the control border.
+	var controlUI = document.createElement('div');
+	controlUI.className = 'controlUIClass';
+	controlUI.title = 'Click to View Taiwan map';
+	controlDiv.appendChild(controlUI);
+
+	// Set CSS for the control interior.
+	var btnText1 = document.createElement('span');
+	var btnText2 = document.createElement('span');
+	var btnText3 = document.createElement('span');
+	var btnText4 = document.createElement('span');
+	btnText1.innerHTML = '全台';
+	btnText2.innerHTML = '北部';
+	btnText3.innerHTML = '中部';
+	btnText4.innerHTML = '南部';
+	controlUI.appendChild(btnText2);
+	controlUI.appendChild(btnText3);
+	controlUI.appendChild(btnText4);
+	controlUI.appendChild(btnText1);
+
+	// the click event listeners: map to Taiwan.
+	btnText1.addEventListener('click', function () {
+		map.setCenter(defuLatlng);
+		map.setZoom(7);
+	});
+	// the click event listeners: map to North.
+	btnText2.addEventListener('click', function () {
+		map.setCenter(NorthLatlng);
+		map.setZoom(10);
+	});
+	// the click event listeners: map to central.
+	btnText3.addEventListener('click', function () {
+		map.setCenter(centralLatlng);
+		map.setZoom(10);
+	});
+	// the click event listeners: map to south.
+	btnText4.addEventListener('click', function () {
+		map.setCenter(southLatlng);
+		map.setZoom(10);
+	});
+
+}
+
 function initMap() {
 
 	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 7,
-		center: { lat: 23.9932872, lng: 120.96468660000005 },
-		mapTypeControl: false,
-		streetViewControl: false
-		//disableDefaultUI: true,
+		center: defuLatlng,
+		disableDefaultUI: true,
+		//mapTypeControl: false,
+		//streetViewControl: false
 	});
 
 	//JSON ArrayData
@@ -129,11 +166,21 @@ function initMap() {
 	// Note: The code uses the JavaScript Array.prototype.map() method to
 	// create an array of markers based on a given "locations" array.
 	// The map() method here has nothing to do with the Google Maps API.
+	var image = {
+		// url: 'https://image.flaticon.com/icons/svg/443/443025.svg',
+		url: 'assets/svgs/mapMarker.svg',
+		size: new google.maps.Size(34, 40),			//顯示圖片大小
+		origin: new google.maps.Point(0, -7),		//起始位置，通常為0
+		anchor: new google.maps.Point(0, 38),		//移動 marker 數字越大往右和往上移動
+		scaledSize: new google.maps.Size(34, 34)	//圖片實際大小，通常與size一樣大小
+		};
 	var markers = markersList.map(function (data, i) {
 		var marker = new google.maps.Marker({
 			position: data.loc,
 			title: data.title,
-			label: labels[i % labels.length],
+			// label: labels[i % labels.length],
+			label: data.label,
+			icon: image,
 			animation: google.maps.Animation.DROP
 		});
 		google.maps.event.addListener(marker, 'click', function (e) {
@@ -147,9 +194,34 @@ function initMap() {
 
 	// Add a marker clusterer to manage the markers.
 	var markerCluster = new MarkerClusterer(map, markers,{ imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+
+	// Create the DIV to hold the control and call the CenterControl()
+	// constructor passing in this DIV.
+	var centerControlDiv = document.createElement('div');
+	var centerControl = new CenterControl(centerControlDiv, map);
+
+	centerControlDiv.index = 1;
+	map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
 }
 
 ////*****************************************************////
+$(document).ready(function () {
+	$(".goBackPage").click(function () {
+		event.preventDefault();
+		history.back(1);
+	});
+
+	$(".ifActive").click(function () {
+		$(this).children("i").toggleClass("is-active");
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-out-cubic',
+		//delay: 50,
+	});
+});
 </script>
 </body>
 </html>

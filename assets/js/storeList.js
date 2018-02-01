@@ -2,6 +2,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "相機美人-敦化店",
 	"phone": "02-2711-0656",
 	"address": "台北市大安區敦化南路一段233巷48號",
@@ -14,6 +15,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "相機美人-新光華店",
 	"phone": "02-2395-7277",
 	"address": "台北市中正區市民大道三段8號3樓45號",
@@ -26,6 +28,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "相機美人-南港中信園區店",
 	"phone": "02-2785-0155",
 	"address": "台北市南港區經貿二路186號C棟2樓",
@@ -38,6 +41,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "弘采科技-新店家樂福店",
 	"phone": "02-8919-3138",
 	"address": "新北市新店區中興路三段1號2樓",
@@ -50,6 +54,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "和信嘉-內壢家樂福店",
 	"phone": "03-463-8746",
 	"address": "桃園市中壢區中華路一段450號",
@@ -62,6 +67,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "極美職人",
 	"phone": "04-2301-3331",
 	"address": "台中市西區模範街80號",
@@ -74,6 +80,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "a life 生活家電旗艦館",
 	"phone": "04-2223-1873",
 	"address": "台中市北區三民路3段168巷1號",
@@ -86,6 +93,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "世鈞科技",
 	"phone": "04-839-3708",
 	"address": "彰化縣員林市中山路二段468號",
@@ -98,6 +106,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "羅森資訊-瑞豐生活館",
 	"phone": "07-522-8711",
 	"address": "高雄市鼓山區南屏路501號",
@@ -110,6 +119,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "羅森資訊-金典綠園道",
 	"phone": "04-232-39155",
 	"address": "臺中市西區健行路1049號1F",
@@ -122,6 +132,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type1",
+	"label": "展",
 	"title": "羅森資訊-鳳山生活館",
 	"phone": "07-780-6800",
 	"address": "高雄市鳳山區青年路二段457號",
@@ -134,6 +145,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "誠品信義-相機美人專櫃",
 	"phone": "02-8789-3388 #3115",
 	"address": "台北市信義區松高路11號2樓",
@@ -146,6 +158,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "統一時代百貨-明昱專櫃",
 	"phone": "0973-881-299",
 	"address": "台北市忠孝東路五段8號6樓",
@@ -158,6 +171,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "忠孝SOGO-怡眾專櫃",
 	"phone": "02-2752-5661",
 	"address": "台北市忠孝東路四段45號8樓",
@@ -170,6 +184,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "京站百貨-明昱專櫃",
 	"phone": "0986-021-626",
 	"address": "台北市大同區承德路一段1號3樓",
@@ -182,6 +197,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "中和環球購物中心-明昱專櫃",
 	"phone": "02-8685-31556",
 	"address": "新北市中和區中山路三段122號B1",
@@ -194,6 +210,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "台茂購物中心-和信嘉專櫃",
 	"phone": "03-3521249",
 	"address": "桃園市蘆竹區南崁路一段112號5樓",
@@ -206,6 +223,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "中壢SOGO-怡眾專櫃",
 	"phone": "03-427-6239",
 	"address": "中壢市元化路357號7樓",
@@ -218,6 +236,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "台中NOVA-a life生活家電館",
 	"phone": "04-2326-3081",
 	"address": "台中市西區英才路508號1樓135櫃位",
@@ -230,6 +249,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "勤美誠品-鈞越專櫃",
 	"phone": "04-2328-1000#5010",
 	"address": "台中市公益路68號B1",
@@ -242,6 +262,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "嘉義耐斯百貨-相機美人專櫃",
 	"phone": "05-271-0097",
 	"address": "嘉義市東區忠孝路600號B1",
@@ -254,6 +275,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "羅森資訊-台中大遠百誠品",
 	"phone": "(04)225-42855",
 	"address": "臺中市西屯區台灣大道三段251號9F",
@@ -266,6 +288,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "新光三越台南西門店-廣積專櫃",
 	"phone": "06-303-0999",
 	"address": "台南市中西區西門路一段658號",
@@ -278,6 +301,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "漢神巨蛋-羅森專櫃",
 	"phone": "07-5866593",
 	"address": "高雄市左營區博愛路二段777號B1",
@@ -290,6 +314,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "羅森資訊-南紡購物中心",
 	"phone": "(06)208-1700",
 	"address": "台南市東區中華東路一段366號B1",
@@ -302,6 +327,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "羅森資訊-高雄夢時代百貨",
 	"phone": "(07)823-0055",
 	"address": "高雄市前鎮區中華五路789號3F",
@@ -314,6 +340,7 @@ var markersList = [
 {
 	"url": "#0",
 	"type": "type2",
+	"label": "專",
 	"title": "屏東太平洋百貨-羅森專櫃",
 	"phone": "08-732-5666",
 	"address": "屏東縣屏東市中正路72號",
