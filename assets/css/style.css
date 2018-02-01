@@ -88,6 +88,12 @@ strong,b{font-weight: bold;}
     25% {transform: rotate(0deg);}
 }
 
+/* 加入收藏樣式 */
+.ifActive i {font-size:1.3rem;animation: refave-heart .8s;}
+i.is-active {color:#ef4b0a;animation: fave-heart .8s;}
+@keyframes fave-heart {0% {transform: scale(1,1);opacity:.25;}50% {transform: scale(1.5,1.5);}100% {opacity:1;transform: scale(1,1)}}
+@keyframes refave-heart {0% {transform: scale(.8,.8);}50% {transform: scale(1.2,1.2);opacity:.25;}100% {transform: scale(1,1)opacity:1;}}
+
 /* 底部固定欄樣式 */
 .BottomBar {position:fixed;bottom:0;left:0;right:0;background-color:rgba(255,255,255,.85);z-index:1;}
 .swiper-slide img {max-width:100%;}

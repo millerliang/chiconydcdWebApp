@@ -12,20 +12,6 @@
 <style>
 html,body {height: 100%;overflow: hidden;}
 
-.ifActive i {font-size:1.3rem;animation: refave-heart .8s;}
-i.is-active {color:#ef4b0a;animation: fave-heart .8s;}
-@keyframes fave-heart {
-0% {
-transform: scale(1,1);opacity:.25;}
-50% {transform: scale(1.5,1.5);}
-100% {opacity:1;transform: scale(1,1)}
-}
-@keyframes refave-heart {
-0% {transform: scale(.8,.8);}
-50% {transform: scale(1.2,1.2);opacity:.25;}
-100% {transform: scale(1,1)opacity:1;}
-}
-
 main .menu {height: auto;top:-50rem;left:0;width: 100%;background-color: white;}
 main input#menuBtn:checked ~ aside.menu {top: 3rem;bottom: auto;}
 /* 頂部展開選單 */
@@ -41,17 +27,19 @@ main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
 .mapInfoWindow p {margin-bottom:.25rem;}
 
 /* GoogleMap control UI */
-.controlUIClass {margin:0 .5rem 3rem 0;text-align:center;}
-.controlUIClass span {margin-bottom:.8rem;display:block;color:white;font-Family:Roboto,Arial,sans-serif;font-Size:10pt;line-Height:2;padding:0 .65rem;border:2px solid #fff;border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.3);cursor:pointer;background-color:#333;background: linear-gradient(to bottom, #033a46, #2191a0);}
+.controlUIClass {margin:0 .5rem 3.5rem 0;text-align:center;max-width:5rem;}
+.controlUIClass span {margin-bottom:.8rem;display:block;color:#333;font-Size:10pt;line-Height:16pt;padding:0 .65rem;border:2px solid #fff;border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.3);cursor:pointer;background-color:white;background__: linear-gradient(to bottom, #033a46, #2191a0);}
 </style>
 <main class="container" style="height:100vh;padding:3rem 0 0 0;">
 <input type="checkbox" id="menuBtn" />
 <label class="menuClose" for="menuBtn"></label>
 <aside class="menu">
 	<ul class="popupSel">
-		<li><a href="#0" id="mapAll"><i class="fa fa-check" style="float: right;color: #a0c763;"></i>全 部</a></li>
-		<li><a href="#0">展售店</a></li>
-		<li><a href="#0">展售專櫃</a></li>
+		<li><a href="#0" id="mapAll"><i class="fa fa-check" style="float: right;color: #a0c763;"></i>All</a></li>
+		<li><a href="#0">items</a></li>
+		<li><a href="#0">items</a></li>
+		<!-- <li><a href="#0">展售店</a></li>
+		<li><a href="#0">展售專櫃</a></li> -->
 	</ul>
 </aside>
 <nav class="topMenuBar">
@@ -76,56 +64,60 @@ main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
 <script src="assets/js/aos.js"></script>
 <!-- Replace the value of the key parameter with your own API key. -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaSL-jx7oKuVVnrBHMhs5bxw3qgE0DL94&callback=initMap"></script>
-<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script src="assets/js/markerclusterer/markerclusterer.js"></script>
 <script src="assets/js/storeList.js"></script>
 
 <script>
 ////*****************************************************////
-var defuLatlng = {lat: 23.9932872, lng: 120.96468660000005}; //地理中心
-var NorthLatlng = {lat: 24.976049, lng: 121.420235}; //北部
-var centralLatlng = {lat: 24.147533, lng: 120.672606}; //中部
-var southLatlng = {lat: 22.766903, lng: 120.355527}; //南部
+var defuLatlng = {lat: 23.484257, lng: 120.886731}; // mapCenter 地圖中心
 
 function CenterControl(controlDiv, map) {
-
+	
+	var NorthLatlng = {lat: 24.976049, lng: 121.420235}; // setCenter 北部
+	var CentralLatlng = {lat: 24.147533, lng: 120.672606}; // setCenter 中部
+	var SouthLatlng = {lat: 22.766903, lng: 120.355527}; // setCenter 南部
+	var textLabels = ["全台","北部","中部","南部"];
+	
 	// Set CSS for the control border.
 	var controlUI = document.createElement('div');
 	controlUI.className = 'controlUIClass';
-	controlUI.title = 'Click to View Taiwan map';
+	controlUI.title = 'Click to View This map';
 	controlDiv.appendChild(controlUI);
 
 	// Set CSS for the control interior.
-	var btnText1 = document.createElement('span');
-	var btnText2 = document.createElement('span');
-	var btnText3 = document.createElement('span');
-	var btnText4 = document.createElement('span');
-	btnText1.innerHTML = '全台';
-	btnText2.innerHTML = '北部';
-	btnText3.innerHTML = '中部';
-	btnText4.innerHTML = '南部';
-	controlUI.appendChild(btnText2);
-	controlUI.appendChild(btnText3);
-	controlUI.appendChild(btnText4);
-	controlUI.appendChild(btnText1);
+	var viewAll = document.createElement('span');
+	var viewNorth = document.createElement('span');
+	var viewCentral = document.createElement('span');
+	var viewSouth = document.createElement('span');
+	// viewAll.innerHTML = '全台';
+	viewAll.innerHTML = textLabels[0];
+	viewNorth.innerHTML = textLabels[1];
+	viewCentral.innerHTML = textLabels[2];
+	viewSouth.innerHTML = textLabels[3];
+
+	controlUI.appendChild(viewNorth);
+	controlUI.appendChild(viewCentral);
+	controlUI.appendChild(viewSouth);
+	controlUI.appendChild(viewAll);
 
 	// the click event listeners: map to Taiwan.
-	btnText1.addEventListener('click', function () {
+	viewAll.addEventListener('click', function () {
 		map.setCenter(defuLatlng);
 		map.setZoom(7);
 	});
 	// the click event listeners: map to North.
-	btnText2.addEventListener('click', function () {
+	viewNorth.addEventListener('click', function () {
 		map.setCenter(NorthLatlng);
 		map.setZoom(10);
 	});
 	// the click event listeners: map to central.
-	btnText3.addEventListener('click', function () {
-		map.setCenter(centralLatlng);
+	viewCentral.addEventListener('click', function () {
+		map.setCenter(CentralLatlng);
 		map.setZoom(10);
 	});
 	// the click event listeners: map to south.
-	btnText4.addEventListener('click', function () {
-		map.setCenter(southLatlng);
+	viewSouth.addEventListener('click', function () {
+		map.setCenter(SouthLatlng);
 		map.setZoom(10);
 	});
 
@@ -144,16 +136,6 @@ function initMap() {
 	//JSON ArrayData
 	////var markersList = [
 	////	{ "title": "相機美人-新光華店", "address": "台北市中正區市民大道三段8號3樓45號", "phone": "02-2395-7277", "label": "1", "loc": { lat: 25.0450357, lng: 121.53193120000003 } },
-	////	{ "title": "相機美人-敦化店", "address": "台北市大安區敦化南路一段233巷48號", "phone": "02-2711-0656", "label": "2", "loc": { lat: 25.0403231, lng: 121.55188429999998 } },
-	////	{ "title": "相機美人-南港中信園區店", "address": "台北市南港區經貿二路186號C棟2樓", "phone": "02-2785-0155", "label": "3", "loc": { lat: 25.0586561, lng: 121.61495089999994 } },
-	////	{ "title": "弘采科技-新店家樂福店", "address": "新北市新店區中興路三段1號2樓", "phone": "02-8919-3138", "label": "4", "loc": { lat: 24.9761049, lng: 121.54659530000004 } },
-	////	{ "title": "和信嘉-內壢家樂福店", "address": "桃園市中壢區中華路一段450號", "phone": "03-463-8746", "label": "5", "loc": { lat: 24.9727564, lng: 121.25344799999993 } },
-	////	{ "title": "極美職人", "address": "台中市西區模範街80號", "phone": "04-2301-3331", "label": "6", "loc": { lat: 24.15062, lng: 120.66673390000005 } },
-	////	{ "title": "a life 生活家電旗艦館", "address": "台中市北區三民路3段168巷1號", "phone": "04-2223-1873", "label": "7", "loc": { lat: 24.1521983, lng: 120.6853509 } },
-	////	{ "title": "世鈞科技", "address": "彰化縣員林市中山路二段468號", "phone": "04-839-3708", "label": "8", "loc": { lat: 23.9707539, lng: 120.57159100000001 } },
-	////	{ "title": "羅森資訊-瑞豐生活館", "address": "高雄市鼓山區南屏路501號", "phone": "07-522-8711", "label": "9", "loc": { lat: 22.6654023, lng: 120.30021039999997 } },
-	////	{ "title": "羅森資訊-金典綠園道", "address": "臺中市西區健行路1049號1F", "phone": "04-232-39155", "label": "10", "loc": { lat: 24.1557383, lng: 120.66326100000003 } },
-	////	{ "title": "羅森資訊-鳳山生活館", "address": "高雄市鳳山區青年路二段457號", "phone": "07-780-6800", "label": "11", "loc": { lat: 22.644978, lng: 120.35010490000002 } }
 	////];
 
 	// Create an array of alphabetical characters used to label the markers.
@@ -167,12 +149,11 @@ function initMap() {
 	// create an array of markers based on a given "locations" array.
 	// The map() method here has nothing to do with the Google Maps API.
 	var image = {
-		// url: 'https://image.flaticon.com/icons/svg/443/443025.svg',
-		url: 'assets/svgs/mapMarker.svg',
-		size: new google.maps.Size(34, 40),			//顯示圖片大小
-		origin: new google.maps.Point(0, -7),		//起始位置，通常為0
-		anchor: new google.maps.Point(0, 38),		//移動 marker 數字越大往右和往上移動
-		scaledSize: new google.maps.Size(34, 34)	//圖片實際大小，通常與size一樣大小
+			url: 'assets/svgs/mapMarker.svg',
+			size: new google.maps.Size(34, 40),			//顯示圖片大小
+			origin: new google.maps.Point(0, -7),		//起始位置，通常為0
+			anchor: new google.maps.Point(0, 38),		//移動 marker 數字越大往右和往上移動
+			scaledSize: new google.maps.Size(34, 34)	//圖片實際大小，通常與size一樣大小
 		};
 	var markers = markersList.map(function (data, i) {
 		var marker = new google.maps.Marker({
@@ -191,10 +172,7 @@ function initMap() {
 		})
 		return marker;
 	});
-
-	// Add a marker clusterer to manage the markers.
-	var markerCluster = new MarkerClusterer(map, markers,{ imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
-
+	
 	// Create the DIV to hold the control and call the CenterControl()
 	// constructor passing in this DIV.
 	var centerControlDiv = document.createElement('div');
@@ -202,6 +180,9 @@ function initMap() {
 
 	centerControlDiv.index = 1;
 	map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
+
+	// Add a marker clusterer to manage the markers.
+	var markerCluster = new MarkerClusterer(map, markers,{ imagePath: 'assets/js/markerclusterer/m' });
 }
 
 ////*****************************************************////
