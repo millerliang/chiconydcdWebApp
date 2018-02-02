@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/registerStep.css">
+</head>
+
+<body>
+<main class="container">
+<input type="checkbox" id="menuBtn"/>  
+<label class="menuClose" for="menuBtn"></label>
+<input type="checkbox" id="overlayer"/>  
+<label class="overlayerClose" for="overlayer-None"></label>
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<label class="menuButton" for="menuBtn">
+				<object data="assets/svgs/barIco.svg" type="image/svg+xml"></object>
+			</label>
+		</li>
+		<li>
+			<a href="#0" class="topShoppingBag">
+				<i class="flaticon-shopping-cart-5"></i>
+				<span class="shopNum">2</span>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<form>
+				<i class="fa fa-search"></i>
+				<input placeholder="搜尋" type="text">
+				<button type="reset">&times;</button>
+			</form>
+		</li>
+	</ul>
+</nav>
+
+<selected class="popBoxCont">
+	<div class="verificationCode">
+		<!-- <h1 class="title">SMS 簡訊驗證碼</h1>
+		<img class="img-responsive" src="https://image.flaticon.com/icons/svg/456/456905.svg">
+		<input type="number" class="input" placeholder="輸入6位驗證號碼" max="6">
+		<div class="h1rem"></div>
+		<button class="button">驗 證</button>
+		<p class="cancelBtn"><label for="overlayer">取 消</label></p> -->
+	</div>
+</selected>
+
+<aside class="menu">
+	<div class="menuContainer">
+		<nav>
+			<h3 class="row middle-xs userAccount">
+				<div class="col-xs-2"><img class="userImg-circle" src="https://image.flaticon.com/icons/svg/149/149071.svg"></div>
+				<div class="col-xs-8"><span class="userName">SignUp</span></div>
+				<div class="col-xs-2 times text-center"><label for="menuBtn">&times;</div>
+			</h3>
+			<ul>
+				<li><a href="news.html">消息<small>News</small></a></li>
+				<li><a href="commodity.html">商品<small>Commodity</small></a></li>
+				<li><a href="store.html">門市<small>Store</small></a></li>
+				<li><a href="lottery.html">抽獎<small>lottery</small></a></li>
+			</ul>
+			<ul class="clineUser">
+				<li><a href="#"><i class="fi-handbag"></i>我的品牌</a></li>
+				<li><a href="#"><i class="fi-shopping-bag"></i>我的商品</a></li>
+				<li><a href="#"><i class="fi-placeholder-1"></i>我的門市</a></li>
+				<li><a href="#"><i class="fi-invoice"></i>我的訂單</a></li>
+				<li><a href="#"><i class="fi-coupon"></i>我的優惠劵</a></li>
+				<li><a href="#"><i class="flaticon-id-card"></i>我的檔案</a></li>
+			</ul>
+		</nav>  
+	</div>
+</aside>
+
+<form id="formContact" action="#" data-aos="fade-up" data-aos-delay="250">
+	<div>
+		<h3>Profile</h3>
+		<section>
+			<p class="fieldset">
+				<label for="signup-userName">姓名 <b>*</b></label>
+				<label class="image-replace username" for="signup-username">Username</label>
+				<input id="signup-userName" name="signup-userName" type="text" placeholder="必填項目" class="required">
+			</p>
+			<label for="sex">性別</label>
+			<select>
+				<option value="sex">未選取</option>
+				<option value="male">男</option>
+				<option value="female">女</option>
+			</select>
+			<label for="birthday">生日</label>
+			<ul class="row">
+				<li class="col-xs pl0"><select id="date-sel-year" __rel="2015"></select></li>
+				<li class="col-xs"><select id="date-sel-month" __rel="9"></select></li>
+				<li class="col-xs pr0"><select id="date-sel-day" __rel="10"></select></li>
+			</ul>
+			<!-- <small class="error">(*) 必填項目</small> -->
+		</section>
+		<h3>Address</h3>
+		<section>
+			<p class="fieldset">
+				<label for="signup-email">Email <b>*</b></label>
+				<label class="image-replace email" for="signup-email">E-mail</label>
+				<input id="signup-email" name="signup-email" type="text" class="required email" placeholder="必填項目">
+			</p>
+			<label for="city">城市</label>
+			<div class="row city-selector" role="tw-city-selector"></div>
+			<label for="address">地址</label>
+			<!-- <input id="address" name="address" type="text"> -->
+			<textarea name="address" id="address"></textarea>
+		</section>
+		<h3>Finish</h3>
+		<section>
+			<input id="acceptTerms" name="acceptTerms" type="checkbox" class="required hidden">
+			<label for="acceptTerms" class="acceptTerms"><i class="fa fa-check"></i>我已閱讀並同意相關服務條款</label>
+		</section>
+	</div>
+</form>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.js"></script>
+<script src="assets/js/validateMessages_zh_TW.js"></script>
+<script src="assets/js/birthday.js"></script>
+<script src="assets/js/tw-city-selector.min.js"></script>
+<script src="assets/js/aos.js"></script>
+
+<script>
+$(document).ready(function () {
+
+	var form = $("#formContact");
+	form.validate({
+		errorPlacement: function errorPlacement(error, element) { element.before(error); },
+		rules: {
+			confirm: {
+				equalTo: "#password"
+			}
+		}
+	});
+	form.children("div").steps({
+		headerTag: "h3",
+		bodyTag: "section",
+		transitionEffect: "slideLeft",
+		onStepChanging: function (event, currentIndex, newIndex) {
+			form.validate().settings.ignore = ":disabled,:hidden";
+			return form.valid();
+		},
+		onFinishing: function (event, currentIndex) {
+			form.validate().settings.ignore = ":disabled";
+			return form.valid();
+		},
+		onFinished: function (event, currentIndex) {
+			alert("Submitted!");
+		},
+		labels: {
+			cancel: "取消",
+			finish: "註冊會員",
+			next: "下一步",
+			previous: "上一步"
+		}
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-in-sine',
+		//delay: 50,
+	});
+
+	// 生日 birthday
+	$.date_picker({
+		YearSelector: "#date-sel-year",
+		MonthSelector: "#date-sel-month",
+		DaySelector: "#date-sel-day"
+	});
+
+	// 地址 tw-city-selector.js
+	new TwCitySelector();
+
+});
+</script>
+</body>
+</html>
