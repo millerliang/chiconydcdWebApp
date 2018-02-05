@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<main class="container">
+<main class="container" style="height:100%;padding:0;">
 <input type="checkbox" id="menuBtn"/>  
 <label class="menuClose" for="menuBtn"></label>
 <input type="checkbox" id="overlayer"/>  
@@ -85,11 +85,14 @@
 				<input id="signup-userName" name="signup-userName" type="text" placeholder="必填項目" class="required">
 			</p>
 			<label for="sex">性別</label>
-			<select>
-				<option value="sex">未選取</option>
-				<option value="male">男</option>
-				<option value="female">女</option>
-			</select>
+			<div class="materialSelect">
+				<select>
+					<option value="sex">未選取</option>
+					<option value="male">男</option>
+					<option value="female">女</option>
+					<option value="other">其他</option>
+				</select>
+			</div>
 			<label for="birthday">生日</label>
 			<ul class="row">
 				<li class="col-xs pl0"><select id="date-sel-year" __rel="2015"></select></li>
@@ -124,6 +127,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script src="assets/js/validateMessages_zh_TW.js"></script>
 <script src="assets/js/birthday.js"></script>
 <script src="assets/js/tw-city-selector.min.js"></script>
@@ -180,6 +184,9 @@ $(document).ready(function () {
 
 	// 地址 tw-city-selector.js
 	new TwCitySelector();
+
+	// material_select js
+	$('.materialSelect select').material_select();
 
 });
 </script>
