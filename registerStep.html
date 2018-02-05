@@ -38,17 +38,6 @@
 	</ul>
 </nav>
 
-<selected class="popBoxCont">
-	<div class="verificationCode">
-		<!-- <h1 class="title">SMS 簡訊驗證碼</h1>
-		<img class="img-responsive" src="https://image.flaticon.com/icons/svg/456/456905.svg">
-		<input type="number" class="input" placeholder="輸入6位驗證號碼" max="6">
-		<div class="h1rem"></div>
-		<button class="button">驗 證</button>
-		<p class="cancelBtn"><label for="overlayer">取 消</label></p> -->
-	</div>
-</selected>
-
 <aside class="menu">
 	<div class="menuContainer">
 		<nav>
@@ -75,7 +64,7 @@
 	</div>
 </aside>
 
-<form id="formContact" action="#" data-aos="fade-up" data-aos-delay="250">
+<form class="formContact" action="#" data-aos="fade-up" data-aos-delay="250">
 	<div>
 		<h3>Profile</h3>
 		<section>
@@ -136,7 +125,7 @@
 <script>
 $(document).ready(function () {
 
-	var form = $("#formContact");
+	var form = $(".formContact");
 	form.validate({
 		errorPlacement: function errorPlacement(error, element) { element.before(error); },
 		rules: {

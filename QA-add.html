@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/registerStep.css">
+</head>
+
+<body>
+<style>
+.BottomBar {padding:.6rem;}
+.BottomBar a {display:block;border:1px solid #ddd;padding:.6rem 0;}
+.formContact {padding-top: 1.5rem;}
+.formContact textarea {height:10rem;}
+</style>
+<main class="container">
+
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<a href="#0" class="menuButton goBackPage">
+				<i class="fa fa-angle-left" data-aos="flip-right" data-aos-delay="1000"></i>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<h3 data-aos="fade-left" data-aos-duration="1600" data-aos-delay="300">新增客服</h3>
+		</li>
+		<!-- <li class="col-xs-1_ noWarp text-right">
+			<label for="" class="menuButton ifActive"><i class="fa fa-heart-o"></i></label>
+		</li> -->
+	</ul>
+</nav>
+
+<form class="formContact" action="#" data-aos="fade-up" data-aos-delay="250">
+	<section>
+		<label for="store">店家</label>
+		<select class="required">
+			<option value="0">選擇你要詢問的門市</option>
+			<option value="a">A</option>
+			<option value="b">B</option>
+			<option value="c">C</option>
+		</select>
+		<label for="question">類型</label>
+		<select class="required">
+			<option value="0">選擇你的問題類型</option>
+			<option value="a">D</option>
+			<option value="b">E</option>
+			<option value="c">F</option>
+		</select>
+		<label for="textArea">填寫你的問題</label>
+		<textarea name="textArea" id="textArea"></textarea>
+	</section>
+</form>
+
+	<footer class="BottomBar text-center">
+		<a href="#0" class="goBackPage">提 交</a>
+	</footer>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/js/aos.js"></script>
+
+<script>
+$(document).ready(function () {
+	$(".goBackPage").click(function () {
+		event.preventDefault();
+		history.back(1);
+	});
+
+	$(".ifActive").click(function () {
+		$(this).children("i").toggleClass("is-active");
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-out-cubic',
+		//delay: 50,
+	});
+});
+</script>
+</body>
+</html>

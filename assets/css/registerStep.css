@@ -95,33 +95,33 @@ html,body{height: 100%;}
 
 /* ID formContact */
 
-#formContact input[type="text"],
-#formContact input[type="email"],
-#formContact input[type="tel"],
-#formContact input[type="url"],
-#formContact textarea,
-#formContact button[type="submit"] {}
+.formContact input[type="text"],
+.formContact input[type="email"],
+.formContact input[type="tel"],
+.formContact input[type="url"],
+.formContact textarea,
+.formContact button[type="submit"] {}
 
-#formContact {max-width: 960px;margin: 0 auto;height: 100%;padding: 5rem 1rem 1rem;box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);font-size: 11pt;overflow: hidden;}
-#formContact h3 {display: block;margin-bottom: 10px;}
-#formContact label b {color:#ff3111;}
+.formContact {max-width: 960px;margin: 0 auto;height: 100%;padding: 5rem 1rem 1rem;box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);font-size: 11pt;overflow: hidden;}
+.formContact h3 {display: block;margin-bottom: 10px;}
+.formContact label b {color:#ff3111;}
 
-#formContact input[type="text"], #formContact input[type="email"], #formContact input[type="tel"], #formContact input[type="url"], #formContact textarea,#formContact select {width: 100%;border: 1px solid #d7d8d9;background: #FFF;padding: .6rem;margin-bottom: 1.8rem;border-radius: 4px;}
+.formContact input[type="text"], .formContact input[type="email"], .formContact input[type="tel"], .formContact input[type="url"], .formContact textarea,.formContact select {width: 100%;border: 1px solid #d7d8d9;background: #FFF;padding: .6rem;margin-bottom: 1.8rem;border-radius: 4px;}
 
-#formContact input[type="text"]:hover,
-#formContact input[type="email"]:hover,
-#formContact input[type="tel"]:hover,
-#formContact input[type="url"]:hover,
-#formContact textarea:hover {
+.formContact input[type="text"]:hover,
+.formContact input[type="email"]:hover,
+.formContact input[type="tel"]:hover,
+.formContact input[type="url"]:hover,
+.formContact textarea:hover {
 -webkit-transition: border-color 0.3s ease-in-out;
 -moz-transition: border-color 0.3s ease-in-out;
 transition: border-color 0.3s ease-in-out;
 border: 1px solid #aaa;
 }
 
-#formContact textarea {min-height: 5rem;max-width: 100%;resize: none;}
+.formContact textarea {min-height: 4rem;max-width: 100%;resize: none;}
 
-#formContact button[type="submit"] {
+.formContact button[type="submit"] {
 cursor: pointer;
 width: 100%;
 border: none;
@@ -132,16 +132,16 @@ padding: 10px;
 font-size: 15px;
 }
 
-#formContact button[type="submit"]:hover {
+.formContact button[type="submit"]:hover {
 background: #43A047;
 -webkit-transition: background 0.3s ease-in-out;
 -moz-transition: background 0.3s ease-in-out;
 transition: background-color 0.3s ease-in-out;
 }
 
-#formContact button[type="submit"]:active {box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}
+.formContact button[type="submit"]:active {box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}
 
-#formContact input:focus,#formContact textarea:focus {outline: 0;border: 1px solid #aaa;}
+.formContact input:focus,.formContact textarea:focus {outline: 0;border: 1px solid #aaa;}
 
 ::-webkit-input-placeholder {color: #888;}
 :-moz-placeholder {color: #888;}
