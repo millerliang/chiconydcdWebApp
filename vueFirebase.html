@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang=zh-TW>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js + Firebase Chat</title>
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyATcNjuxgzoTyTCGLJvxNyHJHZEvh0a2d8",
+            authDomain: "vuechatroom-d43a7.firebaseapp.com",
+            databaseURL: "https://vuechatroom-d43a7.firebaseio.com",
+            projectId: "vuechatroom-d43a7",
+            storageBucket: "vuechatroom-d43a7.appspot.com",
+            messagingSenderId: "317785143753"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <link href="dist/app.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/javascript" src="dist/manifest.js"></script>
+    <script type="text/javascript" src="dist/vendor.js"></script>
+    <script type="text/javascript" src="dist/app.js"></script>
+</body>
+
+</html>

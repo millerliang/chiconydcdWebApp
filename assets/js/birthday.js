@@ -9,7 +9,7 @@
                 YearTxt: "年份",
                 MonthText: "月份",
                 DayText: "日期",
-                FirstValue: 0
+                FirstValue: "--"
             };
             var opts = $.extend({}, defaults, options);
             var $YearSelector = $(opts.YearSelector);

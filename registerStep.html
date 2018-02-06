@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Chicony Electronics CO.</title>
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/registerStep.css">
 </head>
@@ -66,31 +66,32 @@
 
 <form class="formContact" action="#" data-aos="fade-up" data-aos-delay="250">
 	<div>
-		<h3>Profile</h3>
+		<h3>個人資料</h3>
 		<section>
+
 			<p class="fieldset">
 				<label for="signup-userName">姓名 <b>*</b></label>
 				<label class="image-replace username" for="signup-username">Username</label>
-				<input id="signup-userName" name="signup-userName" type="text" placeholder="必填項目" class="required">
+				<input id="signup-userName" name="signup-userName" type="text" placeholder="必填項目 (不可變更)" class="required">
 			</p>
-			<label for="sex">性別</label>
+			<label for="signup-sex">性別</label>
 			<div class="materialSelect">
-				<select>
-					<option value="sex">未選取</option>
-					<option value="male">男</option>
-					<option value="female">女</option>
-					<option value="other">其他</option>
+				<select id="signup-sex">
+					<option value="未選取">未選取</option>
+					<option value="男">男</option>
+					<option value="女">女</option>
+					<option value="其他">其他</option>
 				</select>
 			</div>
 			<label for="birthday">生日</label>
 			<ul class="row">
-				<li class="col-xs pl0"><select id="date-sel-year" __rel="2015"></select></li>
-				<li class="col-xs"><select id="date-sel-month" __rel="9"></select></li>
-				<li class="col-xs pr0"><select id="date-sel-day" __rel="10"></select></li>
+				<li class="col-xs pl0"><select id="date-sel-year" __rel="1986"></select></li>
+				<li class="col-xs"><select id="date-sel-month" __rel="1"></select></li>
+				<li class="col-xs pr0"><select id="date-sel-day" __rel="1"></select></li>
 			</ul>
 			<!-- <small class="error">(*) 必填項目</small> -->
 		</section>
-		<h3>Address</h3>
+		<h3>聯繫資料</h3>
 		<section>
 			<p class="fieldset">
 				<label for="signup-email">Email <b>*</b></label>
@@ -98,15 +99,16 @@
 				<input id="signup-email" name="signup-email" type="text" class="required email" placeholder="必填項目">
 			</p>
 			<label for="city">城市</label>
-			<div class="row city-selector" role="tw-city-selector"></div>
-			<label for="address">地址</label>
+			<div class="row city-selector" role="tw-city-selector" data-show-zipcode></div>
+			<label for="signup-address">地址</label>
 			<!-- <input id="address" name="address" type="text"> -->
-			<textarea name="address" id="address"></textarea>
+			<textarea name="address" id="signup-address"></textarea>
 		</section>
-		<h3>Finish</h3>
+		<h3>完成</h3>
 		<section>
+			<div id="signup-info"></div>
 			<input id="acceptTerms" name="acceptTerms" type="checkbox" class="required hidden">
-			<label for="acceptTerms" class="acceptTerms"><i class="fa fa-check"></i>我已閱讀並同意相關服務條款</label>
+			<label for="acceptTerms" class="acceptTerms"><i class="fa fa-check"></i>我已閱讀並同意相關<a href="https://www.google.com/intl/zh-TW/policies/terms/" target="_blank">服務條款</a></label>
 		</section>
 	</div>
 </form>
@@ -137,6 +139,8 @@ $(document).ready(function () {
 	form.children("div").steps({
 		headerTag: "h3",
 		bodyTag: "section",
+		enableAllSteps: true,
+		titleTemplate: "#title#",
 		transitionEffect: "slideLeft",
 		onStepChanging: function (event, currentIndex, newIndex) {
 			form.validate().settings.ignore = ":disabled,:hidden";
@@ -147,7 +151,7 @@ $(document).ready(function () {
 			return form.valid();
 		},
 		onFinished: function (event, currentIndex) {
-			alert("Submitted!");
+			alert("成功送出註冊！");
 		},
 		labels: {
 			cancel: "取消",
@@ -176,7 +180,30 @@ $(document).ready(function () {
 
 	// material_select js
 	$('.materialSelect select').material_select();
+	
+	// Display input Vals
+	function displayVals() {
+		var nameValues = $("#signup-userName").val();
+		var eMailValues = $("#signup-email").val();
+		var singleValues = $("#signup-sex").val();
+		var yearValues = $("#date-sel-year").val();
+		var monthValues = $("#date-sel-month").val();
+		var dayValues = $("#date-sel-day").val();
+		var zipcodeValues = $(".zipcode").val();
+		var cityCountyValues = $(".county").val();
+		var cityDistrictValues = $(".district").val();
+		var addressValues = $("#signup-address").val();
+		//var multipleValues = $("#multiple").val() || [];
+		// When using jQuery 3:
+		// var multipleValues = $( "#multiple" ).val();
 
+		$("#signup-info").html("<p><b>姓名:</b> " + nameValues + " </p><p><b>性別:</b> "+ singleValues + "</p><p><b>電郵:</b> " + eMailValues + "</p><p><b>生日:</b> " + yearValues + "年"+ monthValues + "月" + dayValues + "日</p><p><b>地址:</b> "+ zipcodeValues + " " + cityCountyValues + cityDistrictValues + addressValues + "</p>");
+	}
+
+	$("select").change(displayVals);
+	$("input").change(displayVals);
+	$("textarea").change(displayVals);
+	displayVals();
 });
 </script>
 </body>

@@ -1,0 +1,322 @@
+* {margin: 0;padding: 0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-webkit-font-smoothing: antialiased;-moz-font-smoothing: antialiased;-o-font-smoothing: antialiased;font-smoothing: antialiased;text-rendering: optimizeLegibility;}
+body{font-family: '微軟正黑體';}
+.container {}
+.name {position: absolute;right: 1rem;margin: 10px 50px 10px 0px;color: #333;}
+.reset {
+margin-top: 10px;
+padding: 5px 10px;
+border-radius: 10px;
+font-weight: 600;
+color: #333333;
+background-color: #CCCCCC;
+display: inline-block;
+cursor: pointer;
+}
+
+.chatRoom {height: 90vh;margin: 0 auto;border-radius: 5px;max-width: 500px;box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);}
+/* Head */
+.roomHead {
+width: 100%;
+height: 85px;
+border-radius: 5px 5px 0px 0px;
+background-color: #2B364B;
+position: relative;
+}
+
+.roomHead__topButtons {
+padding: 2px 0px 5px 10px;
+text-align: left;
+}
+
+.roomHead__button {
+height: 10px;
+width: 10px;
+border-radius: 50%;
+margin: 0px 1px;
+display: inline-block;
+cursor: pointer;
+}
+
+.close {
+background-color: #FF625A;
+}
+
+.minimize {
+background-color: #FFC02F;
+}
+
+.zoom {
+background-color: #28CB40;
+}
+
+.roomHead__img {
+width: 50px;
+height: 50px;
+margin: 0px 10px 6px 12px;
+border-radius: 50%;
+position: absolute;
+cursor: pointer;
+}
+
+.roomHead__title {
+font-size: 13px;
+font-weight: 600;
+color: #FFFFFF;
+height: 80px;
+margin: 5px 0px 0px 75px;
+position: absolute;
+cursor: pointer;
+}
+/* Body */
+.roomBody {padding: 10px 0px;background-color: #fff;height: calc(70vh - 3rem);overflow-y: auto;overflow-x: hidden;}
+
+.messageBox {
+padding: 5px 10px;
+position: relative;
+}
+
+.messageBox__user {
+height: 40px;
+width: 40px;
+border-radius: 50%;
+vertical-align: top;
+display: inline-block;
+cursor: pointer;
+}
+
+.messageBox__content {
+max-width: 70%;
+display: inline-block;
+}
+
+.messageBox__name {
+margin: 5px 0px 5px 5px;
+font-size: 13px;
+color: #727C8A;
+vertical-align: top;
+cursor: pointer;
+}
+
+.messageBox__message {
+margin: 5px 0px 5px 5px;
+font-size: 12px;
+color: #35393D;
+letter-spacing: 0.6px;
+background-color: #E3E8EB;
+border-radius: 12px;
+line-height: 1.5;
+text-align: left;
+word-break: break-all;
+/*：與html的<pre></pre>同效果，可以使textarea的換行元素正常顯示 */
+white-space: pre-line;
+}
+
+.messageBox__text {
+padding: 8px 10px 9px 11px;
+max-height: 300px;
+overflow: hidden;
+}
+
+.messageBox__readMore {
+border-top: 1px solid #D9DBDD;
+margin-top: 6px;
+padding: 6px 13px 10px 13px;
+left: 0;
+right: 0;
+cursor: pointer;
+display: none;
+}
+
+.messageBox__image {
+margin: 5px 25px 5px 5px;
+}
+
+.messageBox__image img {
+border-radius: 5px;
+max-width: 100%;
+max-height: 335px;
+}
+
+.messageBox__time {
+transform: scale(0.7);
+color: #ACB0B8;
+vertical-align: bottom;
+margin: 0px 0px 5px -12px;
+display: inline-block;
+}
+
+.messageBox__progress {
+width: 25%;
+margin-right: 60px;
+border-radius: 5px;
+background-color: #D4D9E1;
+height: 6px;
+}
+
+.messageBox__progress--state {
+background-color: #00CE00;
+height: 6px;
+width: 10%;
+border-radius: 5px;
+float: right;
+}
+
+.messageBox__progress--number {
+position: absolute;
+top: 0;
+right: 0;
+font-size: 12px;
+color: #B7B7B7;
+margin-right: 35px;
+}
+
+.messageBox--self {
+text-align: right;
+}
+
+.messageBox--self .messageBox__message {
+background-color: #AFF47E;
+margin-right: 25px;
+}
+
+.messageBox--self .messageBox__message__text {
+padding: 8px 10px 9px 11px;
+max-height: 100%;
+overflow: unset;
+}
+
+.messageBox--self .messageBox__time {
+margin: 0px -16px 5px 0px;
+}
+/* Bottom */
+.roomBottom {height: 14vh;bottom: 0px;border-radius: 0px 0px 5px 5px;background-color: #dadcde;}
+
+.roomBottom__tools {
+border-top: solid 1px #E7E7E7;
+border-bottom: solid 2px #E7E7E7;
+background-color: #F6F6F6;
+height: 30px;
+padding: 0px 5px;
+}
+
+.roomBottom__tools_upload {
+height: 20px;
+margin: 5px;
+padding: 1px;
+display: inline-block;
+position: relative;
+overflow: hidden;
+}
+
+.roomBottom__tools_upload:hover {
+border: solid 1px #DCDCDC;
+}
+
+.roomBottom__tools_upload input {
+width: 100%;
+height: 100%;
+left: 0;
+right: 0;
+opacity: 0;
+position: absolute;
+cursor: pointer;
+/* 讓input file可以支援pointer要加pl100% */
+padding-left: 100%;
+}
+
+.roomBottom__tools_upload img {
+height: 100%;
+}
+
+.roomBottom__input {padding: 10px 10px 5px 10px;height: 100%;}
+
+.roomBottom__input__textarea {width: 100%;min-height: 70%;border: none;resize: none;outline: none;}
+/* status */
+.disable {
+pointer-events: none;
+background-color: #ebebeb;
+}
+/* modal */
+.modal {
+z-index: 3;
+padding: 50px 0px;
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.4);
+animation: opac 0.8s;
+letter-spacing: 2px;
+text-align: unset;
+}
+
+.modal__container {
+margin: auto;
+position: relative;
+padding: 10px;
+outline: 0;
+max-width: 300px;
+}
+
+.modal__header {
+color: #fff;
+background-color: #2B364B;
+padding: 10px;
+text-align: center;
+border-radius: 5px 5px 0px 0px;
+}
+
+.modal__body {
+background-color: #fff;
+padding: 20px 50px;
+text-align: center;
+}
+
+.modal__body p {
+text-align: left;
+line-height: 24px;
+}
+
+.modal__img {
+max-width: 100%;
+}
+
+.modal__footer {
+color: #fff;
+background-color: #2B364B;
+height: 8px;
+border-radius: 0px 0px 5px 5px;
+}
+/* name set */
+.userName {
+height: 30px;
+font-size: 16px;
+margin-bottom: 10px;
+border: solid 1px #cbcbcb;
+width: 70%;
+text-align: center;
+display: inline-block;
+}
+
+.button {
+font-size: 14px;
+color: #FFFFFF;
+background-color: #2B364B;
+padding: 10px 20px;
+display: inline-block;
+cursor: pointer;
+}
+/* media */
+@media screen and (max-width: 425px) {
+.messageBox__content {
+max-width: 60%;
+}
+}
+
+@media screen and (max-width: 385px) {
+.messageBox__content {
+max-width: 50%;
+}
+}
