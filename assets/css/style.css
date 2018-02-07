@@ -175,12 +175,14 @@ main .menu nav .clineUser li:last-of-type a {border:none;}
 
 /* 展開側欄選單動畫 */
 main input#menuBtn:checked ~ .menu nav .clineUser li a {opacity:0;animation: aslideAnima .5s forwards;}
-main input#menuBtn:checked ~ .menu nav .clineUser li:first-of-type a{animation-delay: .2s;}
-main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(2) a{animation-delay: .4s;}
-main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(3) a{animation-delay: .6s;}
-main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(4) a{animation-delay: .8s;}
-main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(5) a{animation-delay: 1s;}
-main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(6) a{animation-delay: 1.2s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:first-of-type a {animation-delay: .2s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(2) a {animation-delay: .4s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(3) a {animation-delay: .6s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(4) a {animation-delay: .8s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(5) a {animation-delay: 1s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(6) a {animation-delay: 1.2s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(7) a {animation-delay: 1.4s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(8) a {animation-delay: 1.6s;}
 @keyframes aslideAnima {0% {transform: translateX(1rem);}100% {opacity:1;transform: translateX(0);}}
 
 /* 底部資訊欄 */

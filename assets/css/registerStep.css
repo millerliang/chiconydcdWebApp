@@ -202,3 +202,50 @@ input.email{text-transform:lowercase;}
 /* 顯示填寫資訊 */
 #signup-info {margin-bottom:3rem;}
 #signup-info p {margin-bottom:.8rem;}
+
+/* 聊天室對話框 */
+.chatRoom {padding:.5rem 0 8rem;display: inherit;margin: 0 auto;max-width:640px;}
+.chatRoom div.messageBox {display:block;margin-bottom:.5rem;}
+.chatRoom div.messageBox p {max-width:72%;min-width: 8rem;position:relative;padding: .5rem .8rem 1rem;margin: 10px 20px;display:block;*zoom: 1;word-break: break-all; /*：與html的<pre></pre>同效果，可以使textarea的換行元素正常顯示 */white-space: pre-line;}
+.chatRoom div.messageBox p b {font-size:9pt;display:block;margin-bottom:.3rem;font-weight: normal;}
+.chatRoom div.messageBox p img {max-width:100%;}
+.chatRoom div.messageBox p time {white-space: nowrap;bottom: .3rem;position:absolute; color:#999;font-size:8pt;display:block;margin-top:.3rem;}
+.chatRoom div.messageBox p span.txtHeight {max-height: 250px;overflow: hidden;display: inline-block;}
+.chatRoom div.messageBox p .msgReadMore {font-size: 11pt;padding-top: .5rem;border-top: 1px solid rgba(206, 208, 210, .5);margin-top: 6px;cursor: pointer;text-align: center;display: none;}
+
+.chatRoom div.messageBox p.int time {left:calc( 100% + 8px);}
+.chatRoom div.messageBox p.ext time {right:calc( 100% + 8px);}
+.chatRoom div.messageBox p.ext time i {color__:rgba(255, 255, 255,.5);margin-right:.12rem;}
+.chatRoom div.messageBox p b:before {position: absolute;content: "";width: 0;height: 0;border-style: solid;display: inline-block;}
+.chatRoom div.messageBox p.int b:before {left:-6px;bottom:0;border-width: 0 0 20px 20px;border-color: transparent transparent #dedede transparent;}
+.chatRoom div.messageBox p.ext b:before {right:-6px;top:0;border-width: 20px 20px 0 0;border-color: #47a29a transparent transparent transparent;}
+.chatRoom div.messageBox p.ext b {padding-left: .5rem;}
+
+.chatRoom div.messageBox p .delBtn {position: absolute;top: 0;border:0 solid #ddd;float:right;font-size:small;margin-top:.5rem;background-color: transparent;}
+.chatRoom div.messageBox p.int .delBtn {right:.8rem;}
+.chatRoom div.messageBox p.ext .delBtn {left:.5rem;color:#daf3dc;}
+
+.chatRoom div.messageBox:before,.chatRoom div.messageBox:after {content: "";display: table;clear: both;}
+.chatRoom div.messageBox:after {clear: both;}
+
+.chatRoom div.messageBox p.ext {color: white;background-color: #47a29a;float: right;border-radius: 10px 0 10px 10px;}
+.chatRoom div.messageBox p.int {color: #222;background-color: #dedede;float: left;border-radius: 10px 10px 10px 0;}
+.chatRoom center {color: #999;font-size: small;margin:3rem 0 1.2rem;padding:.15rem 0; background-color: rgba(0, 0, 0, .02);}
+
+/* checkbox switchBtn */
+.switchBtn label {cursor: pointer;margin: 0 auto;line-height: 36px;text-indent: 1.8rem;color:#222;max-width: 75%;height: 36px;background:#dedede;display: block;border-radius: 40px;position: relative;}
+.switchBtn label:after {content: '';position: absolute;top: 2px;left: 2px;width: 32px;height: 32px;background: #fff;border-radius:50%;transition: 0.3s;}
+.switchBtn input:checked + label {color: white;background: #47a29a;text-indent:-2rem;}
+.switchBtn input:checked + label:after {left: calc(100% - 3px);transform: translateX(-100%);}
+.switchBtn label:active:after {width: 40px;}
+
+/* 檔案上傳按鈕 */
+.uploadImg {position: relative;overflow: hidden;}
+.uploadImg .imgBtn {width: 100%;height: 100%;left: 0;right: 0;opacity:0;position: absolute;cursor: pointer;padding-left: 100%;}
+.uploadImg i {font-size:18pt;}
+
+/* 上傳進度條 */
+.imgUploadBox {background-color: #f1f1f1;padding: 1.5rem 0 .8rem;margin: 2rem 0 1rem;display: block;}
+.imgUploadBox .progress {width: 85%;margin: 0 auto;border-radius: 5px;background-color: #D4D9E1;height: 6px;position: relative;}
+.imgUploadBox .progressState {background-color: #00CE00;height: 6px;width: 8%;border-radius: 5px;float: left;}
+.imgUploadBox .progressNumber {position: absolute;top: -1.1rem;font-size: small;color: #697882;margin-right: 35px;}

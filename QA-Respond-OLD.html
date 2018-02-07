@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/registerStep.css">
+</head>
+
+<body>
+<style>
+.container {height:100%;background-color:#f7f5f5;}
+.BottomBar {padding:.6rem;}
+.BottomBar a {display:block;border:1px solid #ddd;padding:.6rem 0;}
+.BottomBar button {display:block;border:1px solid #ddd;padding:.6rem 0;width: 100%;background-color: #2a4150;color: white;border-radius:4px;}
+.formContact {padding:0;box-shadow:none;}
+.formContact textarea {margin-bottom:.1rem;transition: all .5s;}
+.formContact textarea:active,.formContact textarea:focus {min-height:8rem;transition: all .5s;}
+
+/* 聊天室對話框 */
+.chatRoom {padding:.5rem 0 8rem;display: inherit;margin: 0 auto;max-width:640px;}
+.chatRoom div {display:block;margin-bottom:.5rem;}
+.chatRoom div p {position:relative;padding: 10px 20px;margin: 10px 20px;display:block;*zoom: 1;}
+.chatRoom div p time {font-size:9pt;display:block;margin-top:.3rem;}
+
+.chatRoom div p time:before {position: absolute;content: "";width: 0;height: 0;border-style: solid;display: inline-block;}
+.chatRoom div p time i {color:#999;}
+.chatRoom div p.ext time i {color:rgba(255, 255, 255,.5);margin-right:.12rem;}
+.chatRoom div p.int time:before {left:-6px;bottom:0;border-width: 0 0 20px 20px;border-color: transparent transparent #dedede transparent;}
+.chatRoom div p.ext time:before {right:-6px;top:0;border-width: 20px 20px 0 0;border-color: #47a29a transparent transparent transparent;}
+
+.chatRoom div:before,.chatRoom div:after {content: "";display: table;clear: both;}
+.chatRoom div:after {clear: both;}
+
+.chatRoom div p.ext {color: white;text-align:right;background-color: #47a29a;float: right;border-radius: 10px 0 10px 10px;}
+.chatRoom div p.int {color: #222;background-color: #dedede;float: left;border-radius: 10px 10px 10px 0;}
+.chatRoom center {color: #999;font-size: small;margin:3rem 0 1.2rem;padding:.15rem 0; background-color: rgba(0, 0, 0, .02);}
+</style>
+<main class="container">
+
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<a href="#0" class="menuButton goBackPage">
+				<i class="fa fa-angle-left" data-aos="flip-right" data-aos-delay="1000"></i>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<h3 data-aos="fade-left" data-aos-duration="1600" data-aos-delay="300">客服回覆</h3>
+		</li>
+		<!-- <li class="col-xs-1_ noWarp text-right">
+			<label for="" class="menuButton ifActive"><i class="fa fa-heart-o"></i></label>
+		</li> -->
+	</ul>
+</nav>
+
+<selected class="chatRoom">
+	<div><p class="ext">Hello<time><i class="fa fa-clock-o"></i>16:32</time></p></div>
+	<div><p class="int">Hi<time><i class="fa fa-clock-o"></i>16:30</time></p></div>
+	<div><p class="ext">What's up?<time><i class="fa fa-clock-o"></i>15:58</time></p></div>
+	<div><p class="int">Just trying to create a message-like app<time><i class="fa fa-clock-o"></i>15:57</time></p></div>
+	<div><p class="ext">Oh great, can you show me?<time><i class="fa fa-clock-o"></i>15:12</time></p></div>
+	<div><p class="int">Be my guest :)<time><i class="fa fa-clock-o"></i>15:11</time></p></div>
+	<center>2018/02/03</center>
+	<div><p class="ext">Hello<time><i class="fa fa-clock-o"></i>16:32</time></p></div>
+	<div><p class="int">Hi<time><i class="fa fa-clock-o"></i>16:30</time></p></div>
+	<div><p class="ext">What's up?<time><i class="fa fa-clock-o"></i>15:58</time></p></div>
+	<div><p class="int">Just trying to create a message-like app<time><i class="fa fa-clock-o"></i>15:57</time></p></div>
+	<div><p class="ext">Oh great, can you show me?<time><i class="fa fa-clock-o"></i>15:12</time></p></div>
+	<div><p class="int">Be my guest :)<time><i class="fa fa-clock-o"></i>15:11</time></p></div>
+</selected>
+
+<footer class="BottomBar text-center">
+	<form class="formContact" action="#">
+		<textarea name="textArea" id="textArea" placeholder="填寫你的問題"></textarea>
+		<button>提 交</button>
+	</form>
+</footer>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/js/aos.js"></script>
+
+<script>
+$(document).ready(function () {
+	$(".goBackPage").click(function () {
+		event.preventDefault();
+		history.back(1);
+	});
+
+	$(".ifActive").click(function () {
+		$(this).children("i").toggleClass("is-active");
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-out-cubic',
+		//delay: 50,
+	});
+});
+</script>
+</body>
+</html>
