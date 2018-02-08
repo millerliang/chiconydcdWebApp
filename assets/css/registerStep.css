@@ -31,7 +31,7 @@ html,body{height: 100%;}
 
 .wizard > .content > .body{padding: 2rem .25rem;position: absolute;width: 100%;}
 .wizard > .content > .body > iframe{border: 0 none;width: 100%;height: 100%;}
-.wizard > .content > .body input{display: block;border: 1px solid #ccc;}
+.wizard > .content > .body input,.formContact input {display: block;border: 1px solid #ccc;}
 .wizard > .content > .body input[type="checkbox"]{display: inline-block;}
 .wizard > .content > .body input.error{background: rgb(247, 233, 234);border: 1px solid #ff3111 !important;animation: errorBorder .6s 2 ease-in-out;}
 @keyframes errorBorder {
@@ -41,7 +41,7 @@ html,body{height: 100%;}
     75%{border-color:#ddd;}
     100%{border-color:#ff3111;}
 }
-.wizard > .content > .body label{display: inline-block;margin-bottom: .5rem;}
+.wizard > .content > .body label,.formContact label {display: inline-block;margin-bottom: .5rem;}
 .wizard > .content > .body label.error{color: #ff3111;display: inline-block;margin-left: 1rem;animation: errorAnima .8s 3 ease-in-out;transform-origin: left center;}
 @keyframes errorAnima {
     0%{
@@ -181,6 +181,7 @@ form label.image-replace {
 form label.username {background-image: url(https://codyhouse.co/demo/login-signup-modal-window/img/cd-icon-username.svg);}
 form label.email {background-image: url(https://codyhouse.co/demo/login-signup-modal-window/img/cd-icon-email.svg);}
 form label.password {background-image: url(https://codyhouse.co/demo/login-signup-modal-window/img/cd-icon-password.svg);}
+form label.phone {background-image: url(https://www.flaticon.com/premium-icon/icons/svg/657/657099.svg);background-size: cover;}
 
 /* 城市地區 */
 .city-selector {}

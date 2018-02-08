@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/signupForm.css">
+	<link rel="stylesheet" href="assets/css/registerStep.css">
+	<style>
+	.formContact {padding:0;border: none;box-shadow: none;}
+	#barcode {width:100%;height:auto;}
+	</style>
+</head>
+
+<body>
+<main class="container">
+<input type="checkbox" id="menuBtn"/>  
+<label class="menuClose" for="menuBtn"></label>
+<input type="checkbox" id="overlayer"/>  
+<label class="overlayerClose" for="overlayer-None"></label>
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<label class="menuButton" for="menuBtn">
+				<object data="assets/svgs/barIco.svg" type="image/svg+xml"></object>
+			</label>
+		</li>
+		<li>
+			<a href="#0" class="topShoppingBag">
+				<i class="flaticon-shopping-cart-5"></i>
+				<span class="shopNum">2</span>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<form>
+				<i class="fa fa-search"></i>
+				<input placeholder="搜尋" type="text">
+				<button type="reset">&times;</button>
+			</form>
+		</li>
+	</ul>
+</nav>
+
+<selected class="popBoxCont">
+	<div class="verificationCode">
+		<h1 class="title">送出變更</h1>
+		<div class="h1rem"></div>
+		<button class="button" onclick="location.href='index.html'">確 定</button>
+		<p class="cancelBtn"><label for="overlayer">取 消</label></p>
+	</div>
+</selected>
+
+<aside class="menu">
+	<div class="menuContainer">
+		<nav>
+			<h3 class="row middle-xs userAccount">
+				<div class="col-xs-2"><img class="userImg-circle" src="https://image.flaticon.com/icons/svg/149/149071.svg"></div>
+				<div class="col-xs-8"><span class="userName">SignUp</span></div>
+				<div class="col-xs-2 times text-center"><label for="menuBtn">&times;</div>
+			</h3>
+			<ul>
+				<li><a href="news.html">消息<small>News</small></a></li>
+				<li><a href="commodity.html">商品<small>Commodity</small></a></li>
+				<li><a href="store.html">門市<small>Store</small></a></li>
+				<li><a href="lottery.html">抽獎<small>lottery</small></a></li>
+			</ul>
+			<ul class="clineUser">
+				<li><a href="#"><i class="fi-handbag"></i>我的品牌</a></li>
+				<li><a href="#"><i class="fi-shopping-bag"></i>我的商品</a></li>
+				<li><a href="#"><i class="fi-placeholder-1"></i>我的門市</a></li>
+				<li><a href="#"><i class="fi-invoice"></i>我的訂單</a></li>
+				<li><a href="#"><i class="fi-coupon"></i>我的優惠劵</a></li>
+				<li><a href="#"><i class="flaticon-id-card"></i>我的檔案</a></li>
+			</ul>
+		</nav>  
+	</div>
+</aside>
+
+<div class="formMain">
+	<form class="register-form" data-aos="fade-up" data-aos-delay="250">
+		<div class="line"></div>
+		<div class="form-content">
+			<section class="formContact">
+				<h1 class="title"><img class="userImg-circle" src="https://image.flaticon.com/icons/svg/149/149071.svg"> User Name</h1>
+				<div class="h15rem"></div>
+				<center><svg id="barcode"></svg></center>
+				<div class="h15rem"></div>
+				<p class="fieldset">
+					<label for="signup-userName">姓名</label>
+					<label class="image-replace username" for="signup-username">Username</label>
+					<input id="signup-userName" name="signup-userName" type="text" placeholder="必填項目 (不可變更)" value="Allen Pan">
+				</p>
+				<p class="fieldset">
+					<label for="signup-phone">手機</label>
+					<label class="image-replace phone" for="signup-phone">手機</label>
+					<input id="signup-phone" name="signup-phone" type="text" value="0918223344" disabled>
+				</p>
+				<p class="fieldset">
+					<label for="signup-email">Email</label>
+					<label class="image-replace email" for="signup-email">E-mail</label>
+					<input id="signup-email" name="signup-email" type="text" value="allen@jyt-inc.com">
+				</p>
+				<label for="signup-sex">性別</label>
+				<div class="materialSelect">
+					<select id="signup-sex">
+						<option value="未選取">未選取</option>
+						<option value="男" selected>男</option>
+						<option value="女">女</option>
+						<option value="其他">其他</option>
+					</select>
+				</div>
+				<label for="birthday">生日</label>
+				<ul class="row">
+					<li class="col-xs pl0">
+						<select id="date-sel-year" rel="1962"></select>
+					</li>
+					<li class="col-xs">
+						<select id="date-sel-month" rel="03"></select>
+					</li>
+					<li class="col-xs pr0">
+						<select id="date-sel-day" rel="05"></select>
+					</li>
+				</ul>
+				<label for="city">城市</label>
+				<div class="row city-selector" role="tw-city-selector" data-show-zipcode data-selected-county="臺中市" data-selected-district="中區"></div>
+				<label for="signup-address">地址</label>
+				<textarea name="address" id="signup-address">中山路 20 號 3 樓</textarea>
+			</section>
+
+			<div class="h1rem"></div>
+			<label class="button" for="overlayer">儲存編輯</label>
+		</div>
+	</form>
+</div>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="assets/js/birthday.js"></script>
+<script src="assets/js/tw-city-selector.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script>
+$(document).ready(function() {
+
+	JsBarcode("#barcode", "Code: 000 123 456 789");
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-in-sine',
+		//delay: 50,
+	});
+
+	// 生日 birthday
+	$.date_picker({
+		YearSelector: "#date-sel-year",
+		MonthSelector: "#date-sel-month",
+		DaySelector: "#date-sel-day"
+	});
+
+	// 地址 tw-city-selector.js
+	new TwCitySelector();
+
+	// material_select js
+	$('.materialSelect select').material_select();
+});
+</script>
+</body>
+</html>
