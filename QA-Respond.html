@@ -16,11 +16,12 @@
 <body>
 <style>
 .container {height:100%;background-color:#f7f5f5;}
-.BottomBar {padding:.6rem;}
-.BottomBar a {display:block;border:1px solid #ddd;padding:.6rem 0;}
-.BottomBar button {display:block;border:1px solid #ddd;padding:.6rem 0;width: 100%;background-color: #2a4150;color: white;border-radius:4px;}
+#js-userName {margin:0;font-size: small;padding: .4rem;}
+.BottomBar {padding:.6rem 0;background-color: white;}
 .formContact {padding:0;box-shadow:none;}
-.formContact textarea {margin-bottom:.1rem;transition: all .5s;}
+.formContact .inputHeight {align-items: stretch;align-content:space-between;height:3rem;margin-bottom: .3rem;}
+.formContact .inputHeight button {display:block;border:1px solid #ddd;min-height: 100%;width: 100%;background-color: #2a4150;color: white;border-radius:4px;}
+.formContact .inputHeight textarea {margin:0;transition: all .5s;min-height: auto;height: 100%;}
 /* .formContact textarea:active,.formContact textarea:focus {min-height:8rem;transition: all .5s;} */
 </style>
 
@@ -64,18 +65,20 @@
 		
 		<footer class="BottomBar text-center">
 			<div class="formContact" id="js-roomBody">
-				<textarea id="js-message" placeholder="填寫你的問題" @keydown.enter="sendMessage($event)"></textarea>
+				<ul class="row middle-xs inputHeight">
+					<li class="col-xs pr0"><textarea id="js-message" placeholder="填寫你的問題" @keydown.enter="sendMessage($event)"></textarea></li>
+					<li class="col-xs-2 col-sm-1 pl0"><button v-on:click="sendMessage($event)">提交</button></li>
+				</ul>
 				<ul class="row middle-xs cube9">
 					<li class="col-xs-2 col-sm-1 uploadImg">
 						<input class="imgBtn" type="file" accept="image/*" @change="sendImage($event)">
 						<i class="fa fa-image"></i>
 					</li>
-					<li class="col-xs"><input style="margin:0;font-size: small;" type="text" id="js-userName" maxlength="8" value="YourName"></li>
-					<li class="col-xs switchBtn">
+					<li class="col-xs"><input type="text" id="js-userName" maxlength="8" value="PostName"></li>
+					<li class="col-xs-4 col-sm-2 switchBtn">
 						<input type="checkbox" id="checkbox" v-model="isChecked" class="hidden">
-						<label for="checkbox" v-on:click="CheckedBtn()">{{ isChecked ? '用戶' : '客服' }}</label>
+						<label for="checkbox" v-on:click="CheckedBtn()">{{ isChecked ? '用戶回覆' : '客服回覆' }}</label>
 					</li>
-					<li class="col-xs"><button v-on:click="sendMessage($event)">提 交</button></li>
 				</ul>
 			</div>
 		</footer>
