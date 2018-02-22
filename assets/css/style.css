@@ -7,7 +7,7 @@
 /* @import url(https://use.fontawesome.com/releases/v5.0.4/css/all.css); */
 
 /*//// for global pages Star ////*/
-body {font-family: "Heiti TC", 'Microsoft JhengHei', "Source Sans Pro", "Helvetica Neue", "Noto Sans CJK TC", Roboto, -apple-system, BlinkMacSystemFont, Ubuntu, Cantarell, sans-serif;-webkit-font-smoothing: antialiased;color: rgba(60, 75, 88, 1);background: #f5f5f5;line-height: 1.25;font-weight: normal;/* overflow-x: hidden; */}
+body {font-family: "Heiti TC", 'Microsoft JhengHei', "Source Sans Pro", "Helvetica Neue", "Noto Sans CJK TC", Roboto, -apple-system, BlinkMacSystemFont, Ubuntu, Cantarell, sans-serif;-webkit-font-smoothing: antialiased;color: rgba(60, 75, 88, 1);background: #F5F5F5;line-height: 1.25;font-weight: normal;/* overflow-x: hidden; */}
 hr{border: none;border-bottom: 1px solid #f0f0f0;}
 strong,b{font-weight: bold;}
 .red{color: rgba(237, 0, 0, .75);}
@@ -132,19 +132,7 @@ z-index: 3;
 /* 跳出選單樣式 */
 main .popBoxCont {position: fixed;top: -30rem;left: 1rem;right: 1rem;background-color: white;-webkit-transition: 0.35s ease-in-out;transition: 0.35s ease-in-out;-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);z-index: 4;border-radius: 3px;}
 /* 左側欄展開樣式 */
-main .menu {
-height: 100%;
-width: 300px;
-position: fixed;
-left: -305px;
-top: 0;
-background: #B8523D;
--webkit-transition: 0.35s ease-in-out;
-transition: 0.35s ease-in-out;
--webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-z-index: 4;
-}
+main .menu {height: 100%;width: 300px;position: fixed;left: -305px;top: 0;background: #B8523D;-webkit-transition: 0.35s ease-in-out;transition: 0.35s ease-in-out;-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);z-index: 4;}
 main .menu .menuContainer {width: 100%;height: 100%;display: -webkit-box;display: -ms-flexbox;display: flex;background: #f3f3f3;}
 main .menu nav {width: 100%;height: 100%;overflow: hidden;overflow-y: scroll;}
 main .menu nav h3, main .menu nav a {text-align: left;padding: .8rem 0 .8rem .85rem;margin: 0;font-weight: 300;color: black;}
@@ -227,5 +215,26 @@ main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(8) a {animation
 /* isotope-filter Btns */
 .button-group ul li a {color: #ccc;}
 .button-group ul li a.is-checked {color: #222;font-weight:500;}
+
+/* 我的優惠劵 MyCoupons */
+.myCoupons {max-width:640px;margin:0 auto;padding:.8rem 1rem;display: block;}
+.myCoupons li {margin-bottom:.8rem;display:block;position: relative;}
+.myCoupons li .thisTag {position:absolute;right: 1rem;color: rgba(255, 255, 255, .6);}
+.myCoupons li a {color:white;text-shadow:0 1px 1px rgba(0,0,0,.3);min-height:8rem;display: block;border-radius:8px;padding:1.3rem 1.8rem 1.5rem;background-color:#fff;box-shadow:0px 1px 1px rgba(0,0,0,.08);}
+.myCoupons li a h1.percent {font-size:48px;line-height: 1;font-family: sans-serif;}
+.myCoupons li a hr {border-bottom: 2px dotted rgba(0,0,0,.08);;margin: 1rem 0;}
+.myCoupons li a hr::before,.myCoupons li a hr::after {position: absolute; content:"";display:block;width:2rem;height:2rem;border-radius:50%;background-color:#f0f0f0;}
+.myCoupons li a hr::before {right:0;transform: translate(50%,-50%);}
+.myCoupons li a hr::after {left:0;transform: translate(-50%,-50%);}
+
+.myCoupons li a strong {font-size: larger;}
+.myCoupons li a p {margin:.35rem 0;}
+.myCoupons li a times {font-size: small;}
+
+.CouponBgColor1 {background: linear-gradient(to right, #19E8D9, #5F79EA);}
+.CouponBgColor2 {background: linear-gradient(to right, #FF8881, #e64f63);}
+.CouponBgColor3 {background: linear-gradient(to right, #B3D2DE, #697E9E);}
+.CouponBgColor4 {background: linear-gradient(to right, #1d2d35, #010d13);}
+.CouponBgColor4 hr {border-color: rgba(255, 255, 255, 0.12)!important;}
 
 /*//// for Other pages End ////*/

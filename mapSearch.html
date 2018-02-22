@@ -19,6 +19,7 @@ main .menu ul.popupSel li a i {margin-right:.25rem;min-width:1rem;text-align: ce
 main .menu ul.popupSel li a {border-bottom:1px solid #ddd;padding:1.25rem 1rem;display:block;}
 main .menu ul.popupSel li a:hover {background: #f1f1f1;}
 main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
+main .menu ul.popupSel li a i.fa-check {float: right;color: #a0c763;}
 
 #map {height:calc(100vh - 3rem);}
 .mapInfoWindow {padding:.35rem .5rem 0;}
@@ -35,7 +36,7 @@ main .menu ul.popupSel li:last-of-type a {border-bottom:none;}
 <label class="menuClose" for="menuBtn"></label>
 <aside class="menu">
 	<ul class="popupSel">
-		<li><a href="#0" id="mapAll"><i class="fa fa-check" style="float: right;color: #a0c763;"></i>All</a></li>
+		<li><a href="#0" id="mapAll"><i class="fa fa-check"></i>All</a></li>
 		<li><a href="#0">items</a></li>
 		<li><a href="#0">items</a></li>
 		<!-- <li><a href="#0">展售店</a></li>
@@ -165,7 +166,7 @@ function initMap() {
 			animation: google.maps.Animation.DROP
 		});
 		google.maps.event.addListener(marker, 'click', function (e) {
-			infoWindow.setContent("<div class='mapInfoWindow'><img src='"+ data.img +"'><h3>" + data.title + "</h3><p>" + data.address + "</p><p>" + data.phone + "</p></div>");
+			infoWindow.setContent("<div class='mapInfoWindow'><img src='"+ data.img +"'><h3>" + data.title + "</h3><p>" + data.address + "</p><p><i class='fa fa-phone'></i> " + data.phone + "</p><p class='text-right'><a href='storeIntroduction.html'>更多...</a></p></div>");
 			infoWindow.open(map, marker);
 			map.setCenter(marker.getPosition());
 			map.panTo(marker.getPosition());

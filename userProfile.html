@@ -9,8 +9,13 @@
 	<link rel="stylesheet" href="assets/css/signupForm.css">
 	<link rel="stylesheet" href="assets/css/registerStep.css">
 	<style>
+	.formMain .register-form {width:95%;}
+	.formMain .register-form .form-content {padding:2rem 1rem;}
 	.formContact {padding:0;border: none;box-shadow: none;}
-	#barcode {width:100%;height:auto;}
+	#barcode {width:100%;height:auto;transition: all 1.2s;transform-origin:center center;}
+	.barcode {background-color:rgba(0, 0, 0, 0);transition: all 2s;}
+	.show {position: fixed;z-index: 1;top:0;left: 0;width: 100%;height:100%;background-color:rgba(255, 255, 255, .85);transition: all 2s;}
+	.show #barcode {width:100%;height:100%;transform: rotate(-90deg)translateX(50%) !important;}
 	</style>
 </head>
 
@@ -47,7 +52,7 @@
 	<div class="verificationCode">
 		<h1 class="title">送出變更</h1>
 		<div class="h1rem"></div>
-		<button class="button" onclick="location.href='index.html'">確 定</button>
+		<button id="confirmBtn" class="button">確 定</button>
 		<p class="cancelBtn"><label for="overlayer">取 消</label></p>
 	</div>
 </selected>
@@ -85,7 +90,7 @@
 			<section class="formContact">
 				<h1 class="title"><img class="userImg-circle" src="https://image.flaticon.com/icons/svg/149/149071.svg"> User Name</h1>
 				<div class="h15rem"></div>
-				<center><svg id="barcode"></svg></center>
+				<center class="barcode"><svg id="barcode"></svg></center>
 				<div class="h15rem"></div>
 				<p class="fieldset">
 					<label for="signup-userName">姓名</label>
@@ -105,7 +110,7 @@
 				<label for="signup-sex">性別</label>
 				<div class="materialSelect">
 					<select id="signup-sex">
-						<option value="未選取">未選取</option>
+						<option value="不顯示">不顯示</option>
 						<option value="男" selected>男</option>
 						<option value="女">女</option>
 						<option value="其他">其他</option>
@@ -146,7 +151,20 @@
 <script>
 $(document).ready(function() {
 
-	JsBarcode("#barcode", "Code: 000 123 456 789");
+	JsBarcode("#barcode", "SN: 000 123 456 789");
+
+	$(".barcode").click (function(){
+		$(this).toggleClass("show");
+	});
+
+	// 確認 Confirm Send Btn
+	$("#confirmBtn").click (function(){
+		$("#overlayer").prop("checked", false);
+		$(".register-form").removeClass("aos-animate");
+		// $(".register-form").attr('data-aos-delay', '1000');
+		$('html, body').delay(800).animate({scrollTop:0}, 800);
+		// location.reload();
+	});
 
 	AOS.init({
 		//offset: 45,

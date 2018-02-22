@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+	main.container{padding: 3.3rem 0 0;background-color:#f0f0f0;}
+
+	main .filter {height: auto;top:-50rem;left:0;width: 100%;background-color: white;}
+	main input#overlayer:checked ~ selected.filter {top: 3rem;bottom: auto;}
+	/* 頂部展開選單 */
+	main .filter ul.popupSel li a i {margin-right:.25rem;min-width:1rem;text-align: center;}
+	main .filter ul.popupSel li a {border-bottom:1px solid #ddd;padding:1.25rem 1rem;display:block;}
+	main .filter ul.popupSel li a:hover {background: #f1f1f1;}
+	main .filter ul.popupSel li:last-of-type a {border-bottom:none;}
+	main .filter ul.popupSel li a i.fa-check {float: right;color: #a0c763;}
+	</style>
+</head>
+
+<body>
+<main class="container">
+<input type="checkbox" id="menuBtn"/>
+<label class="menuClose" for="menuBtn"></label>
+<input type="checkbox" id="overlayer"/>
+<label class="overlayerClose" for="overlayer"></label>
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<label class="menuButton" for="menuBtn">
+				<object data="assets/svgs/barIco.svg" type="image/svg+xml"></object>
+			</label>
+		</li>
+		<li class="col-xs noWrap">
+			<h3 data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">我的優惠劵</h3>
+		</li>
+		<li class="text-right">
+			<label for="overlayer" class="menuButton">
+				<i class="fa fa-ellipsis-v"></i>
+			</label>
+		</li>
+	</ul>
+</nav>
+
+<selected class="menu filter">
+	<ul class="popupSel">
+		<li>
+			<a href="#0"><i class="fa fa-check"></i>All</a>
+		</li>
+		<li><a href="#0">將到期</a></li>
+		<li><a href="#0">已過期</a></li>
+		<li><a href="#0">已核銷</a></li>
+	</ul>
+</selected>
+
+<aside class="menu">
+	<div class="menuContainer">
+		<nav>
+			<h3 class="row middle-xs userAccount">
+				<div class="col-xs-2"><img class="userImg-circle" src="https://image.flaticon.com/icons/svg/149/149071.svg"></div>
+				<div class="col-xs-8"><span class="userName">SignUp</span></div>
+				<div class="col-xs-2 times text-center"><label for="menuBtn">&times;</div>
+			</h3>
+			<ul>
+				<li><a href="news.html">消息<small>News</small></a></li>
+				<li><a href="commodity.html">商品<small>Commodity</small></a></li>
+				<li><a href="store.html">門市<small>Store</small></a></li>
+				<li><a href="lottery.html">抽獎<small>lottery</small></a></li>
+			</ul>
+			<ul class="clineUser">
+				<li><a href="#"><i class="fi-handbag"></i>我的品牌</a></li>
+				<li><a href="#"><i class="fi-shopping-bag"></i>我的商品</a></li>
+				<li><a href="#"><i class="fi-placeholder-1"></i>我的門市</a></li>
+				<li><a href="#"><i class="fi-invoice"></i>我的訂單</a></li>
+				<li><a href="#"><i class="fi-coupon"></i>我的優惠劵</a></li>
+				<li><a href="#"><i class="flaticon-id-card"></i>我的檔案</a></li>
+			</ul>
+		</nav>  
+	</div>
+</aside>
+
+<ul class="myCoupons">
+	<li>
+		<a class="CouponBgColor1" href="myCouponDetail.html">
+			<!-- <span class="thisTag">已過期</span> -->
+			<h1 class="percent">10<small>%</small></h1>
+			<hr>
+			<strong>Amadana</strong>
+			<p>全商品 10%</p>
+			<times>效期：2018/02/28</times>
+		</a>
+	</li>
+	<li>
+		<a class="CouponBgColor2" href="myCouponDetail.html">
+			<span class="thisTag">已核銷</span>
+			<h1 class="percent">15<small>%</small></h1>
+			<hr>
+			<strong>正負零</strong>
+			<p>全商品 15%</p>
+			<times>效期：2018/01/31</times>
+		</a>
+	</li>
+	<li>
+		<a class="CouponBgColor3" href="myCouponDetail.html">
+			<span class="thisTag">已過期</span>
+			<h1 class="percent">5<small>%</small></h1>
+			<hr>
+			<strong>Yokoshima</strong>
+			<p>全商品 5%</p>
+			<times>效期：2017/12/31</times>
+		</a>
+	</li>
+	<li>
+		<a class="CouponBgColor4" href="myCouponDetail.html">
+			<span class="thisTag">已過期</span>
+			<h1 class="percent">12<small>%</small></h1>
+			<hr>
+			<strong>Yokoshima</strong>
+			<p>全商品 12%</p>
+			<times>效期：2017/10/30</times>
+		</a>
+	</li>
+</ul>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/js/aos.js"></script>
+
+<script>
+$(document).ready(function () {
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-in-sine',
+		//delay: 50,
+	});
+
+});
+</script>
+</body>
+</html>
