@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/signupForm.css">
+	<style>
+	.container {background-color: #e4e6e9;}
+	.formMain .register-form {width:95%;}
+	.formMain .register-form .form-content {padding:2rem 1rem;}
+	.formContact {padding:0;border: none;box-shadow: none;}
+	#barcode {width:100%;height:auto;}
+	.myCoupons {max-width:100%;padding:0;overflow: hidden;}
+	.myCoupons li a {border-radius: 0;}
+	.myCoupons li a hr::before,.myCoupons li a hr::after{background-color:#fff;}
+	</style>
+</head>
+
+<body>
+<main class="container">
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<a href="#0" class="menuButton goBackPage">
+				<i class="fa fa-angle-left" data-aos="flip-right" data-aos-delay="1000"></i>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<h3 data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">優惠劵明細</h3>
+		</li>
+	</ul>
+</nav>
+
+<div class="formMain">
+	<section class="register-form" data-aos="fade-up" data-aos-delay="250">
+		<ul class="myCoupons">
+			<li>
+				<a class="CouponBgColor1" href="#0">
+					<span class="thisTag">未使用</span>
+					<h1 class="percent">10<small>%</small></h1>
+					<hr>
+					<strong>Amadana</strong>
+					<p>全商品 10%</p>
+					<times>效期：2018/02/28</times>
+				</a>
+			</li>
+		</ul>
+		<center><svg id="barcode"></svg></center>
+		<article class="form-content">
+			<p><strong>使用說明</strong></p>
+			<p>本優惠券限制使用於amadana商品，請注意優惠券的使用效期。 優惠券請妥善保存，優惠券每張限定使用一次，如果優惠券到期未使用或是已被核銷，該優惠券即可不可使用</p>
+		</article>
+	</section>
+</div>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script>
+$(document).ready(function() {
+	$(".goBackPage").click(function () {
+		event.preventDefault();
+		history.back(1);
+	});
+
+	JsBarcode("#barcode", "SN: 000 123 456 789", {
+		fontSize: 28,
+		// displayValue: false
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 600,
+		easing: 'ease-in-sine',
+		//delay: 50,
+	});
+});
+</script>
+</body>
+</html>
