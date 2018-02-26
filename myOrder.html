@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Chicony Electronics CO.</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<main class="container">
+<input type="checkbox" id="menuBtn"/>  
+<label class="menuClose" for="menuBtn"></label>
+<nav class="topMenuBar">
+	<ul class="row middle-xs">
+		<li>
+			<label class="menuButton" for="menuBtn">
+				<object data="assets/svgs/barIco.svg" type="image/svg+xml"></object>
+			</label>
+		</li>
+		<li>
+			<a href="#0" class="topShoppingBag">
+				<i class="flaticon-shopping-cart-5"></i>
+				<span class="shopNum">2</span>
+			</a>
+		</li>
+		<li class="col-xs noWrap">
+			<form>
+				<i class="fa fa-search"></i>
+				<input placeholder="搜尋" type="text">
+				<button type="reset">&times;</button>
+			</form>
+		</li>
+	</ul>
+</nav>
+
+<aside class="menu">
+	<div class="menuContainer">
+		<nav>
+			<h3 class="row middle-xs userAccount">
+				<div class="col-xs-2"><img class="userImg-circle" src="https://placem.at/people?txt=Avatar&w=128&amp;h=128&random=?"></div>
+				<div class="col-xs-8"><span class="userName">約翰·維克</span></div>
+				<div class="col-xs-2 times text-center"><label for="menuBtn">&times;</div>
+			</h3>
+			<ul>
+				<li><a href="news.html">消息<small>News</small></a></li>
+				<li><a href="commodity.html">商品<small>Commodity</small></a></li>
+				<li><a href="store.html">門市<small>Store</small></a></li>
+				<li><a href="lottery.html">抽獎<small>lottery</small></a></li>
+			</ul>
+			<ul class="clineUser">
+				<li><a href="#"><i class="fi-handbag"></i>我的品牌</a></li>
+				<li><a href="#"><i class="fi-shopping-bag"></i>我的商品</a></li>
+				<li><a href="#"><i class="fi-placeholder-1"></i>我的門市</a></li>
+				<li><a href="myOrder.html"><i class="fi-invoice"></i>我的訂單</a></li>
+				<li><a href="myCoupons.html"><i class="fi-coupon"></i>我的優惠劵</a></li>
+				<li><a href="userProfile.html"><i class="flaticon-id-card"></i>我的檔案</a></li>
+			</ul>
+		</nav>  
+	</div>
+</aside>
+
+<div class="h15rem"></div>
+<!-- <h3 class="subTitle">我的訂單</h3> -->
+<selected class="isotope-filter button-group">
+	<ul class="row center-xs cube9 noWrap">
+		<li class="col-xs"><a class="button">全部訂單</a></li>
+		<li class="col-xs"><a class="button is-checked" data-filter=".status_1">待支付(1)</a></li>
+		<li class="col-xs"><a class="button" data-filter=".status_2">待收貨(1)</a></li>
+		<li class="col-xs"><a class="button" data-filter=".status_3">已關閉</a></li>
+	</ul>
+</selected>
+<selected class="boxCont">
+	<ul id="orderItems" class="orderItemClass"></ul>
+</selected>
+<hr/>
+
+</main>
+<!-- JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+$(document).ready(function () {
+	var orderItemsJson =[{
+		o_url:"myOrderDetail.html",o_store:"相機美人-新光華店",o_status:"已收貨",o_type:"status_0",o_price:"125",o_sn:"00012345679",o_date:"2018/02/25 19:43",o_buyItems:[
+			{itemName:"運動手錶",num:"1",price:"59"},{ itemName: "運動耳機", num: "1", price: "66" }
+		]
+		},{
+		o_url:"myOrderDetail.html",o_store:"相機美人-敦化店",o_status:"待支付",o_type:"status_1",o_price:"305",o_sn:"0003345678",o_date:"2018/02/01 16:33",o_buyItems:[
+			{itemName:"相機保護套",num:"1",price:"40"},{ itemName: "運動耳機", num: "1", price: "199" },{ itemName: "螢幕保護貼", num: "1", price: "66" }
+		]
+		},{
+		o_url:"myOrderDetail.html",o_store:"相機美人-新光華店",o_status:"待收貨",o_type:"status_2",o_price:"50",o_sn:"0009876521",o_date:"2018/01/20 11:54",o_buyItems:[
+			{itemName:"美顏補光燈",num:"1",price:"50"}
+		]
+		},{
+		o_url:"myOrderDetail.html",o_store:"相機美人-南港中信園區店",o_status:"已關閉",o_type:"status_3",o_price:"238",o_sn:"000100300255",o_date:"2018/01/05 08:21",o_buyItems:[
+			{itemName:"手機保護套",num:"1",price:"39"},{ itemName: "藍芽耳機", num: "1", price: "199" }
+		]
+		}
+	];
+	$.each(orderItemsJson,function(index,obj)
+	{
+		order_item ='<li class="order-item ' + obj.o_type +'">';
+		order_item +='<a href="'+ obj.o_url +'">';
+		order_item +='<h1 class="' + obj.o_status +'">'+ obj.o_status +'<small>訂單詳情</small></h1>';
+		order_item +='<article class="row">';
+		order_item +='<div class="col-xs-7 p0"><small>編號:' + obj.o_sn +'</small></div>';
+		order_item +='<div class="col-xs text-right p0 noWrap"><times>' + obj.o_date +'</times></div>';
+		order_item +='</article>';
+		order_item +='<p class="storeName green">' + obj.o_store +'</p>';
+		order_item +='<article class="row">';
+		order_item += '<div class="col-xs p0 items">';
+			$.each(obj.o_buyItems, function (i, item) {
+				order_item += '<p>' + item.itemName + '<br><small>NT$ ' + item.price +' x' + item.num +'</small></p>';
+			});
+		order_item += '</div>';
+		order_item +='<div class="col-xs-3 text-right noWrap"><small>NT$ </small><span class="price">' + obj.o_price +'</span></div>';
+		order_item +='</article></a>';
+		order_item +='</li>';
+		$('#orderItems').append(order_item);
+	});
+
+	$('#orderItems').isotope({
+		filter:'.status_1',
+		itemSelector: '.order-item',
+		layoutMode: 'fitRows',
+		masonry: {
+			columnWidth: 200
+		}
+	});
+
+	var $portfoliogrid = $('#orderItems');
+	$('.isotope-filter').on('click', '.button', function () {
+		var filterValue = $(this).attr('data-filter');
+		$portfoliogrid.isotope({
+			filter: filterValue
+		});
+	});
+
+	$('.button-group').each(function (i, buttonGroup) {
+		var $buttonGroup = $(buttonGroup);
+		$buttonGroup.on('click', '.button', function () {
+			$buttonGroup.find('.is-checked').removeClass('is-checked');
+			$(this).addClass('is-checked');
+		});
+	});
+
+	AOS.init({
+		//offset: 45,
+		duration: 300,
+		easing: 'ease-in-sine',
+		//delay: 50,
+	});
+});
+</script>
+</body>
+</html>

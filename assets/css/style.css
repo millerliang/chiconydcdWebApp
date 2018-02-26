@@ -27,6 +27,8 @@ strong,b{font-weight: bold;}
 .overHidden{overflow:hidden;}
 .noWrap{white-space:nowrap;}
 .p0{padding:0;}
+.pt0{padding-top:0;}
+.pb0{padding-bottom:0;}
 .pl0{padding-left:0;}
 .pr0{padding-right:0;}
 .px0{padding-left:0;padding-right:0;}
@@ -238,4 +240,17 @@ main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(8) a {animation
 .CouponBgColor4 {background: linear-gradient(to right, #1d2d35, #010d13);}
 .CouponBgColor4 hr {border-color: rgba(255, 255, 255, 0.12)!important;}
 
+/* 我的訂單 MyOrders */
+.orderItemClass,.isotope-filter .cube9 {max-width:960px;margin:0 auto;}
+.orderItemClass h1 {font-size:medium;color:#83C44E;border-bottom:1px solid rgba(0,0,0,.08);margin-bottom:.6rem;line-height:1.8;}
+.orderItemClass h1 small {float: right;color:#333;padding-right:.75rem;background:url('https://image.flaticon.com/icons/svg/142/142050.svg') no-repeat right center #fff;background-size:10px;}
+.orderItemClass li {width: 100%;border:1px solid rgba(0,0,0,.08);margin-bottom:.6rem;padding:.3rem .5rem .8rem;background-color:#fff;}
+.orderItemClass times,.orderItemClass small {font-size:xx-small;color:#999;}
+.orderItemClass p.storeName {line-height:2;margin-bottom:.8rem;}
+.orderItemClass .price {font-size: 16pt;}
+.orderItemClass div.items p {margin-bottom:.4rem;line-height: 1;}
+.orderItemClass h1.已關閉 {color:gray;}
+
+.orderList {padding:1rem .25rem;}
+.orderList li {margin-bottom: 1.5rem;}
 /*//// for Other pages End ////*/
