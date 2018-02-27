@@ -33,15 +33,18 @@ strong,b{font-weight: bold;}
 .pr0{padding-right:0;}
 .px0{padding-left:0;padding-right:0;}
 .m0{margin:0;}
+.mt0{margin-top:0;}
+.mb0{margin-bottom:0;}
 .mx0{margin-left:0;margin-right:0;}
+.my0{margin-top:0;margin-bottom:0;}
 .hidden{display:none!important;}
 .boxShadow{-moz-box-shadow: 0px 2px 4px rgba(0,0,0,.25);-webkit-box-shadow: 0px 2px 4px rgba(0,0,0,.25);box-shadow: 0px 2px 4px rgba(0,0,0,.25);}
 .img-responsive {max-width:100%;display: block;margin: 0 auto;}
 .text-left {text-align:left;}
 .text-center {text-align:center;}
 .text-right {text-align:right;}
-.swiper-pagination-bullet-active {background: rgba(2, 20, 40, .75);}
-/* Top header 固定欄樣式 */
+.swiper-pagination-bullet-active {background: rgba(2, 20, 40, .75);} /* for .swiper-pagination color */
+/* TopBar nav header 固定欄樣式 */
 .topMenuBar {background-color:white;position: fixed;width: 100%;z-index: 2;display: block;padding: .2rem 0;top: 0;-moz-box-shadow: 0px 1px 4px rgba(0,0,0,.15);-webkit-box-shadow: 0px 1px 4px rgba(0,0,0,.15);box-shadow: 0px 1px 4px rgba(0,0,0,.15);}
 .topMenuBar .row {flex-wrap: nowrap;}
 .topMenuBar li:first-of-type i {font-size: 20px;} /* menuBarIcon */
@@ -56,14 +59,8 @@ strong,b{font-weight: bold;}
 .topMenuBar li form:hover button,.topMenuBar li input[type=text]:focus + button {transition: all .8s;transform: translateX(-1.8rem);font-size: small;opacity: 1;}
 
 /* TopBar 購物車樣式 */
-.topShoppingBag {
-    position: relative;
-    display: inline-block;
-    width: 1.2rem;
-}
-.topShoppingBag i::before {
-    font-size: 19px;
-}
+.topShoppingBag {position: relative;display: inline-block;width: 1.2rem;}
+.topShoppingBag i::before {font-size: 19px;}
 .topShoppingBag span.shopNum {
     font-family: monospace;
     position: absolute;
@@ -97,12 +94,12 @@ strong,b{font-weight: bold;}
 /* 加入收藏樣式 */
 .ifActive i {font-size:1.3rem;animation: refave-heart .8s;}
 i.is-active {color:#ef4b0a;animation: fave-heart .8s;}
-@keyframes fave-heart {0% {transform: scale(1,1);opacity:.25;}50% {transform: scale(1.5,1.5);}100% {opacity:1;transform: scale(1,1)}}
-@keyframes refave-heart {0% {transform: scale(.8,.8);}50% {transform: scale(1.2,1.2);opacity:.25;}100% {transform: scale(1,1)opacity:1;}}
+@keyframes fave-heart {0% {transform: scale(1, 1);opacity: .25;}50% {transform: scale(1.5, 1.5);}100% {opacity: 1;transform: scale(1, 1);}}
+@keyframes refave-heart {0% {transform: scale(.8, .8);}50% {transform: scale(1.2, 1.2);opacity: .25;}100% {transform: scale(1, 1);opacity:1;}}
 
 /* 底部固定欄樣式 */
 .BottomBar {position:fixed;bottom:0;left:0;right:0;background-color:rgba(255,255,255,.85);z-index:1;}
-.swiper-slide img {max-width:100%;}
+.swiper-slide img {max-width:100%;} /* .Swiper Slide 圖片大小 */
 .cube9 li {padding:0;} /* 九宮格無邊距 */
 
 main.container {position: relative;width: 100%;padding:3.3rem 0 3rem;} /* 全域框架 */
@@ -119,20 +116,8 @@ main .menuButton {display: inline-block;padding: 10px 20px;margin: 0 auto;cursor
 main .menuButton:hover {background: #f0f0f0;}
 main .menuButton object {width: 1.4rem;pointer-events:none;}
 /* 半透明灰底 Toggle */
-main .menuClose,.overlayerClose {
-position: fixed;
-top: 0;
-left: 0;
-background: rgba(0, 0, 0, 0.4);
-height: 100%;
-width: 100%;
-opacity: 0;
-visibility: hidden;
--webkit-transition: 0.3s ease;
-transition: 0.3s ease;
-z-index: 3;
-}
-/* 跳出選單樣式 */
+main .menuClose,.overlayerClose {position: fixed;top: 0;left: 0;background: rgba(0, 0, 0, 0.4);height: 100%;width: 100%;opacity: 0;visibility: hidden;-webkit-transition: 0.3s ease;transition: 0.3s ease;z-index: 3;}
+/* 跳出獨立 ModelBox 樣式 */
 main .popBoxCont {position: fixed;top: -30rem;left: 1rem;right: 1rem;background-color: white;-webkit-transition: 0.35s ease-in-out;transition: 0.35s ease-in-out;-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);z-index: 4;border-radius: 3px;}
 /* 左側欄展開樣式 */
 main .menu {height: 100%;width: 300px;position: fixed;left: -305px;top: 0;background: #B8523D;-webkit-transition: 0.35s ease-in-out;transition: 0.35s ease-in-out;-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);z-index: 4;}
@@ -174,6 +159,8 @@ main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(5) a {animation
 main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(6) a {animation-delay: 1.2s;}
 main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(7) a {animation-delay: 1.4s;}
 main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(8) a {animation-delay: 1.6s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(9) a {animation-delay: 1.8s;}
+main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(10) a {animation-delay: 2s;}
 @keyframes aslideAnima {0% {transform: translateX(1rem);}100% {opacity:1;transform: translateX(0);}}
 
 /* 底部資訊欄 */
@@ -182,40 +169,22 @@ main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(8) a {animation
 .bottomInfo .row small {display:block;line-height:1.5;}
 .bottomInfo .row .col-xs {color:#999;}
 
-/* index 抽獎 btn */
-.lotteryBtn {background-color: transparent;padding: 0 0 .5em;}
-.lotteryBtn li {}
-.lotteryBtn li a {
-    padding: .3rem 0;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, .25);
-    color: white;
-    background-color: rgba(102, 48, 178, .85);
-    background: linear-gradient(to bottom, rgba(187, 112, 255, .95), rgba(247, 161, 224, .85));
-    border-radius: 2rem;
-    align-items:  center;
-    width: 90%;
-    display: inline-block;
-}
-.lotteryBtn li a.colorB {background-color: rgba(48, 89, 178, .85);background: linear-gradient(to bottom, rgba(110, 140, 255, 0.95), rgba(160, 200, 245, 0.85));}
-.lotteryBtn li a i {vertical-align: middle;margin-right: .3rem;display: inline-block;}
-.lotteryBtn li a i::before {font-size: 1.6rem;}
-
 /*//// for global pages End ////*/
 
 /*//// for Other pages Star ////*/
 
-/* isotope-filter Style */
-#branItems {}
-#branItems li {padding: 0 .2rem 1.2rem .2rem;}
-#branItems li a,#storeItems li a {
-    background-color:  white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
-    display: block;
-    padding: .25rem .5rem;
-    border-radius: 4px;
-}
+/* index 抽獎 btn */
+.lotteryBtn {background-color: transparent;padding: 0 0 .5em;}
+.lotteryBtn li a {padding: .3rem 0;text-shadow: 0 1px 1px rgba(0, 0, 0, .25);color: white;background-color: rgba(102, 48, 178, .85);background: linear-gradient(to bottom, rgba(187, 112, 255, .95), rgba(247, 161, 224, .85));border-radius: 2rem;align-items:  center;width: 90%;display: inline-block;}
+.lotteryBtn li a.colorB {background-color: rgba(48, 89, 178, .85);background: linear-gradient(to bottom, rgba(110, 140, 255, 0.95), rgba(160, 200, 245, 0.85));}
+.lotteryBtn li a i {vertical-align: middle;margin-right: .3rem;display: inline-block;}
+.lotteryBtn li a i::before {font-size: 1.6rem;}
 
-/* isotope-filter Btns */
+/* 品牌 isotope-filter Style */
+#branItems li {padding: 0 .2rem 1.2rem .2rem;}
+#branItems li a,#storeItems li a {background-color:  white;box-shadow: 0 1px 3px rgba(0, 0, 0, .12);display: block;padding: .25rem .5rem;border-radius: 4px;}
+
+/* isotope-filter Toggle Btns */
 .button-group ul li a {color: #ccc;}
 .button-group ul li a.is-checked {color: #222;font-weight:500;}
 
@@ -234,6 +203,7 @@ main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(8) a {animation
 .myCoupons li a p {margin:.35rem 0;}
 .myCoupons li a times {font-size: small;}
 
+/* 優惠劵顏色 MyCoupons bg color */
 .CouponBgColor1 {background: linear-gradient(to right, #19E8D9, #5F79EA);}
 .CouponBgColor2 {background: linear-gradient(to right, #FF8881, #e64f63);}
 .CouponBgColor3 {background: linear-gradient(to right, #B3D2DE, #697E9E);}
@@ -251,6 +221,8 @@ main input#menuBtn:checked ~ .menu nav .clineUser li:nth-of-type(8) a {animation
 .orderItemClass div.items p {margin-bottom:.4rem;line-height: 1;}
 .orderItemClass h1.已關閉 {color:gray;}
 
+/* 訂單明細 MyOrderDetail */
 .orderList {padding:1rem .25rem;}
 .orderList li {margin-bottom: 1.5rem;}
+
 /*//// for Other pages End ////*/

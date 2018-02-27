@@ -475,13 +475,13 @@
 		display: block;
 	}
 }
-@media all and (max-width:400px){
+/* @media all and (max-width:400px){
 	#wowslider-container1 .ws_controls,
 	#wowslider-container1 .ws_bullets,
 	#wowslider-container1 .ws_thumbs{
 		display__: none
 	}
-}
+} */
 
 /* 自定義 */
 #wowslider-container1 .ws-title div, #wowslider-container1 .ws-title span{background-color:rgba(255,255,255,.5);}

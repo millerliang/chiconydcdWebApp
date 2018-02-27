@@ -804,7 +804,7 @@ overflow: hidden;
 }
 
 #work-list {
-/* width:100%;margin:24px auto 40px;border-bottom:3px solid #dbd6c7 */;
+/* width:100%;margin:24px auto 40px;border-bottom:3px solid #dbd6c7; */
 }
 
 #work-list ul {
@@ -1083,7 +1083,6 @@ text-decoration: none;
 margin: 0;
 border: solid 1px #c4bfb5;
 text-shadow: 0 1px 0 rgb(255, 255, 255);
-font: normal !important normal !important 400 !important 11px !important normal !important !important !important;
 }
 
 .remove:focus,.remove:hover,.button:focus,.addtocart:focus,.update-button:focus,.button:hover,.addtocart:hover,.update-button:hover {
@@ -1476,9 +1475,7 @@ padding: 9px
 0 4px;
 }
 
-.
-
-says,.hidden,fieldset legend {
+.says,.hidden,fieldset legend {
 display: none;
 }
 
@@ -2348,10 +2345,7 @@ top: 50%;
 left: 50%;
 }
 
-* html #TB_window {
-position: absolute;
-margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
-}
+* html #TB_window {position: absolute;margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');}
 
 #TB_window img#TB_Image {
 display: block;
@@ -2445,10 +2439,7 @@ width: 100%;
 }
 
 * html
-#TB_HideSelect {
-position: absolute;
-height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight :document.body.offsetHeight+'px');
-}
+#TB_HideSelect {position: absolute;height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight :document.body.offsetHeight+'px');}
 
 #TB_iframeContent {
 clear: both;
