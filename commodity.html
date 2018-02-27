@@ -21,8 +21,8 @@
 	.formContact {padding:1rem 0;box-shadow: none;}
 	.formContact select {margin:.5rem 0;}
 	/* 2018-02-27 add auto layout */
-	.ProductListWrap .col-xs-12 {padding:2rem 0;}
-	.ProductListWrap .col-xs-12 img {width:100%;}
+	.ProductListWrap li:nth-child(3n){-ms-flex-preferred-size: 100%;flex-basis: 100%;padding:2rem 0;}
+	.ProductListWrap li:nth-child(3n) img {width:100%;}
 	</style>
 </head>
 
@@ -126,7 +126,7 @@
 				<p class="price">$ 2,390</p>
 			</div>
 		</li>
-		<li class="col-xs-12">
+		<li class="col-xs">
 			<img class="img-responsive" src="http://recent.keedan.com/track/files/2016/04/y010-1.jpg">
 			<div>
 				<p>
@@ -164,11 +164,6 @@
 				<p class="price">$ 1,490</p>
 			</div>
 		</li>
-	</ul>
-</selected>
-
-<selected class="boxCont" data-aos="fade-up" data-aos-delay="100" onclick="location.href='productDesciption.html'">
-	<ul class="row center-xs">
 		<li class="col-xs">
 			<img class="img-responsive" src="https://cdn.hughes.co.uk/live/media/image/bb/a8/09/dyson-hdr-new.jpg">
 			<div>
@@ -183,7 +178,25 @@
 		</li>
 	</ul>
 </selected>
-<div class="h2rem"></div>
+
+<!-- <selected class="boxCont" data-aos="fade-up" data-aos-delay="100" onclick="location.href='productDesciption.html'">
+	<ul class="row center-xs">
+		<li class="col-xs">
+			<img class="img-responsive" src="https://cdn.hughes.co.uk/live/media/image/bb/a8/09/dyson-hdr-new.jpg">
+			<div>
+				<p>
+					<span class="productColor p7"></span>
+					<span class="productColor p2"></span>
+				</p>
+				<p>Dyson Hughes 吸塵器</p>
+				<small>型號 xxxx</small>
+				<p class="price">$ 4,990</p>
+			</div>
+		</li>
+	</ul>
+</selected> -->
+<hr>
+<div class="h1rem"></div>
 
 <selected class="boxCont" data-aos="fade-up" data-aos-delay="300" onclick="location.href='productDesciption.html'">
 	<ul class="row center-xs">
