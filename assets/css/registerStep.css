@@ -17,7 +17,7 @@ html,body{height: 100%;}
 
 .wizard > .steps .current a,
 .wizard > .steps .current a:hover,
-.wizard > .steps .current a:active{background: #0b4b71;color: #fff;cursor: default;text-shadow: 0 1px 1px rgba(0, 0, 0, .25);background: linear-gradient(to right, #89ceef, #77eca2);}
+.wizard > .steps .current a:active,.formContact .sumitBtn.active{background: #0b4b71;color: #fff;cursor: default;text-shadow: 0 1px 1px rgba(0, 0, 0, .25);background: linear-gradient(to right, #89ceef, #77eca2);}
 
 .wizard > .steps .done a,
 .wizard > .steps .done a:hover,
@@ -33,7 +33,7 @@ html,body{height: 100%;}
 .wizard > .content > .body > iframe{border: 0 none;width: 100%;height: 100%;}
 .wizard > .content > .body input,.formContact input {display: block;border: 1px solid #ccc;}
 .wizard > .content > .body input[type="checkbox"]{display: inline-block;}
-.wizard > .content > .body input.error{background: rgb(247, 233, 234);border: 1px solid #ff3111 !important;animation: errorBorder .6s 2 ease-in-out;}
+.wizard > .content > .body input.error,.formContact input.error{background: rgb(247, 233, 234);border: 1px solid #ff3111 !important;animation: errorBorder .6s 2 ease-in-out;}
 @keyframes errorBorder {
     0%{border-color:#053146;}
     25%{border-color:#ddd}
@@ -42,7 +42,7 @@ html,body{height: 100%;}
     100%{border-color:#ff3111;}
 }
 .wizard > .content > .body label,.formContact label {display: inline-block;margin-bottom: .5rem;}
-.wizard > .content > .body label.error{color: #ff3111;display: inline-block;margin-left: 1rem;animation: errorAnima .8s 3 ease-in-out;transform-origin: left center;}
+.wizard > .content > .body label.error,.formContact label.error{color: #ff3111;display: inline-block;margin-left: 1rem;animation: errorAnima .8s 3 ease-in-out;transform-origin: left center;}
 @keyframes errorAnima {
     0%{
         transform: translateX(0);
@@ -142,6 +142,10 @@ transition: background-color 0.3s ease-in-out;
 .formContact button[type="submit"]:active {box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);}
 
 .formContact input:focus,.formContact textarea:focus {outline: 0;border: 1px solid #aaa;}
+
+.formContact .sumitBtn {width: 100%;margin-top: 24px;line-height: 3;border: none;text-align: center;cursor: pointer;border-radius: 4px;display: block;color: #666;-webkit-transition: 400ms;border-bottom: 2px solid transparent;text-shadow: 0 1px 1px rgba(0, 0, 0, .25);}
+.formContact .sumitBtn:hover {border-bottom-color: #999;-webkit-transform: translate(-2px, -2px);transform: translate(-2px, -2px);}
+.formContact .sumitBtn.active:hover {border-bottom-color: #4b9ec7;}
 
 ::-webkit-input-placeholder {color: #888;}
 :-moz-placeholder {color: #888;}

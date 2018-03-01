@@ -130,7 +130,7 @@ main .menu nav a:hover {background: #f1f1f1;}
 
 /* 展開側欄使用者樣式 */
 main .menu nav h3.userAccount {padding: .52rem 0 .62rem .3rem!important;}
-main .menu nav h3.userAccount img.userImg-circle {max-width:100%;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;display: inherit;}
+main .menu nav h3.userAccount img.userImg-circle {width: 2rem;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;display: inherit;}
 
 main .menu nav h3.userAccount img.userImg-circle:hover {transform: rotateY(-180deg);}
 main input#menuBtn:checked ~ .menu nav h3.userAccount img.userImg-circle {transform-origin: center center;transition:all .3s;animation: aslideImgFlip .6s 3 ease-in-out;}
